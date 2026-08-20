@@ -1,0 +1,23 @@
+{
+  "name": "rumbo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Test vocacional RIASEC para jóvenes, con carreras, universidades en Colombia y becas.",
+  "author": "Franck E. Peñaloza",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^16.3.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "typescript": "^5.8.3"
+  }
+}

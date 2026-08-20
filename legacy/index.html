@@ -1,0 +1,1126 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rumbo — Test vocacional para jóvenes</title>
+<meta name="description" content="Descubre qué carrera va contigo: test vocacional RIASEC de 48 preguntas con tu código Holland, carreras afines, universidades por departamento y becas en Colombia.">
+<meta name="author" content="Franck E. Peñaloza">
+<meta property="og:title" content="Rumbo — Test vocacional">
+<meta property="og:description" content="Descubre qué carrera va contigo: test RIASEC con universidades y becas en Colombia. Gratis, 6-8 minutos.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta name="theme-color" content="#0E7C66">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧭</text></svg>">
+</head>
+<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --paper: #F7F5F0;
+    --surface: #FFFFFF;
+    --surface-2: #EFECE4;
+    --ink: #1E2430;
+    --ink-soft: #4A5261;
+    --ink-faint: #7A8294;
+    --line: #DDD8CC;
+    --accent: #0E7C66;
+    --accent-ink: #FFFFFF;
+    --accent-soft: #E0F0EB;
+    --dim-r: #C75B1E; --dim-r-soft: #F7E4D6;
+    --dim-i: #2668B8; --dim-i-soft: #DDE9F8;
+    --dim-a: #7C4FD0; --dim-a-soft: #EBE2FA;
+    --dim-s: #C93E75; --dim-s-soft: #F9DFEA;
+    --dim-e: #A87708; --dim-e-soft: #F6ECD2;
+    --dim-c: #2E8B57; --dim-c-soft: #DDF0E4;
+    --shadow: 0 2px 12px rgba(30,36,48,.08);
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #131720;
+      --surface: #1C2230;
+      --surface-2: #232A3A;
+      --ink: #ECEDF0;
+      --ink-soft: #B4BAC7;
+      --ink-faint: #7E8697;
+      --line: #333C4E;
+      --accent: #3BB896;
+      --accent-ink: #0E1A16;
+      --accent-soft: #1B3A33;
+      --dim-r: #EE8A47; --dim-r-soft: #3B2A1D;
+      --dim-i: #62A0E8; --dim-i-soft: #1D2C42;
+      --dim-a: #A886EA; --dim-a-soft: #2E2544;
+      --dim-s: #E9739F; --dim-s-soft: #3D2230;
+      --dim-e: #D9AE3E; --dim-e-soft: #383018;
+      --dim-c: #5BC189; --dim-c-soft: #1D3527;
+      --shadow: 0 2px 14px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131720;
+    --surface: #1C2230;
+    --surface-2: #232A3A;
+    --ink: #ECEDF0;
+    --ink-soft: #B4BAC7;
+    --ink-faint: #7E8697;
+    --line: #333C4E;
+    --accent: #3BB896;
+    --accent-ink: #0E1A16;
+    --accent-soft: #1B3A33;
+    --dim-r: #EE8A47; --dim-r-soft: #3B2A1D;
+    --dim-i: #62A0E8; --dim-i-soft: #1D2C42;
+    --dim-a: #A886EA; --dim-a-soft: #2E2544;
+    --dim-s: #E9739F; --dim-s-soft: #3D2230;
+    --dim-e: #D9AE3E; --dim-e-soft: #383018;
+    --dim-c: #5BC189; --dim-c-soft: #1D3527;
+    --shadow: 0 2px 14px rgba(0,0,0,.35);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+  .shell { max-width: 900px; margin: 0 auto; padding: 24px 20px 80px; }
+
+  h1, h2, h3 {
+    font-family: "Bricolage Grotesque", "Instrument Sans", system-ui, sans-serif;
+    text-wrap: balance;
+    margin: 0;
+  }
+  .mono {
+    font-family: "Spline Sans Mono", "Consolas", monospace;
+    letter-spacing: .06em;
+  }
+  .eyebrow {
+    font-family: "Spline Sans Mono", "Consolas", monospace;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-size: .72rem;
+    color: var(--ink-faint);
+  }
+
+  /* ---------- Header ---------- */
+  header.top {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 6px 0 26px;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .brand svg { flex: none; }
+  .brand-name {
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+    font-weight: 700; font-size: 1.05rem; letter-spacing: -.01em;
+  }
+
+  /* ---------- Screens ---------- */
+  .screen { display: none; }
+  .screen.active { display: block; animation: rise .35s ease both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    .screen.active { animation: none; }
+    * { transition-duration: 0s !important; }
+  }
+
+  /* ---------- Intro ---------- */
+  .hero h1 {
+    font-size: clamp(2.4rem, 6.5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.04;
+    letter-spacing: -.02em;
+    max-width: 15ch;
+  }
+  .hero .lede {
+    margin: 20px 0 0;
+    max-width: 58ch;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+  }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; gap: 18px;
+    margin-top: 22px;
+    color: var(--ink-faint);
+    font-size: .85rem;
+  }
+  .hero-meta span { display: inline-flex; align-items: center; gap: 7px; }
+
+  .dim-band {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 10px;
+    margin: 34px 0 30px;
+  }
+  .dim-chip {
+    border: 1px solid var(--line);
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 14px 14px 12px;
+    cursor: default;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .dim-chip:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+  .dim-chip .letter {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 30px; height: 30px; border-radius: 9px;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 800; font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  .dim-chip .dim-name { font-weight: 600; font-size: .92rem; }
+  .dim-chip .dim-hint { font-size: .78rem; color: var(--ink-faint); margin-top: 2px; line-height: 1.35; }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+    font: inherit; font-weight: 600;
+    border: none; cursor: pointer;
+    border-radius: 999px;
+    padding: 14px 28px;
+    background: var(--accent); color: var(--accent-ink);
+    transition: transform .12s ease, filter .12s ease;
+  }
+  .btn:hover { transform: translateY(-2px); filter: brightness(1.06); }
+  .btn:focus-visible, .opt:focus-visible, .btn-ghost:focus-visible,
+  .career-head:focus-visible, .uni-link:focus-visible, .snies-link:focus-visible {
+    outline: 3px solid var(--accent); outline-offset: 3px;
+  }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px;
+    font: inherit; font-weight: 600; font-size: .92rem;
+    background: none; border: 1px solid var(--line);
+    color: var(--ink-soft);
+    border-radius: 999px; padding: 10px 20px; cursor: pointer;
+    transition: border-color .12s ease, color .12s ease;
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+  .intro-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+
+  /* ---------- Test ---------- */
+  .progress-row {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .progress-count { font-size: .8rem; color: var(--ink-faint); }
+  .track {
+    height: 6px; border-radius: 999px; background: var(--surface-2);
+    overflow: hidden; margin-bottom: 44px;
+  }
+  .track .fill {
+    height: 100%; width: 0%;
+    background: var(--accent);
+    border-radius: 999px;
+    transition: width .3s ease;
+  }
+  .q-card { max-width: 640px; margin: 0 auto; }
+  .q-dim {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: "Spline Sans Mono", monospace;
+    font-size: .72rem; text-transform: uppercase; letter-spacing: .12em;
+    color: var(--ink-faint);
+    margin-bottom: 14px;
+  }
+  .q-dim .dot { width: 9px; height: 9px; border-radius: 50%; }
+  .q-text {
+    font-size: clamp(1.5rem, 4vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+    min-height: 3.6em;
+  }
+  .q-prompt { color: var(--ink-faint); font-size: .9rem; margin: 6px 0 26px; }
+  .opts { display: grid; gap: 10px; }
+  .opt {
+    display: flex; align-items: center; justify-content: space-between;
+    font: inherit; text-align: left;
+    background: var(--surface);
+    border: 1.5px solid var(--line);
+    border-radius: var(--radius);
+    padding: 15px 18px;
+    cursor: pointer;
+    color: var(--ink);
+    transition: border-color .12s ease, background .12s ease, transform .12s ease;
+  }
+  .opt:hover { border-color: var(--accent); transform: translateX(4px); }
+  .opt.selected { border-color: var(--accent); background: var(--accent-soft); }
+  .opt .key {
+    font-family: "Spline Sans Mono", monospace;
+    font-size: .75rem;
+    color: var(--ink-faint);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 2px 8px;
+  }
+  .test-nav { display: flex; justify-content: space-between; margin-top: 30px; }
+
+  /* ---------- Results ---------- */
+  .res-head { text-align: center; margin-bottom: 8px; }
+  .res-head h2 { font-size: clamp(1.7rem, 4.5vw, 2.5rem); font-weight: 800; letter-spacing: -.015em; }
+  .res-head p { color: var(--ink-soft); max-width: 52ch; margin: 12px auto 0; }
+  .code-row { display: flex; justify-content: center; gap: 14px; margin: 28px 0 8px; }
+  .code-letter {
+    width: 74px; height: 84px; border-radius: 18px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+    box-shadow: var(--shadow);
+  }
+  .code-letter b { font-family: "Bricolage Grotesque", sans-serif; font-size: 2rem; font-weight: 800; line-height: 1; }
+  .code-letter span { font-size: .62rem; text-transform: uppercase; letter-spacing: .08em; opacity: .85; }
+  .code-caption { text-align: center; color: var(--ink-faint); font-size: .85rem; margin-bottom: 36px; }
+
+  .res-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 22px;
+    align-items: start; margin-bottom: 40px;
+  }
+  @media (max-width: 720px) { .res-grid { grid-template-columns: 1fr; } }
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px;
+  }
+  .panel h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 16px; }
+  #radarBox { display: flex; justify-content: center; }
+  #radarBox svg { max-width: 100%; height: auto; }
+
+  .bar-row { display: grid; grid-template-columns: 26px 1fr 44px; gap: 10px; align-items: center; margin-bottom: 12px; }
+  .bar-row .bl {
+    font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: .95rem;
+    width: 26px; height: 26px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .bar-track { height: 10px; background: var(--surface-2); border-radius: 999px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 999px; width: 0%; transition: width .8s ease; }
+  .bar-pct { font-family: "Spline Sans Mono", monospace; font-size: .8rem; color: var(--ink-soft); text-align: right; font-variant-numeric: tabular-nums; }
+
+  .profile-blurb { margin-top: 6px; }
+  .profile-blurb h4 { margin: 14px 0 4px; font-size: .95rem; }
+  .profile-blurb h4 .tag {
+    display: inline-block; border-radius: 6px; padding: 1px 8px;
+    font-size: .75rem; margin-right: 6px; vertical-align: 1px;
+  }
+  .profile-blurb p { margin: 0; font-size: .9rem; color: var(--ink-soft); }
+
+  .careers-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 16px; }
+  .careers-head h3 { font-size: 1.3rem; font-weight: 800; }
+  .careers-head .hint { font-size: .8rem; color: var(--ink-faint); }
+  .career-list { display: grid; gap: 12px; }
+  .career {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    transition: border-color .12s ease;
+  }
+  .career:hover { border-color: var(--accent); }
+  .career-head {
+    display: block; width: 100%;
+    font: inherit; color: inherit; text-align: left;
+    background: none; border: none; padding: 0;
+    cursor: pointer; border-radius: 8px;
+  }
+  .career-top { display: flex; align-items: center; gap: 14px; }
+  .career-rank {
+    font-family: "Spline Sans Mono", monospace; font-size: .78rem;
+    color: var(--ink-faint); width: 22px; flex: none;
+    font-variant-numeric: tabular-nums;
+  }
+  .career-name { font-weight: 700; flex: 1; }
+  .career-code { display: flex; gap: 4px; flex: none; }
+  .career-code i {
+    font-style: normal; font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 800; font-size: .72rem;
+    width: 20px; height: 20px; border-radius: 6px;
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .career-match {
+    font-family: "Spline Sans Mono", monospace;
+    font-weight: 600; font-size: .95rem;
+    color: var(--accent); flex: none; width: 52px; text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
+  .career-meter { height: 5px; background: var(--surface-2); border-radius: 999px; margin: 12px 0 0 36px; overflow: hidden; }
+  .career-meter div { height: 100%; background: var(--accent); border-radius: 999px; }
+  .career-body { display: none; margin: 12px 0 2px 36px; font-size: .92rem; color: var(--ink-soft); }
+  .career.open .career-body { display: block; }
+  .career-body .fields { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .career-body .fields span {
+    font-size: .78rem; background: var(--surface-2);
+    border-radius: 999px; padding: 3px 11px; color: var(--ink-soft);
+  }
+  .unis-title {
+    font-family: "Spline Sans Mono", monospace;
+    text-transform: uppercase; letter-spacing: .12em;
+    font-size: .68rem; color: var(--ink-faint);
+    margin: 16px 0 8px;
+  }
+  .unis { display: flex; flex-wrap: wrap; gap: 6px; }
+  .uni-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: .8rem; font-weight: 500;
+    border: 1px solid var(--line); border-radius: 999px;
+    padding: 4px 13px;
+    color: var(--ink-soft); text-decoration: none;
+    transition: border-color .12s ease, color .12s ease;
+  }
+  .uni-link:hover { border-color: var(--accent); color: var(--accent); }
+  .uni-link svg { flex: none; opacity: .6; }
+  .snies-link {
+    display: inline-block; margin-top: 12px;
+    font-size: .82rem; font-weight: 600;
+    color: var(--accent); text-decoration: none;
+  }
+  .snies-link:hover { text-decoration: underline; }
+  .filter-bar {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .filter-bar label { font-size: .88rem; font-weight: 600; color: var(--ink-soft); }
+  .filter-bar select {
+    font: inherit; font-size: .88rem;
+    color: var(--ink); background: var(--surface);
+    border: 1px solid var(--line); border-radius: 10px;
+    padding: 8px 12px; cursor: pointer;
+    max-width: 100%;
+  }
+  .filter-bar select:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .no-unis { font-size: .82rem; color: var(--ink-faint); font-style: italic; }
+
+  /* ---------- Becas ---------- */
+  .becas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+  }
+  .beca {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 18px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .beca-tag {
+    align-self: flex-start;
+    font-family: "Spline Sans Mono", monospace;
+    font-size: .66rem; text-transform: uppercase; letter-spacing: .1em;
+    background: var(--accent-soft); color: var(--accent);
+    border-radius: 999px; padding: 3px 11px;
+  }
+  .beca h4 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 1.02rem; font-weight: 700; margin: 2px 0 0;
+  }
+  .beca p { margin: 0; font-size: .87rem; color: var(--ink-soft); flex: 1; }
+  .beca a {
+    font-size: .85rem; font-weight: 600;
+    color: var(--accent); text-decoration: none;
+  }
+  .beca a:hover { text-decoration: underline; }
+  .beca a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .res-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 40px; }
+  .disclaimer {
+    text-align: center; font-size: .8rem; color: var(--ink-faint);
+    max-width: 56ch; margin: 30px auto 0;
+  }
+  .toast {
+    position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%) translateY(20px);
+    background: var(--ink); color: var(--paper);
+    padding: 10px 22px; border-radius: 999px; font-size: .88rem; font-weight: 600;
+    opacity: 0; pointer-events: none; transition: opacity .25s ease, transform .25s ease;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  footer { margin-top: 60px; text-align: center; font-size: .78rem; color: var(--ink-faint); }
+</style>
+
+<div class="shell">
+  <header class="top">
+    <div class="brand">
+      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
+        <circle cx="15" cy="15" r="13" fill="none" stroke="var(--accent)" stroke-width="2.4"/>
+        <path d="M15 6.5 L18 15 L15 23.5 L12 15 Z" fill="var(--accent)"/>
+        <circle cx="15" cy="15" r="2.2" fill="var(--paper)"/>
+      </svg>
+      <span class="brand-name">Rumbo</span>
+    </div>
+    <span class="eyebrow">Modelo RIASEC · Holland</span>
+  </header>
+
+  <!-- ============ INTRO ============ -->
+  <section id="screen-intro" class="screen active">
+    <div class="hero">
+      <p class="eyebrow">Test de intereses y habilidades</p>
+      <h1 style="margin-top:12px">Descubre hacia dónde apunta tu vocación</h1>
+      <p class="lede">
+        Responde 48 afirmaciones sobre lo que te gusta hacer y lo que se te da bien.
+        Al final obtendrás tu perfil en las seis dimensiones del modelo RIASEC
+        —el más usado en orientación vocacional en el mundo— y las carreras
+        que más se parecen a ti, ordenadas por afinidad.
+      </p>
+      <div class="hero-meta">
+        <span>⏱ 6–8 minutos</span>
+        <span>📊 Perfil con gráfico + código Holland</span>
+        <span>🎓 32 carreras con universidades en Colombia</span>
+        <span>💰 Becas y apoyos oficiales</span>
+        <span>🔒 Nada sale de tu navegador</span>
+      </div>
+    </div>
+
+    <div class="dim-band" id="dimBand"></div>
+
+    <div class="intro-actions">
+      <button class="btn" id="btnStart">Empezar el test →</button>
+      <button class="btn-ghost" id="btnResume" hidden>Continuar donde quedé</button>
+    </div>
+  </section>
+
+  <!-- ============ TEST ============ -->
+  <section id="screen-test" class="screen">
+    <div class="progress-row">
+      <span class="eyebrow">Pregunta</span>
+      <span class="progress-count mono" id="qCount">1 / 48</span>
+    </div>
+    <div class="track"><div class="fill" id="qFill"></div></div>
+
+    <div class="q-card">
+      <span class="q-dim" id="qDim"><span class="dot"></span><span></span></span>
+      <h2 class="q-text" id="qText"></h2>
+      <p class="q-prompt">¿Qué tanto va contigo esta actividad?</p>
+      <div class="opts" id="opts"></div>
+      <div class="test-nav">
+        <button class="btn-ghost" id="btnBack">← Anterior</button>
+        <button class="btn-ghost" id="btnQuit">Salir y guardar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESULTS ============ -->
+  <section id="screen-results" class="screen">
+    <div class="res-head">
+      <p class="eyebrow">Tus resultados</p>
+      <h2 id="resTitle"></h2>
+      <p id="resSub"></p>
+    </div>
+
+    <div class="code-row" id="codeRow"></div>
+    <p class="code-caption">Tu código Holland: las tres dimensiones que más te definen</p>
+
+    <div class="res-grid">
+      <div class="panel">
+        <h3>Tu mapa de intereses</h3>
+        <div id="radarBox"></div>
+      </div>
+      <div class="panel">
+        <h3>Puntaje por dimensión</h3>
+        <div id="bars"></div>
+        <div class="profile-blurb" id="profileBlurb"></div>
+      </div>
+    </div>
+
+    <div class="careers-head">
+      <h3>Carreras más afines a ti</h3>
+      <span class="hint">Toca una carrera para ver dónde estudiarla</span>
+    </div>
+    <div class="filter-bar">
+      <label for="deptSel">📍 Universidades en:</label>
+      <select id="deptSel"></select>
+    </div>
+    <div class="career-list" id="careerList"></div>
+
+    <div class="careers-head" style="margin-top:44px">
+      <h3>Becas y apoyos para estudiar</h3>
+      <span class="hint">Enlaces oficiales verificados</span>
+    </div>
+    <div class="becas-grid">
+      <div class="beca">
+        <span class="beca-tag">Nacional · Gratuito</span>
+        <h4>Gratuidad en la matrícula</h4>
+        <p>Política de Estado del Ministerio de Educación: estudiar pregrado en universidades e instituciones <strong>públicas</strong> sin pagar matrícula. Aplica para la mayoría de jóvenes de estratos 1, 2 y 3.</p>
+        <a href="https://www.mineducacion.gov.co" target="_blank" rel="noopener">Ministerio de Educación →</a>
+      </div>
+      <div class="beca">
+        <span class="beca-tag">Nacional</span>
+        <h4>ICETEX — becas y fondos</h4>
+        <p>Becas, subsidios, créditos condonables y fondos especiales (comunidades étnicas, víctimas, docentes, mejores bachilleres). Revisa las convocatorias abiertas cada semestre.</p>
+        <a href="https://web.icetex.gov.co" target="_blank" rel="noopener">Portal del ICETEX →</a>
+      </div>
+      <div class="beca">
+        <span class="beca-tag">Nacional · Gratuito</span>
+        <h4>SENA — formación gratuita</h4>
+        <p>Carreras técnicas y tecnológicas <strong>100% gratis</strong> en todo el país, presenciales y virtuales, con práctica y contrato de aprendizaje. Inscripciones por Sofia Plus.</p>
+        <a href="https://oferta.senasofiaplus.edu.co" target="_blank" rel="noopener">Oferta del SENA →</a>
+      </div>
+      <div class="beca">
+        <span class="beca-tag">Bogotá</span>
+        <h4>Jóvenes a la U — ATENEA</h4>
+        <p>Programa del Distrito de Bogotá para estudiar gratis programas de educación superior en universidades aliadas. Convocatorias varias veces al año.</p>
+        <a href="https://agenciaatenea.gov.co" target="_blank" rel="noopener">Agencia ATENEA →</a>
+      </div>
+      <div class="beca">
+        <span class="beca-tag">Medellín</span>
+        <h4>Sapiencia — becas Medellín</h4>
+        <p>Becas y créditos condonables de la Alcaldía de Medellín para tecnólogos y pregrados en instituciones de la ciudad.</p>
+        <a href="https://sapiencia.gov.co" target="_blank" rel="noopener">Sapiencia →</a>
+      </div>
+      <div class="beca">
+        <span class="beca-tag">En cada universidad</span>
+        <h4>Becas de las universidades</h4>
+        <p>Casi todas las universidades tienen becas propias: por excelencia académica, deportivas, culturales y socioeconómicas. Búscalas en el sitio oficial de cada una como "becas" o "apoyo financiero".</p>
+        <a href="https://hecaa.mineducacion.gov.co/consultaspublicas/programas" target="_blank" rel="noopener">Ver instituciones en el SNIES →</a>
+      </div>
+      <div class="beca">
+        <span class="beca-tag">Exterior · Posgrado</span>
+        <h4>Colfuturo</h4>
+        <p>Para más adelante: crédito-beca que condona hasta el 80% para hacer maestrías y doctorados en el exterior. Tenlo en el radar desde ya.</p>
+        <a href="https://www.colfuturo.org" target="_blank" rel="noopener">Colfuturo →</a>
+      </div>
+    </div>
+
+    <div class="res-actions">
+      <button class="btn" id="btnCopy">Copiar mis resultados</button>
+      <button class="btn-ghost" id="btnMore">Ver más carreras</button>
+      <button class="btn-ghost" id="btnRestart">Repetir el test</button>
+    </div>
+    <p class="disclaimer">
+      Este test es una guía de exploración, no un veredicto. Las universidades listadas
+      son una muestra, no un ranking: hay muchas más instituciones en Colombia que ofrecen
+      cada carrera. Verifica siempre el registro calificado y la acreditación del programa
+      en el SNIES antes de decidir.
+    </p>
+  </section>
+
+  <footer>Creado por <strong>Franck E. Peñaloza</strong> · Basado en la teoría de tipos vocacionales de John L. Holland (RIASEC)</footer>
+</div>
+
+<div class="toast" id="toast">Copiado ✓</div>
+
+<script>
+"use strict";
+
+/* ================= Datos ================= */
+const DIMS = {
+  R: { name: "Realista",     color: "var(--dim-r)", soft: "var(--dim-r-soft)",
+       hint: "Manos, herramientas y acción",
+       desc: "Te gusta lo concreto: construir, reparar, moverte, trabajar con herramientas, máquinas o al aire libre. Aprendes haciendo." },
+  I: { name: "Investigador", color: "var(--dim-i)", soft: "var(--dim-i-soft)",
+       hint: "Analizar, descubrir, entender",
+       desc: "Te mueve la curiosidad: analizar problemas, buscar el porqué de las cosas, experimentar y trabajar con ideas y datos." },
+  A: { name: "Artístico",    color: "var(--dim-a)", soft: "var(--dim-a-soft)",
+       hint: "Crear y expresar",
+       desc: "Necesitas crear y expresarte: diseño, música, escritura, imagen. Prefieres la libertad y la originalidad a las rutinas." },
+  S: { name: "Social",       color: "var(--dim-s)", soft: "var(--dim-s-soft)",
+       hint: "Ayudar y enseñar a otros",
+       desc: "Las personas son tu centro: enseñar, cuidar, acompañar, resolver conflictos. Disfrutas cuando tu trabajo mejora la vida de alguien." },
+  E: { name: "Emprendedor",  color: "var(--dim-e)", soft: "var(--dim-e-soft)",
+       hint: "Liderar, convencer, lograr",
+       desc: "Te atraen los retos y el liderazgo: convencer, negociar, iniciar proyectos, tomar decisiones y competir por metas ambiciosas." },
+  C: { name: "Convencional", color: "var(--dim-c)", soft: "var(--dim-c-soft)",
+       hint: "Orden, datos y precisión",
+       desc: "Tu fuerte es el orden: organizar información, seguir procesos, trabajar con números y hacer que todo funcione con precisión." },
+};
+const DIM_KEYS = ["R","I","A","S","E","C"];
+
+const QUESTIONS_BY_DIM = {
+  R: [
+    "Armar o reparar cosas con mis propias manos",
+    "Entender cómo funcionan los motores y las máquinas",
+    "Trabajar al aire libre, en el campo o la naturaleza",
+    "Usar herramientas o equipos técnicos",
+    "Construir un mueble o un objeto desde cero",
+    "Cuidar animales o cultivar plantas",
+    "Hacer deporte o actividades físicas exigentes",
+    "Instalar o configurar equipos electrónicos",
+  ],
+  I: [
+    "Resolver problemas de lógica o matemática",
+    "Hacer experimentos para comprobar una idea",
+    "Leer sobre ciencia, tecnología o descubrimientos",
+    "Analizar datos para encontrar patrones",
+    "Preguntarme el porqué de las cosas hasta hallar la respuesta",
+    "Programar o entender cómo funciona el software",
+    "Investigar un tema a fondo por mi cuenta",
+    "Debatir teorías o ideas complejas",
+  ],
+  A: [
+    "Dibujar, pintar o diseñar",
+    "Escribir cuentos, poemas o guiones",
+    "Tocar un instrumento o crear música",
+    "Imaginar mundos, personajes o ideas nuevas",
+    "Actuar, bailar o presentarme en un escenario",
+    "Tomar fotos o grabar y editar videos",
+    "Decorar espacios o combinar colores y estilos",
+    "Expresar lo que siento a través del arte",
+  ],
+  S: [
+    "Ayudar a alguien a entender un tema difícil",
+    "Escuchar los problemas de mis amigos y aconsejarlos",
+    "Trabajar en equipo para lograr algo juntos",
+    "Cuidar a personas enfermas o mayores",
+    "Participar en voluntariados o causas sociales",
+    "Enseñar a otras personas algo que sé hacer",
+    "Hacer que un grupo se sienta bienvenido e incluido",
+    "Mediar cuando hay conflictos entre personas",
+  ],
+  E: [
+    "Liderar un equipo o un proyecto",
+    "Convencer a otros de una idea que me apasiona",
+    "Vender algo o negociar un precio",
+    "Crear un negocio propio",
+    "Hablar en público con seguridad",
+    "Tomar decisiones rápidas bajo presión",
+    "Competir y ponerme metas ambiciosas",
+    "Organizar eventos y lograr que la gente participe",
+  ],
+  C: [
+    "Mantener mis apuntes y archivos perfectamente ordenados",
+    "Seguir instrucciones detalladas paso a paso",
+    "Trabajar con números, cuentas o presupuestos",
+    "Hacer listas y planificar mi semana",
+    "Revisar textos o datos buscando errores",
+    "Clasificar y organizar información",
+    "Manejar hojas de cálculo o bases de datos",
+    "Cumplir plazos y reglas con precisión",
+  ],
+};
+
+// Orden intercalado: R,I,A,S,E,C, R,I,A,S,E,C, ...
+const QUESTIONS = [];
+for (let i = 0; i < 8; i++) {
+  for (const k of DIM_KEYS) QUESTIONS.push({ dim: k, text: QUESTIONS_BY_DIM[k][i] });
+}
+const TOTAL = QUESTIONS.length; // 48
+const MAX_PER_DIM = 8 * 3;      // 24
+
+const SCALE = [
+  { v: 0, label: "No va conmigo" },
+  { v: 1, label: "Un poco" },
+  { v: 2, label: "Bastante" },
+  { v: 3, label: "Totalmente yo" },
+];
+
+/* Universidades en Colombia (sitio oficial) */
+const SNIES_URL = "https://hecaa.mineducacion.gov.co/consultaspublicas/programas";
+/* [nombre, sitio oficial, departamentos con sede principal/seccional]
+   "*" = presencia en todo el país */
+const UNIS = {
+  unal:      ["U. Nacional de Colombia", "https://unal.edu.co", ["Bogotá D.C.","Antioquia","Caldas","Valle del Cauca"]],
+  andes:     ["U. de los Andes", "https://uniandes.edu.co", ["Bogotá D.C."]],
+  javeriana: ["Pontificia U. Javeriana", "https://www.javeriana.edu.co", ["Bogotá D.C.","Valle del Cauca"]],
+  udea:      ["U. de Antioquia", "https://www.udea.edu.co", ["Antioquia"]],
+  univalle:  ["U. del Valle", "https://www.univalle.edu.co", ["Valle del Cauca"]],
+  rosario:   ["U. del Rosario", "https://www.urosario.edu.co", ["Bogotá D.C."]],
+  externado: ["U. Externado de Colombia", "https://www.uexternado.edu.co", ["Bogotá D.C."]],
+  eafit:     ["U. EAFIT", "https://www.eafit.edu.co", ["Antioquia"]],
+  uninorte:  ["U. del Norte", "https://www.uninorte.edu.co", ["Atlántico"]],
+  uis:       ["U. Industrial de Santander", "https://www.uis.edu.co", ["Santander"]],
+  upb:       ["U. Pontificia Bolivariana", "https://www.upb.edu.co", ["Antioquia","Santander","Córdoba"]],
+  sabana:    ["U. de La Sabana", "https://www.unisabana.edu.co", ["Cundinamarca"]],
+  icesi:     ["U. Icesi", "https://www.icesi.edu.co", ["Valle del Cauca"]],
+  distrital: ["U. Distrital", "https://www.udistrital.edu.co", ["Bogotá D.C."]],
+  upn:       ["U. Pedagógica Nacional", "https://www.upn.edu.co", ["Bogotá D.C."]],
+  utp:       ["U. Tecnológica de Pereira", "https://www.utp.edu.co", ["Risaralda"]],
+  sena:      ["SENA", "https://www.sena.edu.co", ["*"]],
+  tadeo:     ["U. Jorge Tadeo Lozano", "https://www.utadeo.edu.co", ["Bogotá D.C."]],
+  bosque:    ["U. El Bosque", "https://www.unbosque.edu.co", ["Bogotá D.C."]],
+  ces:       ["U. CES", "https://www.ces.edu.co", ["Antioquia"]],
+  lasalle:   ["U. de La Salle", "https://www.lasalle.edu.co", ["Bogotá D.C."]],
+  escuelaing:["Escuela Colombiana de Ingeniería", "https://www.escuelaing.edu.co", ["Bogotá D.C."]],
+  konrad:    ["Fund. U. Konrad Lorenz", "https://www.konradlorenz.edu.co", ["Bogotá D.C."]],
+  magdalena: ["U. del Magdalena", "https://www.unimagdalena.edu.co", ["Magdalena"]],
+  poli:      ["Politécnico Grancolombiano", "https://www.poli.edu.co", ["Bogotá D.C.","Antioquia"]],
+  uao:       ["U. Autónoma de Occidente", "https://www.uao.edu.co", ["Valle del Cauca"]],
+  cesa:      ["CESA", "https://www.cesa.edu.co", ["Bogotá D.C."]],
+  unilibre:  ["U. Libre", "https://www.unilibre.edu.co", ["Bogotá D.C.","Atlántico","Valle del Cauca"]],
+  umng:      ["U. Militar Nueva Granada", "https://www.umng.edu.co", ["Bogotá D.C.","Cundinamarca"]],
+  uptc:      ["UPTC", "https://www.uptc.edu.co", ["Boyacá"]],
+  colmayor:  ["Colegio Mayor de Antioquia", "https://www.colmayor.edu.co", ["Antioquia"]],
+  ean:       ["U. EAN", "https://universidadean.edu.co", ["Bogotá D.C."]],
+  udca:      ["U.D.C.A", "https://www.udca.edu.co", ["Bogotá D.C."]],
+  uniatlantico: ["U. del Atlántico", "https://www.uniatlantico.edu.co", ["Atlántico"]],
+  unisimon:  ["U. Simón Bolívar", "https://www.unisimon.edu.co", ["Atlántico"]],
+  unicartagena: ["U. de Cartagena", "https://unicartagena.edu.co", ["Bolívar"]],
+  unab:      ["U. Autónoma de Bucaramanga", "https://unab.edu.co", ["Santander"]],
+  unicordoba:["U. de Córdoba", "https://www.unicordoba.edu.co", ["Córdoba"]],
+  unicauca:  ["U. del Cauca", "https://www.unicauca.edu.co", ["Cauca"]],
+  uac:       ["U. Autónoma del Caribe", "https://www.uac.edu.co", ["Atlántico"]],
+  cuc:       ["U. de la Costa (CUC)", "https://www.cuc.edu.co", ["Atlántico"]],
+  unimetro:  ["U. Metropolitana", "https://www.unimetro.edu.co", ["Atlántico"]],
+  iub:       ["Institución U. de Barranquilla", "https://www.unibarranquilla.edu.co", ["Atlántico"]],
+  utb:       ["U. Tecnológica de Bolívar", "https://www.utb.edu.co", ["Bolívar"]],
+  curn:      ["Corp. U. Rafael Núñez", "https://www.curn.edu.co", ["Bolívar"]],
+  comfenalco:["Tecnológico Comfenalco", "https://www.tecnologicocomfenalco.edu.co", ["Bolívar"]],
+  unisinu:   ["U. del Sinú", "https://www.unisinu.edu.co", ["Córdoba","Bolívar"]],
+  unicesar:  ["U. Popular del Cesar", "https://www.unicesar.edu.co", ["Cesar"]],
+  udes:      ["U. de Santander (UDES)", "https://www.udes.edu.co", ["Santander","Cesar"]],
+  areandina: ["Areandina", "https://www.areandina.edu.co", ["Bogotá D.C.","Cesar","Risaralda"]],
+  unisucre:  ["U. de Sucre", "https://www.unisucre.edu.co", ["Sucre"]],
+  cecar:     ["CECAR", "https://cecar.edu.co", ["Sucre"]],
+  uniguajira:["U. de La Guajira", "https://www.uniguajira.edu.co", ["La Guajira"]],
+  ucc:       ["U. Cooperativa de Colombia", "https://www.ucc.edu.co", ["Bogotá D.C.","Antioquia","Magdalena","Córdoba","Cesar","Santander","Valle del Cauca"]],
+  sergio:    ["U. Sergio Arboleda", "https://www.usergioarboleda.edu.co", ["Bogotá D.C.","Magdalena"]],
+};
+const DEPTS = [...new Set(Object.values(UNIS).flatMap((u) => u[2]).filter((d) => d !== "*"))]
+  .sort((a, b) => a.localeCompare(b, "es"));
+
+/* Carreras: vector RIASEC con pesos 0–1 */
+const CAREERS = [
+  { n: "Medicina", v: {I:1,S:.85,R:.4}, d: "Diagnosticar y tratar enfermedades combinando ciencia rigurosa con el trato directo a pacientes.", f: ["Hospitales","Investigación clínica","Salud pública"], u: ["unal","udea","javeriana","bosque","uninorte","unicartagena","unisinu","unimetro"] },
+  { n: "Enfermería", v: {S:1,C:.55,R:.45}, d: "Cuidar la salud de las personas en el día a día: atención directa, procedimientos y acompañamiento.", f: ["Clínicas","Emergencias","Cuidado comunitario"], u: ["unal","univalle","javeriana","udea","uninorte","unicartagena","unimetro","curn","unisucre","areandina"] },
+  { n: "Psicología", v: {S:1,I:.75,A:.35}, d: "Entender la mente y el comportamiento para acompañar a personas, equipos y comunidades.", f: ["Clínica","Educativa","Organizacional"], u: ["unal","andes","javeriana","konrad","uninorte","unab","unisimon","cuc","cecar"] },
+  { n: "Ingeniería de Software", v: {I:1,C:.6,R:.45}, d: "Diseñar y construir aplicaciones, sistemas y productos digitales resolviendo problemas con código.", f: ["Desarrollo web","Apps móviles","Inteligencia artificial"], u: ["unal","andes","eafit","distrital","uninorte","icesi","utb","cuc","magdalena","iub"] },
+  { n: "Ciencia de Datos", v: {I:1,C:.75,E:.35}, d: "Convertir datos en decisiones: estadística, programación y comunicación de hallazgos.", f: ["Analítica","Machine learning","Investigación"], u: ["andes","eafit","icesi","uninorte"] },
+  { n: "Ingeniería Civil", v: {R:.95,I:.7,C:.55}, d: "Diseñar y construir la infraestructura del mundo: edificios, puentes, carreteras y obras hidráulicas.", f: ["Construcción","Estructuras","Gestión de obras"], u: ["unal","andes","escuelaing","uis","uninorte","unicauca","cuc","utb","unicartagena","unisucre"] },
+  { n: "Ingeniería Mecánica / Mecatrónica", v: {R:1,I:.75,C:.4}, d: "Crear y mantener máquinas, robots y sistemas automatizados que mueven la industria.", f: ["Robótica","Automatización","Manufactura"], u: ["unal","uis","utp","umng","uniatlantico","uninorte","utb","uac","unicordoba"] },
+  { n: "Ingeniería Industrial", v: {E:.8,C:.75,I:.6}, d: "Optimizar procesos, recursos y equipos para que empresas y operaciones funcionen mejor.", f: ["Logística","Calidad","Gestión de operaciones"], u: ["unal","andes","javeriana","uis","uninorte","uniatlantico","cuc","utb","unicordoba","comfenalco"] },
+  { n: "Ingeniería Ambiental", v: {I:.85,R:.7,S:.5}, d: "Proteger ecosistemas y diseñar soluciones frente a la contaminación y el cambio climático.", f: ["Sostenibilidad","Gestión de recursos","Energías limpias"], u: ["unal","andes","lasalle","udea","cuc","uniguajira","unicordoba"] },
+  { n: "Arquitectura", v: {A:.95,R:.6,I:.55}, d: "Imaginar y proyectar espacios donde la gente vive, estudia y trabaja, uniendo arte y técnica.", f: ["Diseño urbano","Interiorismo","Construcción sostenible"], u: ["unal","andes","javeriana","upb","uninorte","uniatlantico","cuc","uac"] },
+  { n: "Diseño Gráfico / UX", v: {A:1,E:.5,I:.4}, d: "Comunicar ideas con imagen: marcas, interfaces, editorial y experiencias digitales.", f: ["Branding","Diseño de interfaces","Ilustración"], u: ["unal","tadeo","javeriana","upb","uninorte","uac"] },
+  { n: "Cine y Comunicación Audiovisual", v: {A:1,E:.55,I:.35}, d: "Contar historias con cámara, sonido y montaje: cine, series, documental y contenido digital.", f: ["Dirección","Producción","Postproducción"], u: ["unal","magdalena","javeriana","poli","uao"] },
+  { n: "Música y Artes Escénicas", v: {A:1,S:.5,E:.4}, d: "Vivir de crear e interpretar: composición, ejecución, teatro y danza.", f: ["Interpretación","Composición","Producción musical"], u: ["unal","javeriana","eafit","distrital","uniatlantico","unab"] },
+  { n: "Periodismo y Comunicación", v: {A:.8,S:.65,E:.6}, d: "Investigar y contar lo que pasa: reportajes, medios digitales y comunicación estratégica.", f: ["Prensa","Medios digitales","Comunicación corporativa"], u: ["javeriana","externado","udea","sabana","uninorte","uao","uac","sergio"] },
+  { n: "Publicidad y Marketing", v: {E:.9,A:.75,S:.4}, d: "Conectar marcas con personas mediante creatividad, campañas y análisis del consumidor.", f: ["Marketing digital","Creatividad publicitaria","Investigación de mercados"], u: ["tadeo","poli","uao","sergio"] },
+  { n: "Administración de Empresas", v: {E:1,C:.65,S:.45}, d: "Dirigir organizaciones: estrategia, finanzas, personas y crecimiento de negocios.", f: ["Gestión","Emprendimiento","Consultoría"], u: ["andes","cesa","eafit","externado","uninorte","unab","cuc","magdalena","ucc","cecar"] },
+  { n: "Economía", v: {I:.9,E:.65,C:.6}, d: "Analizar cómo se producen y distribuyen los recursos para orientar decisiones públicas y privadas.", f: ["Análisis económico","Banca","Políticas públicas"], u: ["unal","andes","externado","rosario","uninorte","uniatlantico","unicartagena","magdalena"] },
+  { n: "Contabilidad y Finanzas", v: {C:1,E:.55,I:.4}, d: "Llevar el pulso financiero de las organizaciones: registros, impuestos, auditoría e inversión.", f: ["Auditoría","Tributación","Finanzas corporativas"], u: ["unal","externado","javeriana","unilibre","uniatlantico","cuc","ucc","unicesar","cecar","comfenalco"] },
+  { n: "Derecho", v: {E:.85,S:.65,C:.6}, d: "Defender derechos y resolver conflictos usando la argumentación y el marco legal.", f: ["Litigio","Derecho corporativo","Derechos humanos"], u: ["externado","rosario","unal","andes","uninorte","unilibre","unicartagena","unisimon","sergio","cecar","curn","unisinu"] },
+  { n: "Relaciones Internacionales", v: {E:.8,S:.7,I:.55}, d: "Trabajar entre países y culturas: diplomacia, cooperación y comercio global.", f: ["Diplomacia","Cooperación internacional","Comercio exterior"], u: ["rosario","externado","javeriana","uninorte"] },
+  { n: "Educación / Docencia", v: {S:1,A:.5,C:.45}, d: "Formar a las nuevas generaciones: enseñar, diseñar experiencias de aprendizaje y acompañar.", f: ["Educación inicial","Secundaria","Educación especial"], u: ["upn","udea","distrital","javeriana","uniatlantico","unicauca","unicordoba","uniguajira","magdalena","unicesar"] },
+  { n: "Trabajo Social", v: {S:1,E:.5,C:.4}, d: "Intervenir en problemáticas sociales acompañando a personas y comunidades vulnerables.", f: ["Comunidades","Familia","Políticas sociales"], u: ["unal","externado","lasalle","unicartagena","unisimon","cecar","uniguajira"] },
+  { n: "Biología", v: {I:1,R:.6,A:.3}, d: "Estudiar la vida en todas sus formas, del laboratorio a los ecosistemas.", f: ["Genética","Ecología","Biotecnología"], u: ["unal","andes","udea","javeriana","uniatlantico","unicordoba","magdalena","unisucre"] },
+  { n: "Química y Farmacia", v: {I:.95,C:.6,R:.5}, d: "Investigar sustancias y desarrollar medicamentos y productos que cuidan la salud.", f: ["Laboratorio","Industria farmacéutica","Control de calidad"], u: ["unal","udea","icesi","uis","uniatlantico","unicartagena"] },
+  { n: "Veterinaria", v: {I:.8,R:.75,S:.5}, d: "Cuidar la salud y el bienestar de los animales, de mascotas a fauna silvestre.", f: ["Clínica de animales","Zootecnia","Fauna silvestre"], u: ["unal","lasalle","ces","udca","unicordoba","unisucre"] },
+  { n: "Agronomía", v: {R:1,I:.6,C:.4}, d: "Producir alimentos de forma eficiente y sostenible trabajando con la tierra y la tecnología.", f: ["Cultivos","Agrotecnología","Gestión rural"], u: ["unal","lasalle","uptc","udca","unicordoba","magdalena"] },
+  { n: "Gastronomía", v: {R:.8,A:.7,E:.55}, d: "Crear experiencias con la cocina: técnica, creatividad y gestión de restaurantes.", f: ["Cocina profesional","Pastelería","Gestión de restaurantes"], u: ["sena","sabana","colmayor"] },
+  { n: "Turismo y Hotelería", v: {E:.85,S:.75,C:.4}, d: "Diseñar y operar experiencias de viaje y hospitalidad para personas de todo el mundo.", f: ["Hotelería","Agencias y destinos","Eventos"], u: ["externado","sena","utp","colmayor","magdalena","uniguajira"] },
+  { n: "Fisioterapia", v: {S:.9,R:.65,I:.5}, d: "Recuperar el movimiento y la calidad de vida de las personas a través del cuerpo.", f: ["Rehabilitación","Deporte","Terapia física"], u: ["rosario","unal","ces","udca","unisimon","unimetro","udes"] },
+  { n: "Odontología", v: {R:.7,I:.7,S:.6}, d: "Cuidar la salud bucal combinando precisión manual, ciencia y atención al paciente.", f: ["Clínica dental","Ortodoncia","Cirugía oral"], u: ["unal","javeriana","bosque","ces","unicartagena","unimetro","unisinu"] },
+  { n: "Recursos Humanos", v: {S:.85,E:.65,C:.55}, d: "Cuidar el talento de las organizaciones: selección, desarrollo y bienestar de las personas.", f: ["Selección","Capacitación","Cultura organizacional"], u: ["sena","ean","externado","poli"] },
+  { n: "Ciencias del Deporte", v: {S:.75,R:.75,E:.5}, d: "Entrenar, enseñar y potenciar el rendimiento físico y la vida activa de las personas.", f: ["Entrenamiento","Educación física","Gestión deportiva"], u: ["upn","udca","udea","uniatlantico","unicordoba"] },
+];
+
+/* ================= Estado ================= */
+const STORE_KEY = "brujula-vocacional-v1";
+let answers = new Array(TOTAL).fill(null);
+let idx = 0;
+let visibleCareers = 8;
+let deptFilter = "all";
+let lastRanked = [];
+
+const $ = (s) => document.querySelector(s);
+const screens = { intro: $("#screen-intro"), test: $("#screen-test"), results: $("#screen-results") };
+
+function show(name) {
+  for (const k in screens) screens[k].classList.remove("active");
+  screens[name].classList.add("active");
+  window.scrollTo({ top: 0 });
+}
+
+function save() {
+  try { localStorage.setItem(STORE_KEY, JSON.stringify({ answers, idx })); } catch (e) {}
+}
+function load() {
+  try { return JSON.parse(localStorage.getItem(STORE_KEY)); } catch (e) { return null; }
+}
+function clearSave() {
+  try { localStorage.removeItem(STORE_KEY); } catch (e) {}
+}
+
+/* ================= Intro ================= */
+function buildIntro() {
+  const band = $("#dimBand");
+  band.innerHTML = DIM_KEYS.map((k) => {
+    const d = DIMS[k];
+    return `<div class="dim-chip" title="${d.desc}">
+      <span class="letter" style="background:${d.soft};color:${d.color}">${k}</span>
+      <div class="dim-name">${d.name}</div>
+      <div class="dim-hint">${d.hint}</div>
+    </div>`;
+  }).join("");
+
+  const saved = load();
+  if (saved && saved.answers && saved.answers.some((a) => a !== null) && saved.answers.some((a) => a === null)) {
+    const done = saved.answers.filter((a) => a !== null).length;
+    const btn = $("#btnResume");
+    btn.hidden = false;
+    btn.textContent = `Continuar donde quedé (${done}/${TOTAL})`;
+    btn.onclick = () => {
+      answers = saved.answers;
+      idx = Math.min(saved.idx, TOTAL - 1);
+      show("test"); renderQuestion();
+    };
+  }
+}
+
+/* ================= Test ================= */
+function renderQuestion() {
+  const q = QUESTIONS[idx];
+  const d = DIMS[q.dim];
+  $("#qCount").textContent = `${idx + 1} / ${TOTAL}`;
+  $("#qFill").style.width = `${(idx / TOTAL) * 100}%`;
+  const qDim = $("#qDim");
+  qDim.querySelector(".dot").style.background = d.color;
+  qDim.querySelector("span:last-child").textContent = d.name;
+  $("#qText").textContent = q.text;
+
+  $("#opts").innerHTML = SCALE.map((s, i) =>
+    `<button class="opt ${answers[idx] === s.v ? "selected" : ""}" data-v="${s.v}">
+       <span>${s.label}</span><span class="key">${i + 1}</span>
+     </button>`
+  ).join("");
+  $("#opts").querySelectorAll(".opt").forEach((b) => {
+    b.addEventListener("click", () => answer(parseInt(b.dataset.v, 10)));
+  });
+  $("#btnBack").style.visibility = idx === 0 ? "hidden" : "visible";
+}
+
+function answer(v) {
+  answers[idx] = v;
+  save();
+  if (idx < TOTAL - 1) {
+    idx++;
+    setTimeout(renderQuestion, 120);
+  } else {
+    finish();
+  }
+}
+
+function finish() {
+  $("#qFill").style.width = "100%";
+  clearSave();
+  setTimeout(() => { buildResults(); show("results"); }, 250);
+}
+
+document.addEventListener("keydown", (e) => {
+  if (!screens.test.classList.contains("active")) return;
+  if (["1","2","3","4"].includes(e.key)) answer(parseInt(e.key, 10) - 1);
+  if (e.key === "ArrowLeft" && idx > 0) { idx--; renderQuestion(); }
+});
+
+/* ================= Resultados ================= */
+function scores() {
+  const s = { R:0, I:0, A:0, S:0, E:0, C:0 };
+  QUESTIONS.forEach((q, i) => { s[q.dim] += answers[i] || 0; });
+  return s;
+}
+function normalized(s) {
+  const n = {};
+  for (const k of DIM_KEYS) n[k] = s[k] / MAX_PER_DIM;
+  return n;
+}
+function hollandCode(s) {
+  return [...DIM_KEYS].sort((a, b) => s[b] - s[a]).slice(0, 3);
+}
+function cosine(user, career) {
+  let dot = 0, mu = 0, mc = 0;
+  for (const k of DIM_KEYS) {
+    const u = user[k] || 0, c = career[k] || 0;
+    dot += u * c; mu += u * u; mc += c * c;
+  }
+  if (mu === 0 || mc === 0) return 0;
+  return dot / (Math.sqrt(mu) * Math.sqrt(mc));
+}
+
+function radarSVG(n) {
+  const size = 340, cx = size / 2, cy = size / 2 + 6, rMax = 118;
+  const angle = (i) => (Math.PI * 2 * i) / 6 - Math.PI / 2;
+  const pt = (i, r) => [cx + Math.cos(angle(i)) * r, cy + Math.sin(angle(i)) * r];
+
+  let grid = "";
+  for (const f of [0.25, 0.5, 0.75, 1]) {
+    const pts = DIM_KEYS.map((_, i) => pt(i, rMax * f).join(",")).join(" ");
+    grid += `<polygon points="${pts}" fill="none" stroke="var(--line)" stroke-width="1"/>`;
+  }
+  let axes = "", labels = "";
+  DIM_KEYS.forEach((k, i) => {
+    const [x, y] = pt(i, rMax);
+    axes += `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="var(--line)" stroke-width="1"/>`;
+    const [lx, ly] = pt(i, rMax + 26);
+    labels += `<text x="${lx}" y="${ly}" text-anchor="middle" dominant-baseline="middle"
+      font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="15"
+      fill="${DIMS[k].color}">${k}</text>
+      <text x="${lx}" y="${ly + 15}" text-anchor="middle" dominant-baseline="middle"
+      font-size="9" fill="var(--ink-faint)">${DIMS[k].name}</text>`;
+  });
+  const shape = DIM_KEYS.map((k, i) => pt(i, Math.max(rMax * n[k], 3)).join(",")).join(" ");
+  const dots = DIM_KEYS.map((k, i) => {
+    const [x, y] = pt(i, Math.max(rMax * n[k], 3));
+    return `<circle cx="${x}" cy="${y}" r="4" fill="${DIMS[k].color}"/>`;
+  }).join("");
+
+  return `<svg viewBox="0 0 ${size} ${size}" width="${size}" role="img" aria-label="Gráfico radar de tu perfil RIASEC">
+    ${grid}${axes}
+    <polygon points="${shape}" fill="var(--accent)" fill-opacity="0.16" stroke="var(--accent)" stroke-width="2.5" stroke-linejoin="round"/>
+    ${dots}${labels}
+  </svg>`;
+}
+
+const PROFILE_TITLES = {
+  R: "Constructor", I: "Explorador", A: "Creador", S: "Guía", E: "Líder", C: "Organizador",
+};
+
+function buildResults() {
+  const s = scores();
+  const n = normalized(s);
+  const code = hollandCode(s);
+  const allZero = DIM_KEYS.every((k) => s[k] === 0);
+
+  $("#resTitle").textContent = allZero
+    ? "Hmm… respondiste que nada va contigo"
+    : `Tu perfil: ${PROFILE_TITLES[code[0]]} ${code[1] ? "· " + DIMS[code[1]].name : ""}`;
+  $("#resSub").textContent = allZero
+    ? "Vuelve a intentarlo eligiendo con sinceridad lo que más disfrutas: el test necesita contrastes para orientarte."
+    : `Tus intereses más fuertes son ${DIMS[code[0]].name.toLowerCase()} y ${DIMS[code[1]].name.toLowerCase()}. Esto es lo que significa y las carreras donde ese perfil brilla.`;
+
+  // Código Holland
+  $("#codeRow").innerHTML = code.map((k) =>
+    `<div class="code-letter" style="background:${DIMS[k].soft};color:${DIMS[k].color}">
+      <b>${k}</b><span>${DIMS[k].name}</span>
+    </div>`
+  ).join("");
+
+  // Radar
+  $("#radarBox").innerHTML = radarSVG(n);
+
+  // Barras (ordenadas de mayor a menor)
+  const order = [...DIM_KEYS].sort((a, b) => s[b] - s[a]);
+  $("#bars").innerHTML = order.map((k) =>
+    `<div class="bar-row">
+      <span class="bl" style="background:${DIMS[k].soft};color:${DIMS[k].color}">${k}</span>
+      <div class="bar-track"><div class="bar-fill" data-w="${Math.round(n[k]*100)}" style="background:${DIMS[k].color}"></div></div>
+      <span class="bar-pct">${Math.round(n[k]*100)}%</span>
+    </div>`
+  ).join("");
+  requestAnimationFrame(() => {
+    $("#bars").querySelectorAll(".bar-fill").forEach((el) => { el.style.width = el.dataset.w + "%"; });
+  });
+
+  // Descripción de las 2 dimensiones top
+  $("#profileBlurb").innerHTML = code.slice(0, 2).map((k) =>
+    `<h4><span class="tag" style="background:${DIMS[k].soft};color:${DIMS[k].color}">${k}</span>${DIMS[k].name}</h4>
+     <p>${DIMS[k].desc}</p>`
+  ).join("");
+
+  // Carreras
+  const ranked = CAREERS.map((c) => ({ ...c, match: cosine(n, c.v) }))
+    .sort((a, b) => b.match - a.match);
+  lastRanked = ranked;
+  visibleCareers = 8;
+
+  // Filtro por departamento
+  deptFilter = "all";
+  const sel = $("#deptSel");
+  sel.innerHTML = `<option value="all">Todos los departamentos</option>` +
+    DEPTS.map((d) => `<option value="${d}">${d}</option>`).join("");
+  sel.value = "all";
+  sel.onchange = () => { deptFilter = sel.value; renderCareers(lastRanked); };
+
+  renderCareers(ranked);
+  $("#btnMore").onclick = () => {
+    visibleCareers = Math.min(visibleCareers + 8, ranked.length);
+    renderCareers(ranked);
+    if (visibleCareers >= ranked.length) $("#btnMore").style.display = "none";
+  };
+  $("#btnMore").style.display = "";
+
+  // Copiar
+  $("#btnCopy").onclick = () => copyResults(code, n, ranked.slice(0, 5));
+}
+
+const LINK_ICON = `<svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M4 2h6v6M10 2 4.5 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>`;
+
+function renderCareers(ranked) {
+  $("#careerList").innerHTML = ranked.slice(0, visibleCareers).map((c, i) => {
+    const pct = Math.round(c.match * 100);
+    const codeLetters = Object.entries(c.v).sort((a, b) => b[1] - a[1]).slice(0, 3)
+      .map(([k]) => `<i style="background:${DIMS[k].soft};color:${DIMS[k].color}">${k}</i>`).join("");
+    const matches = (c.u || [])
+      .map((id) => UNIS[id])
+      .filter((u) => u && (deptFilter === "all" || u[2].includes("*") || u[2].includes(deptFilter)));
+    const uniLinks = matches.length
+      ? matches.map((u) => {
+          const where = u[2].includes("*") ? "Todo el país" : u[2].join(" · ");
+          return `<a class="uni-link" href="${u[1]}" target="_blank" rel="noopener" title="${where}">${u[0]} ${LINK_ICON}</a>`;
+        }).join("")
+      : `<span class="no-unis">En nuestra muestra no hay universidades de ${deptFilter} con esta carrera, pero puede haber oferta allí: consulta el listado completo y oficial en el SNIES ↓</span>`;
+    return `<div class="career">
+      <button class="career-head" aria-expanded="false">
+        <span class="career-top">
+          <span class="career-rank">${String(i + 1).padStart(2, "0")}</span>
+          <span class="career-name">${c.n}</span>
+          <span class="career-code">${codeLetters}</span>
+          <span class="career-match">${pct}%</span>
+        </span>
+        <span class="career-meter"><div style="width:${pct}%"></div></span>
+      </button>
+      <div class="career-body">${c.d}
+        <span class="fields">${c.f.map((x) => `<span>${x}</span>`).join("")}</span>
+        <div class="unis-title">🇨🇴 Dónde estudiarla en Colombia</div>
+        <div class="unis">${uniLinks}</div>
+        <a class="snies-link" href="${SNIES_URL}" target="_blank" rel="noopener">Verificar programas y acreditación en el SNIES (Min. Educación) →</a>
+      </div>
+    </div>`;
+  }).join("");
+  $("#careerList").querySelectorAll(".career-head").forEach((el) => {
+    el.addEventListener("click", () => {
+      const card = el.closest(".career");
+      card.classList.toggle("open");
+      el.setAttribute("aria-expanded", card.classList.contains("open"));
+    });
+  });
+}
+
+function copyResults(code, n, top) {
+  const lines = [
+    "🧭 Mi resultado en Rumbo",
+    `Código Holland: ${code.join("")} (${code.map((k) => DIMS[k].name).join(" · ")})`,
+    "",
+    "Perfil RIASEC:",
+    ...DIM_KEYS.map((k) => `  ${k} ${DIMS[k].name}: ${Math.round(n[k]*100)}%`),
+    "",
+    "Carreras más afines:",
+    ...top.map((c, i) => `  ${i + 1}. ${c.n} (${Math.round(c.match*100)}%)`),
+  ];
+  const text = lines.join("\n");
+  const done = () => {
+    const t = $("#toast");
+    t.classList.add("show");
+    setTimeout(() => t.classList.remove("show"), 2200);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
+  } else {
+    fallbackCopy(text, done);
+  }
+}
+function fallbackCopy(text, done) {
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  ta.style.position = "fixed"; ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand("copy"); done(); } catch (e) {}
+  document.body.removeChild(ta);
+}
+
+/* ================= Navegación ================= */
+$("#btnStart").addEventListener("click", () => {
+  answers = new Array(TOTAL).fill(null);
+  idx = 0;
+  show("test"); renderQuestion();
+});
+$("#btnBack").addEventListener("click", () => { if (idx > 0) { idx--; renderQuestion(); } });
+$("#btnQuit").addEventListener("click", () => { save(); buildIntro(); show("intro"); });
+$("#btnRestart").addEventListener("click", () => {
+  clearSave();
+  answers = new Array(TOTAL).fill(null);
+  idx = 0;
+  show("test"); renderQuestion();
+});
+
+buildIntro();
+</script>
+
+</body>
+</html>
