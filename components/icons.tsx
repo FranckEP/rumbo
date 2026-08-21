@@ -118,6 +118,21 @@ export function ShareIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+export function PdfIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...base(props)}>
+      <path
+        d="M9 1.8H4.6a1.4 1.4 0 0 0-1.4 1.4v9.6a1.4 1.4 0 0 0 1.4 1.4h6.8a1.4 1.4 0 0 0 1.4-1.4V5.4L9 1.8Z"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinejoin="round"
+      />
+      <path d="M8.9 1.9v3.4h3.6" stroke="currentColor" strokeWidth="1.3" strokeLinejoin="round" />
+      <path d="M8 7.6v3.6m0 0L6.6 9.8M8 11.2l1.4-1.4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 export function FlagIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg {...base(props)}>

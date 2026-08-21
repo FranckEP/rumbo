@@ -4,8 +4,10 @@ import { useEffect, useMemo, useState } from "react";
 import Becas from "./Becas";
 import CareerCard from "./CareerCard";
 import Celebration from "./Celebration";
+import Desempate from "./Desempate";
 import DimBar from "./DimBar";
-import { SearchIcon, ShareIcon, SlidersIcon } from "./icons";
+import { PdfIcon, SearchIcon, ShareIcon, SlidersIcon } from "./icons";
+import PrintReport from "./PrintReport";
 import Radar from "./Radar";
 import SummaryBar from "./SummaryBar";
 import UniversityView from "./UniversityView";
@@ -15,6 +17,7 @@ import { CAREERS, LEVEL_LABELS, type CareerLevel } from "@/lib/careers";
 import {
   DIMS,
   DIM_KEYS,
+  MARGEN_EMPATE,
   cosine,
   hollandCode,
   normalized,
@@ -50,6 +53,7 @@ export default function Results({ answers, onRestart, onToast }: Props) {
   const [verTodasAfines, setVerTodasAfines] = useState(false);
   /** universidades que ya abrió, para personalizar la pestaña de becas */
   const [unisVistas, setUnisVistas] = useState<string[]>([]);
+  const [enDesempate, setEnDesempate] = useState(false);
 
   function abrirUni(career: string, uni: string) {
     setUniView({ career, uni });
@@ -91,6 +95,14 @@ export default function Results({ answers, onRestart, onToast }: Props) {
   }, [ranked, levelFilter, query, sortMode]);
 
   const activeFilters = (deptFilter !== "all" ? 1 : 0) + (levelFilter !== "all" ? 1 : 0);
+
+  /* Cuántas carreras están tan cerca del primer lugar que el orden entre ellas
+     no significa nada. Decirlo es más útil que fingir una jerarquía. */
+  const empatadas = useMemo(() => {
+    if (!ranked.length) return [];
+    const tope = ranked[0].match;
+    return ranked.filter((c) => tope - c.match <= MARGEN_EMPATE);
+  }, [ranked]);
 
   useEffect(() => {
     setVisibleCareers(PAGE_SIZE);
@@ -164,6 +176,22 @@ export default function Results({ answers, onRestart, onToast }: Props) {
           </button>
         </div>
       </section>
+    );
+  }
+
+  if (enDesempate && empatadas.length > 1) {
+    return (
+      <Desempate
+        empatadas={empatadas}
+        onCerrar={() => setEnDesempate(false)}
+        onVerCarrera={(nombre) => {
+          setEnDesempate(false);
+          setTab("carreras");
+          setQuery("");
+          setOpenCareers(new Set([nombre]));
+          window.scrollTo({ top: 0 });
+        }}
+      />
     );
   }
 
@@ -356,6 +384,32 @@ export default function Results({ answers, onRestart, onToast }: Props) {
             </div>
           )}
 
+          {!query && ranked[0] && ranked[0].match < 0.5 && (
+            <div className="empate">
+              <b>Tu perfil salió muy parejo</b>
+              <p>
+                Ninguna carrera destaca con fuerza porque tus respuestas repartieron el interés
+                entre varias áreas. No es un error ni algo malo: significa que todavía estás
+                explorando. Mira las primeras cinco y fíjate en lo que hacen día a día, no en el
+                porcentaje.
+              </p>
+            </div>
+          )}
+
+          {!query && empatadas.length > 1 && ranked[0] && ranked[0].match >= 0.5 && (
+            <div className="empate">
+              <b>{empatadas.length} carreras te quedaron prácticamente empatadas</b>
+              <p>
+                {empatadas.map((c) => c.n).join(", ")} están a menos de{" "}
+                {Math.round(MARGEN_EMPATE * 100)} puntos entre sí: el orden entre ellas no
+                significa nada. Podemos desempatarlas comparando cómo sería tu día en cada una.
+              </p>
+              <button className="btn" onClick={() => setEnDesempate(true)}>
+                Desempatar estas {empatadas.length} →
+              </button>
+            </div>
+          )}
+
           <p className="result-count">
             {filtered.length} {filtered.length === 1 ? "carrera" : "carreras"}
             {query ? ` para «${query}»` : ""}
@@ -404,10 +458,16 @@ export default function Results({ answers, onRestart, onToast }: Props) {
           <ShareIcon />
           {shareState === "done" ? "¡Listo! ✓" : "Compartir mis resultados"}
         </button>
+        <button className="btn-ghost" onClick={() => window.print()}>
+          <PdfIcon />
+          Descargar PDF
+        </button>
         <button className="btn-ghost" onClick={onRestart}>
           Repetir el test
         </button>
       </div>
+
+      <PrintReport code={code} n={n} ranked={ranked} deptFilter={deptFilter} />
 
       <p className="disclaimer">
         Este test es una guía de exploración, no un veredicto. Las universidades listadas son una

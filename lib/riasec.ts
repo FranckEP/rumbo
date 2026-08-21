@@ -175,17 +175,38 @@ export function hollandCode(s: Scores): DimKey[] {
   return [...DIM_KEYS].sort((a, b) => s[b] - s[a]).slice(0, 3);
 }
 
+/**
+ * Afinidad entre el perfil del joven y una carrera.
+ *
+ * Compara la FORMA de los dos perfiles, no su tamaño: a cada vector se le
+ * resta su propio promedio antes de correlacionarlos. Sin ese centrado, como
+ * todas las respuestas son positivas, el cálculo medía sobre todo cuánto
+ * respondió "sí" la persona en general — y todas las carreras salían entre
+ * 70% y 90%, sin poder distinguir una de otra. Un perfil que respondía alto a
+ * todo llegaba a tener 1.7 puntos de diferencia entre su carrera n.º 1 y su
+ * n.º 8, lo que hacía el resultado inservible.
+ *
+ * Devuelve 0 cuando la carrera no tiene nada que ver con el perfil (la
+ * correlación es nula o negativa): eso es información útil, no un error.
+ */
 export function cosine(user: Scores, career: Partial<Scores>): number {
+  const mediaU = DIM_KEYS.reduce((a, k) => a + (user[k] || 0), 0) / DIM_KEYS.length;
+  const mediaC = DIM_KEYS.reduce((a, k) => a + (career[k] || 0), 0) / DIM_KEYS.length;
+
   let dot = 0;
   let mu = 0;
   let mc = 0;
   for (const k of DIM_KEYS) {
-    const u = user[k] || 0;
-    const c = career[k] || 0;
+    const u = (user[k] || 0) - mediaU;
+    const c = (career[k] || 0) - mediaC;
     dot += u * c;
     mu += u * u;
     mc += c * c;
   }
   if (mu === 0 || mc === 0) return 0;
-  return dot / (Math.sqrt(mu) * Math.sqrt(mc));
+  return Math.max(0, dot / (Math.sqrt(mu) * Math.sqrt(mc)));
 }
+
+/** Carreras dentro de este margen del primer lugar están, en la práctica,
+ *  empatadas: la diferencia no es evidencia de nada. */
+export const MARGEN_EMPATE = 0.04;

@@ -20,9 +20,9 @@ export interface Beca {
 
 export const BECAS: Beca[] = [
   {
-    n: "Gratuidad en la matrícula",
+    n: "Matrícula Cero",
     tag: "Nacional",
-    d: "Estudiar pregrado en universidades e instituciones públicas sin pagar matrícula. Aplica para la mayoría de jóvenes de estratos 1, 2 y 3.",
+    d: "La política de gratuidad del Gobierno: cubre el 100% de la matrícula de pregrado en las instituciones públicas del país. Dirigida a hogares de menores ingresos (estratos 1, 2 y 3) y con pocos requisitos.",
     linkText: "Ministerio de Educación",
     url: "https://www.mineducacion.gov.co",
     grupo: "empieza",
@@ -48,9 +48,9 @@ export const BECAS: Beca[] = [
     depts: ["Bogotá D.C."],
   },
   {
-    n: "Sapiencia — becas Medellín",
+    n: "Sapiencia — Matrícula Cero Medellín",
     tag: "Medellín",
-    d: "Becas y créditos condonables de la Alcaldía para tecnólogos y pregrados en instituciones de la ciudad.",
+    d: "La Alcaldía financia matrícula en instituciones públicas de la ciudad y ofrece créditos condonables. Es uno de los programas municipales más grandes del país, con decenas de miles de cupos cada semestre.",
     linkText: "Sapiencia",
     url: "https://sapiencia.gov.co",
     grupo: "region",
@@ -77,7 +77,7 @@ export const BECAS: Beca[] = [
   {
     n: "ICETEX — becas y fondos",
     tag: "Nacional",
-    d: "Becas, subsidios, créditos condonables y fondos especiales (comunidades étnicas, víctimas, docentes, mejores bachilleres). Convocatorias cada semestre.",
+    d: "Créditos con líneas como «Tú eliges» (pagas poco mientras estudias), becas, subsidios y fondos especiales para comunidades étnicas, víctimas, docentes y mejores bachilleres. Abre convocatoria cada semestre.",
     linkText: "Portal del ICETEX",
     url: "https://web.icetex.gov.co",
     grupo: "creditos",

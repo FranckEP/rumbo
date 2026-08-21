@@ -12,7 +12,7 @@ interface Props {
   vistas: string[];
 }
 
-const RUTA_A = ["Gratuidad en la matrícula", "SENA — formación gratuita"];
+const RUTA_A = ["Matrícula Cero", "SENA — formación gratuita"];
 
 export default function Becas({ deptFilter, vistas }: Props) {
   const [verTodas, setVerTodas] = useState(false);
