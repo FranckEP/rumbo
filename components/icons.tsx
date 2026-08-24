@@ -96,14 +96,6 @@ export function SearchIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-export function SlidersIcon(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg {...base(props)}>
-      <path d="M2.5 4.5h11M4.5 8h7M6.5 11.5h3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-  );
-}
-
 export function ShareIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg {...base(props)}>
@@ -141,6 +133,20 @@ export function FlagIcon(props: SVGProps<SVGSVGElement>) {
         d="M3.6 3c2-1 3.6.6 5.6-.3 1.2-.6 2-.2 3.2.2v6c-1.2-.4-2-.8-3.2-.2-2 .9-3.6-.7-5.6.3V3Z"
         stroke="currentColor"
         strokeWidth="1.25"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function ChevronIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="m4 6 4 4 4-4"
+        stroke="currentColor"
+        strokeWidth="1.9"
+        strokeLinecap="round"
         strokeLinejoin="round"
       />
     </svg>

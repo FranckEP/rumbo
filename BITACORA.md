@@ -127,6 +127,48 @@ ya no existe) y su contenido vive dentro de la tarjeta.
 En "Dónde estudiar", las universidades son **filas seleccionables** que muestran
 si son públicas o privadas y cuántas becas propias tienen.
 
+### 4.2bis Los filtros, a la vista (23 ago 2026)
+
+Estaban detrás de un botón «Filtros» con icono de deslizadores. Franck: *«siento
+que no los usan porque no están a simple vista»*. Tenía razón, y el motivo es
+básico: **nadie abre un menú llamado «Filtros» para encontrar algo que no sabe
+que existe**. El de departamento —que es el que de verdad importa, «¿dónde
+puedo estudiar esto cerca de mí?»— era invisible.
+
+Ahora son **dos píldoras siempre visibles** que llevan escrito su propio valor:
+
+    [📍 UNIVERSIDADES EN / Todo el país ▾]  [🎓 NIVEL / Todos ▾]      [Afinidad|A–Z]
+
+Cada píldora dice a la vez **qué filtra** y **cómo está**, sin abrir nada. Al
+activarse se pinta con el color de acento. El botón «Filtros», el panel
+desplegable y el estado `filtersOpen` desaparecieron.
+
+**Detalle de implementación:** el `<select>` nativo va encima de la píldora en
+`position:absolute; inset:0; opacity:0`. Se ve la píldora, pero toda ella es
+zona de toque y en el celular abre el selector del sistema, que es lo más
+cómodo que hay. Sigue siendo un `<select>` real: enfocable, con `aria-label`,
+y funciona con teclado.
+
+**Lo que se rompió en móvil y cómo se midió.** Con las dos píldoras al 50%
+quedaban **85 px de texto visible**. Ahí no cabe «Archipiélago de San Andrés,
+Providencia y Santa Catalina» (380 px reales) ni «Norte de Santander»: se
+cortaban a nada. Dos arreglos:
+
+1. En pantallas ≤620 px la píldora de departamento se lleva la fila entera;
+   nivel y orden comparten la segunda.
+2. `DEPT_CORTO` y `NIVEL_CORTO` en `Results.tsx` acortan **lo que se muestra**
+   («San Andrés», «Bogotá», «Profesional»). El `<option>` conserva el nombre
+   oficial, que es el que hay que reconocer al elegir.
+
+**«Quitar filtros»** se movió a la línea del conteo. Suelto en la fila de
+filtros caía en una tercera fila él solo y se comía alto antes de que se viera
+la primera carrera. Junto al conteo queda al lado del texto que ya explica qué
+filtro está puesto («32 carreras · universidades en Atlántico»), que es donde
+tiene sentido.
+
+Medido en el navegador: escritorio 1 fila de 50 px; móvil 375 px, 2 filas de
+109 px en total, sin desborde horizontal ni texto recortado en el peor caso.
+
 ### 4.3 Página universidad × carrera
 
 `components/UniversityView.tsx`. Se abre al tocar una universidad y reemplaza la

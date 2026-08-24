@@ -6,7 +6,8 @@ import CareerCard from "./CareerCard";
 import Celebration from "./Celebration";
 import Desempate from "./Desempate";
 import DimBar from "./DimBar";
-import { PdfIcon, SearchIcon, ShareIcon, SlidersIcon } from "./icons";
+import Dropdown, { type Opcion } from "./Dropdown";
+import { CapIcon, PdfIcon, PinIcon, SearchIcon, ShareIcon } from "./icons";
 import PrintReport from "./PrintReport";
 import Radar from "./Radar";
 import SummaryBar from "./SummaryBar";
@@ -39,6 +40,29 @@ interface Props {
   onToast: (msg: string) => void;
 }
 
+/* El nombre oficial de San Andrés no cabe en una píldora de celular y el nivel
+   «profesional» tampoco con su paréntesis. Se acorta lo que se MUESTRA; la
+   lista desplegable conserva el nombre completo, que es el que se reconoce. */
+const DEPT_CORTO: Record<string, string> = {
+  "Archipiélago de San Andrés, Providencia y Santa Catalina": "San Andrés",
+  "Bogotá, D.C.": "Bogotá",
+};
+const OPC_DEPTO: Opcion[] = [
+  { v: "all", t: "Todo el país" },
+  ...DEPARTAMENTOS.map((d) => ({ v: d, t: d })),
+];
+const OPC_NIVEL: Opcion[] = [
+  { v: "all", t: "Todos los niveles" },
+  { v: "profesional", t: LEVEL_LABELS.profesional },
+  { v: "tecnologica", t: LEVEL_LABELS.tecnologica },
+  { v: "tecnica", t: LEVEL_LABELS.tecnica },
+];
+const NIVEL_CORTO: Record<CareerLevel, string> = {
+  profesional: "Profesional",
+  tecnologica: "Tecnológica",
+  tecnica: "Técnica",
+};
+
 export default function Results({ answers, onRestart, onToast }: Props) {
   const [tab, setTab] = useState<Tab>("perfil");
   const [visibleCareers, setVisibleCareers] = useState(PAGE_SIZE);
@@ -46,7 +70,6 @@ export default function Results({ answers, onRestart, onToast }: Props) {
   const [deptFilter, setDeptFilter] = useState("all");
   const [levelFilter, setLevelFilter] = useState<LevelFilter>("all");
   const [sortMode, setSortMode] = useState<SortMode>("match");
-  const [filtersOpen, setFiltersOpen] = useState(false);
   const [openCareers, setOpenCareers] = useState<Set<string>>(new Set());
   /** universidad abierta: {carrera, universidad} */
   const [uniView, setUniView] = useState<{ career: string; uni: string } | null>(null);
@@ -315,74 +338,54 @@ export default function Results({ answers, onRestart, onToast }: Props) {
                 onChange={(e) => setQuery(e.target.value)}
               />
             </label>
-            <button
-              type="button"
-              className={`filter-toggle${activeFilters ? " has-filters" : ""}`}
-              aria-expanded={filtersOpen}
-              onClick={() => setFiltersOpen((v) => !v)}
-            >
-              <SlidersIcon /> Filtros
-              {activeFilters > 0 && <span className="badge">{activeFilters}</span>}
-            </button>
           </div>
 
-          {filtersOpen && (
-            <div className="filter-bar">
-              <label htmlFor="deptSel">Universidades en</label>
-              <select id="deptSel" value={deptFilter} onChange={(e) => setDeptFilter(e.target.value)}>
-                <option value="all">Todo el país</option>
-                {DEPARTAMENTOS.map((d) => (
-                  <option key={d} value={d}>
-                    {d}
-                  </option>
-                ))}
-              </select>
+          {/* Los filtros van a la vista, no detrás de un botón: el de
+              departamento es el que más sirve y nadie lo iba a buscar.
+              Cada píldora muestra su valor actual, así se entiende qué hace
+              y cómo está sin abrir nada. El <select> nativo cubre toda la
+              píldora en transparente: en el celular abre el selector del
+              sistema, que es lo más cómodo que hay. */}
+          <div className="filter-row">
+            <Dropdown
+              icono={<PinIcon />}
+              titulo="Universidades en"
+              aria="Filtrar universidades por departamento"
+              valor={deptFilter}
+              etiqueta={deptFilter === "all" ? "Todo el país" : DEPT_CORTO[deptFilter] ?? deptFilter}
+              activo={deptFilter !== "all"}
+              opciones={OPC_DEPTO}
+              onCambio={setDeptFilter}
+            />
 
-              <label htmlFor="levelSel">Nivel</label>
-              <select
-                id="levelSel"
-                value={levelFilter}
-                onChange={(e) => setLevelFilter(e.target.value as LevelFilter)}
+            <Dropdown
+              icono={<CapIcon />}
+              titulo="Nivel"
+              aria="Filtrar carreras por nivel de formación"
+              valor={levelFilter}
+              etiqueta={levelFilter === "all" ? "Todos" : NIVEL_CORTO[levelFilter]}
+              activo={levelFilter !== "all"}
+              opciones={OPC_NIVEL}
+              onCambio={(v) => setLevelFilter(v as LevelFilter)}
+            />
+
+            <div className="sort-toggle" role="group" aria-label="Ordenar carreras">
+              <button
+                type="button"
+                className={sortMode === "match" ? "active" : ""}
+                onClick={() => setSortMode("match")}
               >
-                <option value="all">Todos</option>
-                <option value="profesional">{LEVEL_LABELS.profesional}</option>
-                <option value="tecnologica">{LEVEL_LABELS.tecnologica}</option>
-                <option value="tecnica">{LEVEL_LABELS.tecnica}</option>
-              </select>
-
-              <div className="filter-actions">
-                <div className="sort-toggle" role="group" aria-label="Ordenar carreras">
-                  <button
-                    type="button"
-                    className={sortMode === "match" ? "active" : ""}
-                    onClick={() => setSortMode("match")}
-                  >
-                    Afinidad
-                  </button>
-                  <button
-                    type="button"
-                    className={sortMode === "alpha" ? "active" : ""}
-                    onClick={() => setSortMode("alpha")}
-                  >
-                    A–Z
-                  </button>
-                </div>
-
-                {activeFilters > 0 && (
-                  <button
-                    type="button"
-                    className="clear-filters"
-                    onClick={() => {
-                      setDeptFilter("all");
-                      setLevelFilter("all");
-                    }}
-                  >
-                    Limpiar
-                  </button>
-                )}
-              </div>
+                Afinidad
+              </button>
+              <button
+                type="button"
+                className={sortMode === "alpha" ? "active" : ""}
+                onClick={() => setSortMode("alpha")}
+              >
+                A–Z
+              </button>
             </div>
-          )}
+          </div>
 
           {!query && ranked[0] && ranked[0].match < 0.5 && (
             <div className="empate">
@@ -411,9 +414,23 @@ export default function Results({ answers, onRestart, onToast }: Props) {
           )}
 
           <p className="result-count">
-            {filtered.length} {filtered.length === 1 ? "carrera" : "carreras"}
-            {query ? ` para «${query}»` : ""}
-            {deptFilter !== "all" ? ` · universidades en ${deptFilter}` : ""}
+            <span>
+              {filtered.length} {filtered.length === 1 ? "carrera" : "carreras"}
+              {query ? ` para «${query}»` : ""}
+              {deptFilter !== "all" ? ` · universidades en ${deptFilter}` : ""}
+            </span>
+            {activeFilters > 0 && (
+              <button
+                type="button"
+                className="clear-filters"
+                onClick={() => {
+                  setDeptFilter("all");
+                  setLevelFilter("all");
+                }}
+              >
+                Quitar filtros
+              </button>
+            )}
           </p>
 
           <div className="career-list">
