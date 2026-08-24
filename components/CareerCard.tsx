@@ -1,14 +1,9 @@
 import { useState } from "react";
-import {
-  LEVEL_LABELS,
-  RUTAS,
-  unisPorNivel,
-  type Career,
-  type CareerLevel,
-} from "@/lib/careers";
+import { LEVEL_LABELS, RUTAS, type Career, type CareerLevel } from "@/lib/careers";
 import { BECAS_UNI } from "@/lib/becasUni";
+import { costoDe, cuantasDe, duracionDe, institucionesDe, nivelesDe, pesos } from "@/lib/oferta";
 import { DIMS, type DimKey } from "@/lib/riasec";
-import { SECTOR_LABEL, SNIES_URL, UNIS, sectorDe } from "@/lib/universities";
+import { SECTOR_LABEL, SNIES_URL } from "@/lib/universities";
 import { useCountUp } from "@/lib/useCountUp";
 
 const ORDER: CareerLevel[] = ["profesional", "tecnologica", "tecnica"];
@@ -54,20 +49,15 @@ export default function CareerCard({
     .slice(0, 3);
 
   const rutas = RUTAS[career.n] ?? [];
-  const porNivel = unisPorNivel(career);
-  const niveles = ORDER.filter((l) => porNivel[l] !== undefined);
-
-  /** ids de universidades de un nivel, ya filtrados por departamento */
-  function unisDe(l: CareerLevel) {
-    return (porNivel[l] ?? []).filter((id) => {
-      const u = UNIS[id];
-      return u && (deptFilter === "all" || u[2].includes("*") || u[2].includes(deptFilter));
-    });
-  }
+  /* Niveles e instituciones vienen del SNIES: son la oferta real y vigente,
+     no una lista curada a mano que había que mantener carrera por carrera. */
+  const niveles = nivelesDe(career.n);
 
   const nivelActivo = nivel && niveles.includes(nivel) ? nivel : niveles[0];
-  const unis = nivelActivo ? unisDe(nivelActivo) : [];
+  const unis = nivelActivo ? institucionesDe(career.n, nivelActivo, deptFilter) : [];
   const rutaActiva = rutas.find((r) => r.l === nivelActivo);
+  const dur = nivelActivo ? duracionDe(career.n, nivelActivo) : undefined;
+  const costo = nivelActivo ? costoDe(career.n, nivelActivo) : undefined;
   const mostradas = verTodas ? unis : unis.slice(0, UNIS_VISIBLES);
   const ocultas = unis.length - mostradas.length;
 
@@ -156,7 +146,7 @@ export default function CareerCard({
               <div className="ctab-panel">
                 <div className="chip-row">
                   {niveles.map((l) => {
-                    const count = unisDe(l).length;
+                    const count = cuantasDe(career.n, l, deptFilter);
                     return (
                       <button
                         key={l}
@@ -175,30 +165,27 @@ export default function CareerCard({
                   })}
                 </div>
 
-                {rutaActiva && (
-                  <p className="ctab-hint">
-                    {rutaActiva.n} · {rutaActiva.t}
-                    {deptFilter !== "all" ? ` · en ${deptFilter}` : ""} · toca una universidad para
-                    ver el detalle
-                  </p>
-                )}
+                <p className="ctab-hint">
+                  {rutaActiva?.n ?? career.n}
+                  {dur ? ` · ${dur} semestres` : rutaActiva ? ` · ${rutaActiva.t}` : ""}
+                  {costo ? ` · matrícula ~${pesos(costo)}` : ""}
+                  {deptFilter !== "all" ? ` · en ${deptFilter}` : ""}
+                </p>
 
                 {mostradas.length ? (
                   <div className="uni-rows">
-                    {mostradas.map((id) => {
-                      const u = UNIS[id];
-                      const sector = sectorDe(id);
-                      const nBecas = BECAS_UNI[id]?.p.length ?? 0;
+                    {mostradas.map((u) => {
+                      const nBecas = u.clave ? BECAS_UNI[u.clave]?.p.length ?? 0 : 0;
                       return (
                         <button
                           type="button"
                           className="uni-row"
-                          key={id}
-                          onClick={() => onPickUni(id)}
+                          key={u.id}
+                          onClick={() => onPickUni(u.id)}
                         >
-                          <span className="uni-row-name">{u[0]}</span>
-                          <span className={`uni-row-sector${sector === "publica" ? " on" : ""}`}>
-                            {SECTOR_LABEL[sector]}
+                          <span className="uni-row-name">{u.nombre}</span>
+                          <span className={`uni-row-sector${u.sector === "publica" ? " on" : ""}`}>
+                            {SECTOR_LABEL[u.sector]}
                           </span>
                           {nBecas > 0 && (
                             <span className="uni-row-becas">
@@ -226,10 +213,8 @@ export default function CareerCard({
                 ) : (
                   <p className="no-unis">
                     {deptFilter === "all"
-                      ? rutaActiva?.w
-                        ? `Se ofrece en: ${rutaActiva.w}. Verifica la oferta vigente en el SNIES.`
-                        : "Consulta la oferta vigente en el SNIES."
-                      : `Sin registro en ${deptFilter} dentro de nuestra muestra — puede haber oferta: revisa el SNIES.`}
+                      ? "No encontramos este nivel en el registro del SNIES."
+                      : `Nadie la ofrece en ${deptFilter} en este nivel, según el SNIES. Prueba con otro departamento o con otro nivel.`}
                   </p>
                 )}
 

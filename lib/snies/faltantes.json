@@ -1,0 +1,607 @@
+[
+ {
+  "id": "4808",
+  "nombre": "Corporación Regional de Educación Superior-cres-de Cali",
+  "sector": "privada",
+  "deps": [
+   "Bogotá, D.C.",
+   "Bolívar",
+   "Cauca",
+   "Nariño",
+   "Sucre",
+   "Valle del Cauca"
+  ],
+  "programas": 26
+ },
+ {
+  "id": "3712",
+  "nombre": "Fundación Centro de Investigación Docencia y Consultoria Administrativa-f-cidca-",
+  "sector": "privada",
+  "deps": [
+   "Bogotá, D.C.",
+   "Meta",
+   "Risaralda"
+  ],
+  "programas": 19
+ },
+ {
+  "id": "4102",
+  "nombre": "Institucion Universitaria Nacional Tecnológica de la Guajira - Uniteg",
+  "sector": "publica",
+  "deps": [
+   "La Guajira"
+  ],
+  "programas": 19
+ },
+ {
+  "id": "4108",
+  "nombre": "Escuela Tecnológica Instituto Técnico Central",
+  "sector": "publica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 18
+ },
+ {
+  "id": "9940",
+  "nombre": "Institucion Universitaria de Santa Marta",
+  "sector": "publica",
+  "deps": [
+   "Magdalena"
+  ],
+  "programas": 18
+ },
+ {
+  "id": "9128",
+  "nombre": "Lci - Fundación Tecnológica",
+  "sector": "privada",
+  "deps": [
+   "Atlántico",
+   "Bogotá, D.C."
+  ],
+  "programas": 17
+ },
+ {
+  "id": "3827",
+  "nombre": "Politecnico Santafe de Bogotá",
+  "sector": "privada",
+  "deps": [
+   "Bogotá, D.C.",
+   "Meta"
+  ],
+  "programas": 17
+ },
+ {
+  "id": "5801",
+  "nombre": "Corporación Escuela Tecnológica del Oriente",
+  "sector": "privada",
+  "deps": [
+   "Santander"
+  ],
+  "programas": 16
+ },
+ {
+  "id": "3715",
+  "nombre": "Fundación Tecnológica Autónoma del Pacifico",
+  "sector": "privada",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "programas": 16
+ },
+ {
+  "id": "3725",
+  "nombre": "Fundación de Educación Superior Alberto Merani",
+  "sector": "privada",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 16
+ },
+ {
+  "id": "2702",
+  "nombre": "Universidad Fucs",
+  "sector": "privada",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 16
+ },
+ {
+  "id": "3706",
+  "nombre": "Fundación Centro Colombiano de Estudios Profesionales, -f.c.e.c.e.p.",
+  "sector": "privada",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "programas": 15
+ },
+ {
+  "id": "2711",
+  "nombre": "Universidad Católica de Pereira",
+  "sector": "privada",
+  "deps": [
+   "Risaralda"
+  ],
+  "programas": 14
+ },
+ {
+  "id": "3724",
+  "nombre": "Institucion Internacional de Altos Estudios Leon Cooper",
+  "sector": "privada",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 13
+ },
+ {
+  "id": "1715",
+  "nombre": "Fundación Universidad de América",
+  "sector": "privada",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 12
+ },
+ {
+  "id": "9929",
+  "nombre": "Universidad Autónoma Indígena Intercultural - Uaiin",
+  "sector": "publica",
+  "deps": [
+   "Cauca"
+  ],
+  "programas": 12
+ },
+ {
+  "id": "2739",
+  "nombre": "Fundación de Estudios Superiores Universitarios de Uraba Antonio Roldan Betancur",
+  "sector": "privada",
+  "deps": [
+   "Antioquia"
+  ],
+  "programas": 11
+ },
+ {
+  "id": "2837",
+  "nombre": "Corporación Universitaria Republicana",
+  "sector": "privada",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 10
+ },
+ {
+  "id": "4835",
+  "nombre": "Corporación Universitaria Taller Cinco Centro de Diseño",
+  "sector": "privada",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 10
+ },
+ {
+  "id": "3114",
+  "nombre": "Escuela Naval de Suboficiales Arc Barranquilla",
+  "sector": "publica",
+  "deps": [
+   "Atlántico",
+   "Bolívar"
+  ],
+  "programas": 10
+ },
+ {
+  "id": "4701",
+  "nombre": "Fundación Academia de Dibujo Profesional",
+  "sector": "privada",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "programas": 10
+ },
+ {
+  "id": "1719",
+  "nombre": "Universidad Católica de Colombia",
+  "sector": "privada",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 10
+ },
+ {
+  "id": "9105",
+  "nombre": "Escuela Naval de Cadetes Almirante Padilla",
+  "sector": "publica",
+  "deps": [
+   "Bolívar"
+  ],
+  "programas": 9
+ },
+ {
+  "id": "3810",
+  "nombre": "Corporación Educativa -itae-",
+  "sector": "privada",
+  "deps": [
+   "Santander"
+  ],
+  "programas": 8
+ },
+ {
+  "id": "9945",
+  "nombre": "Corporación Universitaria de Bogotá -universitaria de Bogotá",
+  "sector": "privada",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 8
+ },
+ {
+  "id": "2114",
+  "nombre": "Escuela Nacional del Deporte",
+  "sector": "publica",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "programas": 8
+ },
+ {
+  "id": "9102",
+  "nombre": "Escuela de Suboficiales Fac -capitán Andrés M. Díaz-",
+  "sector": "publica",
+  "deps": [
+   "Cundinamarca"
+  ],
+  "programas": 8
+ },
+ {
+  "id": "3807",
+  "nombre": "Escuela de Tecnologías de Antioquia -eta-",
+  "sector": "privada",
+  "deps": [
+   "Antioquia"
+  ],
+  "programas": 8
+ },
+ {
+  "id": "3822",
+  "nombre": "Politecnico Icaft",
+  "sector": "privada",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 8
+ },
+ {
+  "id": "4806",
+  "nombre": "Corporación Centro de Estudios Artisticos y Tecnicos-ceart-",
+  "sector": "privada",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 7
+ },
+ {
+  "id": "9906",
+  "nombre": "Corporación Universitaria para el Desarrollo Empresarial y Social - Misión Paz.",
+  "sector": "privada",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "programas": 7
+ },
+ {
+  "id": "4801",
+  "nombre": "Corporación Academia Superior de Artes",
+  "sector": "privada",
+  "deps": [
+   "Antioquia"
+  ],
+  "programas": 6
+ },
+ {
+  "id": "9104",
+  "nombre": "Escuela Militar de Cadetes General José María Cordova",
+  "sector": "publica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 6
+ },
+ {
+  "id": "2730",
+  "nombre": "Fundación Universitaria Escuela Colombiana de Rehabilitación",
+  "sector": "privada",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 6
+ },
+ {
+  "id": "9126",
+  "nombre": "Corporación Tecnológica Indoamerica",
+  "sector": "privada",
+  "deps": [
+   "Atlántico"
+  ],
+  "programas": 5
+ },
+ {
+  "id": "4811",
+  "nombre": "Corporación Unificada Hispanoamericana de Educación Superior",
+  "sector": "privada",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "programas": 5
+ },
+ {
+  "id": "9103",
+  "nombre": "Escuela Militar de Aviacion Marco Fidel Suarez",
+  "sector": "publica",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "programas": 5
+ },
+ {
+  "id": "3902",
+  "nombre": "Escuela Militar de Suboficiales Sargento Inocencio Chinca",
+  "sector": "publica",
+  "deps": [
+   "Cundinamarca"
+  ],
+  "programas": 5
+ },
+ {
+  "id": "2707",
+  "nombre": "Fundación Universitaria Juan N. Corpas",
+  "sector": "privada",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 5
+ },
+ {
+  "id": "2208",
+  "nombre": "Conservatorio del Tolima",
+  "sector": "publica",
+  "deps": [
+   "Tolima"
+  ],
+  "programas": 4
+ },
+ {
+  "id": "4803",
+  "nombre": "Corporación Politecnico Colombo Andino",
+  "sector": "privada",
+  "deps": [
+   "Bogotá, D.C.",
+   "Nariño"
+  ],
+  "programas": 4
+ },
+ {
+  "id": "9936",
+  "nombre": "Corporación Universitaria Autónoma del Norte",
+  "sector": "privada",
+  "deps": [
+   "Norte de Santander"
+  ],
+  "programas": 4
+ },
+ {
+  "id": "9939",
+  "nombre": "Fundación Universitaria Católica del Caribe",
+  "sector": "privada",
+  "deps": [
+   "Atlántico"
+  ],
+  "programas": 4
+ },
+ {
+  "id": "9902",
+  "nombre": "Fundación Universitaria Comfenalco Santander",
+  "sector": "privada",
+  "deps": [
+   "Santander"
+  ],
+  "programas": 4
+ },
+ {
+  "id": "9946",
+  "nombre": "Institución Universitaria Pública de Bello - Iupbello",
+  "sector": "publica",
+  "deps": [
+   "Antioquia"
+  ],
+  "programas": 4
+ },
+ {
+  "id": "2206",
+  "nombre": "Instituto Departamental de Bellas Artes",
+  "sector": "publica",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "programas": 4
+ },
+ {
+  "id": "3828",
+  "nombre": "Corporación Tecnológica de Educación Superior Sapienza Cte",
+  "sector": "privada",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 3
+ },
+ {
+  "id": "2901",
+  "nombre": "Escuela de Inteligencia y Contrainteligencia Brigadier General Ricardo Charry Solano",
+  "sector": "publica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 3
+ },
+ {
+  "id": "3824",
+  "nombre": "Centro de Conocimiento Alejandría - Alejandría",
+  "sector": "privada",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 2
+ },
+ {
+  "id": "9941",
+  "nombre": "Corporación Institución Universitaria Salud Colombia - Unisalud",
+  "sector": "privada",
+  "deps": [
+   "Tolima"
+  ],
+  "programas": 2
+ },
+ {
+  "id": "3802",
+  "nombre": "Corporación Tecnológico Superior",
+  "sector": "privada",
+  "deps": [
+   "Antioquia"
+  ],
+  "programas": 2
+ },
+ {
+  "id": "9937",
+  "nombre": "Corporación Técnica Profesional Caminos del Suroccidente Colombiano",
+  "sector": "privada",
+  "deps": [
+   "Cauca"
+  ],
+  "programas": 2
+ },
+ {
+  "id": "9923",
+  "nombre": "Corporación Universitaria de Cataluña",
+  "sector": "privada",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 2
+ },
+ {
+  "id": "3901",
+  "nombre": "Escuela de Formación de Infanteria de Marina",
+  "sector": "publica",
+  "deps": [
+   "Sucre"
+  ],
+  "programas": 2
+ },
+ {
+  "id": "9107",
+  "nombre": "Escuela de Ingenieros Militares",
+  "sector": "publica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 2
+ },
+ {
+  "id": "9921",
+  "nombre": "Fundación Universitaria Católica del Sur - Unicatolica del Sur",
+  "sector": "privada",
+  "deps": [
+   "Nariño"
+  ],
+  "programas": 2
+ },
+ {
+  "id": "9931",
+  "nombre": "Fundación Universitaria Patricio Symes",
+  "sector": "privada",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 2
+ },
+ {
+  "id": "2736",
+  "nombre": "Fundación Universitaria Seminario Biblico de Colombia - Fusbc",
+  "sector": "privada",
+  "deps": [
+   "Antioquia"
+  ],
+  "programas": 2
+ },
+ {
+  "id": "2748",
+  "nombre": "Fundación Universitaria Seminario Teologico Bautista Internacional",
+  "sector": "privada",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "programas": 2
+ },
+ {
+  "id": "4704",
+  "nombre": "Fundación para la Educación Superior Real de Colombia",
+  "sector": "privada",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 2
+ },
+ {
+  "id": "9944",
+  "nombre": "Institución Universitaria de las Culturas y las Artes Populares Ipc",
+  "sector": "publica",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "programas": 2
+ },
+ {
+  "id": "9934",
+  "nombre": "Centro de Estudios Aeronáuticos - Cea",
+  "sector": "publica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 1
+ },
+ {
+  "id": "2902",
+  "nombre": "Escuela de Logística",
+  "sector": "publica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 1
+ },
+ {
+  "id": "9930",
+  "nombre": "Institucion Universitaria Comando de Educación y Doctrina - Cedoc del Ejercito Nacional",
+  "sector": "publica",
+  "deps": [
+   "Cundinamarca"
+  ],
+  "programas": 1
+ },
+ {
+  "id": "9918",
+  "nombre": "Institucion Universitaria Conocimiento e Innovación para la Justicia - Cij",
+  "sector": "publica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "programas": 1
+ },
+ {
+  "id": "9938",
+  "nombre": "Universitaria del Chicamocha",
+  "sector": "privada",
+  "deps": [
+   "Santander"
+  ],
+  "programas": 1
+ }
+]

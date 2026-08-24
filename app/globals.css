@@ -1394,3 +1394,16 @@ a.ruta-item:focus-visible { outline: 3px solid var(--accent); outline-offset: 2p
   .duelo-op { padding: 18px 18px; font-size: 1rem; }
   .desempate-barra { width: 54px; }
 }
+
+/* Aviso de dato leído del sitio: debe verse claramente distinto de los datos
+   curados, para que nadie tome una beca desactualizada por vigente. */
+.captura {
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  background: var(--surface-2);
+  border-radius: 10px;
+  font-size: .8rem;
+  color: var(--ink-faint);
+  line-height: 1.45;
+}
+.captura b { color: var(--ink-soft); }

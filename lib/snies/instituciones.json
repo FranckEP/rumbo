@@ -1,0 +1,3169 @@
+[
+ {
+  "id": "3824",
+  "nombre": "Centro de Conocimiento Alejandría - Alejandría",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "centro de conocimiento alejandria - alejandria"
+ },
+ {
+  "id": "2905",
+  "nombre": "Centro de Educación Militar - Cemil",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "centro de educacion militar - cemil"
+ },
+ {
+  "id": "9934",
+  "nombre": "Centro de Estudios Aeronáuticos - Cea",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "centro de estudios aeronauticos - cea"
+ },
+ {
+  "id": "2110",
+  "nombre": "Colegio Mayor de Antioquia",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "colegio mayor de antioquia"
+ },
+ {
+  "id": "1714",
+  "nombre": "Colegio Mayor de Nuestra Señora del Rosario",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "colegio mayor de nuestra senora del rosario"
+ },
+ {
+  "id": "3104",
+  "nombre": "Colegio Mayor del Cauca",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Cauca"
+  ],
+  "buscar": "colegio mayor del cauca"
+ },
+ {
+  "id": "2704",
+  "nombre": "Colegio de Estudios Superiores de Administración-cesa-",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "colegio de estudios superiores de administracion-cesa-"
+ },
+ {
+  "id": "2208",
+  "nombre": "Conservatorio del Tolima",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Tolima"
+  ],
+  "buscar": "conservatorio del tolima"
+ },
+ {
+  "id": "4801",
+  "nombre": "Corporación Academia Superior de Artes",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "corporacion academia superior de artes"
+ },
+ {
+  "id": "3820",
+  "nombre": "Corporación Academia Tecnológica de Colombia -atec-",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "corporacion academia tecnologica de colombia -atec-"
+ },
+ {
+  "id": "4806",
+  "nombre": "Corporación Centro de Estudios Artisticos y Tecnicos-ceart-",
+  "sector": "privada",
+  "caracter": "Institución Técnica Profesional",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "corporacion centro de estudios artisticos y tecnicos-ceart-"
+ },
+ {
+  "id": "2838",
+  "nombre": "Corporación Colegiatura Colombiana",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "corporacion colegiatura colombiana"
+ },
+ {
+  "id": "3810",
+  "nombre": "Corporación Educativa -itae-",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Santander"
+  ],
+  "buscar": "corporacion educativa -itae-"
+ },
+ {
+  "id": "3806",
+  "nombre": "Corporación Escuela Superior de Administración y Estudios Tecnologicos- Eae",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "buscar": "corporacion escuela superior de administracion y estudios tecnologicos- eae"
+ },
+ {
+  "id": "5801",
+  "nombre": "Corporación Escuela Tecnológica del Oriente",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Santander"
+  ],
+  "buscar": "corporacion escuela tecnologica del oriente"
+ },
+ {
+  "id": "4822",
+  "nombre": "Corporación Escuela de Artes y Letras",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C.",
+   "Cundinamarca"
+  ],
+  "buscar": "corporacion escuela de artes y letras"
+ },
+ {
+  "id": "9941",
+  "nombre": "Corporación Institución Universitaria Salud Colombia - Unisalud",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Tolima"
+  ],
+  "buscar": "corporacion institucion universitaria salud colombia - unisalud"
+ },
+ {
+  "id": "4832",
+  "nombre": "Corporación Instituto Superior de Educación Social-ises-",
+  "sector": "privada",
+  "caracter": "Institución Técnica Profesional",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "corporacion instituto superior de educacion social-ises-"
+ },
+ {
+  "id": "4825",
+  "nombre": "Corporación Instituto de Administración y Finanzas - Ciaf",
+  "sector": "privada",
+  "caracter": "Institución Técnica Profesional",
+  "deps": [
+   "Risaralda"
+  ],
+  "buscar": "corporacion instituto de administracion y finanzas - ciaf"
+ },
+ {
+  "id": "4829",
+  "nombre": "Corporación Interamericana de Educación Superior-corpocides",
+  "sector": "privada",
+  "caracter": "Institución Técnica Profesional",
+  "deps": [
+   "Santander"
+  ],
+  "buscar": "corporacion interamericana de educacion superior-corpocides"
+ },
+ {
+  "id": "3826",
+  "nombre": "Corporación Internacional para el Desarrollo Educativo -cide-",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "corporacion internacional para el desarrollo educativo -cide-"
+ },
+ {
+  "id": "4803",
+  "nombre": "Corporación Politecnico Colombo Andino",
+  "sector": "privada",
+  "caracter": "Institución Técnica Profesional",
+  "deps": [
+   "Bogotá, D.C.",
+   "Nariño"
+  ],
+  "buscar": "corporacion politecnico colombo andino"
+ },
+ {
+  "id": "4808",
+  "nombre": "Corporación Regional de Educación Superior-cres-de Cali",
+  "sector": "privada",
+  "caracter": "Institución Técnica Profesional",
+  "deps": [
+   "Bogotá, D.C.",
+   "Bolívar",
+   "Cauca",
+   "Nariño",
+   "Sucre",
+   "Valle del Cauca"
+  ],
+  "buscar": "corporacion regional de educacion superior-cres-de cali"
+ },
+ {
+  "id": "3834",
+  "nombre": "Corporación Tecnológica Católica de Occidente - Tecoc -",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "corporacion tecnologica catolica de occidente - tecoc -"
+ },
+ {
+  "id": "9126",
+  "nombre": "Corporación Tecnológica Indoamerica",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Atlántico"
+  ],
+  "buscar": "corporacion tecnologica indoamerica"
+ },
+ {
+  "id": "3819",
+  "nombre": "Corporación Tecnológica Industrial Colombiana - Teinco",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Bogotá, D.C.",
+   "Cundinamarca"
+  ],
+  "buscar": "corporacion tecnologica industrial colombiana - teinco"
+ },
+ {
+  "id": "3808",
+  "nombre": "Corporación Tecnológica de Bogotá - Ctb",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "corporacion tecnologica de bogota - ctb"
+ },
+ {
+  "id": "3828",
+  "nombre": "Corporación Tecnológica de Educación Superior Sapienza Cte",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "corporacion tecnologica de educacion superior sapienza cte"
+ },
+ {
+  "id": "3802",
+  "nombre": "Corporación Tecnológico Superior",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "corporacion tecnologico superior"
+ },
+ {
+  "id": "9937",
+  "nombre": "Corporación Técnica Profesional Caminos del Suroccidente Colombiano",
+  "sector": "privada",
+  "caracter": "Institución Técnica Profesional",
+  "deps": [
+   "Cauca"
+  ],
+  "buscar": "corporacion tecnica profesional caminos del suroccidente colombiano"
+ },
+ {
+  "id": "4811",
+  "nombre": "Corporación Unificada Hispanoamericana de Educación Superior",
+  "sector": "privada",
+  "caracter": "Institución Técnica Profesional",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "buscar": "corporacion unificada hispanoamericana de educacion superior"
+ },
+ {
+  "id": "4813",
+  "nombre": "Corporación Unificada Nacional de Educación Superior-cun-",
+  "sector": "privada",
+  "caracter": "Institución Técnica Profesional",
+  "deps": [
+   "Antioquia",
+   "Atlántico",
+   "Bogotá, D.C.",
+   "Cundinamarca",
+   "Córdoba",
+   "Huila",
+   "Magdalena",
+   "Sucre",
+   "Tolima"
+  ],
+  "buscar": "corporacion unificada nacional de educacion superior-cun-"
+ },
+ {
+  "id": "3830",
+  "nombre": "Corporación Universal de Investigación y Tecnología -coruniversitec-",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "corporacion universal de investigacion y tecnologia -coruniversitec-"
+ },
+ {
+  "id": "1815",
+  "nombre": "Corporación Universidad Piloto de Colombia",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C.",
+   "Cundinamarca"
+  ],
+  "buscar": "corporacion universidad piloto de colombia"
+ },
+ {
+  "id": "2810",
+  "nombre": "Corporación Universidad de la Costa Cuc",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Atlántico",
+   "Meta"
+  ],
+  "buscar": "corporacion universidad de la costa cuc"
+ },
+ {
+  "id": "1833",
+  "nombre": "Corporación Universidad del Sinu - Elias Bechara Zainum - Unisinu -",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C.",
+   "Bolívar",
+   "Córdoba"
+  ],
+  "buscar": "corporacion universidad del sinu - elias bechara zainum - unisinu -"
+ },
+ {
+  "id": "2815",
+  "nombre": "Corporación Universitaria Adventista - Unac",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia",
+   "Santander"
+  ],
+  "buscar": "corporacion universitaria adventista - unac"
+ },
+ {
+  "id": "9119",
+  "nombre": "Corporación Universitaria Americana",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia",
+   "Atlántico",
+   "Córdoba"
+  ],
+  "buscar": "corporacion universitaria americana"
+ },
+ {
+  "id": "2850",
+  "nombre": "Corporación Universitaria Antonio José de Sucre - Corposucre",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bolívar",
+   "Sucre"
+  ],
+  "buscar": "corporacion universitaria antonio jose de sucre - corposucre"
+ },
+ {
+  "id": "3817",
+  "nombre": "Corporación Universitaria Autónoma de Nariño -aunar-",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bolívar",
+   "Meta",
+   "Nariño",
+   "Putumayo",
+   "Valle del Cauca"
+  ],
+  "buscar": "corporacion universitaria autonoma de narino -aunar-"
+ },
+ {
+  "id": "2849",
+  "nombre": "Corporación Universitaria Autónoma del Cauca",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Cauca"
+  ],
+  "buscar": "corporacion universitaria autonoma del cauca"
+ },
+ {
+  "id": "9936",
+  "nombre": "Corporación Universitaria Autónoma del Norte",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Norte de Santander"
+  ],
+  "buscar": "corporacion universitaria autonoma del norte"
+ },
+ {
+  "id": "4810",
+  "nombre": "Corporación Universitaria Cenda",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "corporacion universitaria cenda"
+ },
+ {
+  "id": "3803",
+  "nombre": "Corporación Universitaria Centro Superior - Unicuces",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "buscar": "corporacion universitaria centro superior - unicuces"
+ },
+ {
+  "id": "3831",
+  "nombre": "Corporación Universitaria Comfacauca - Unicomfacauca",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Cauca"
+  ],
+  "buscar": "corporacion universitaria comfacauca - unicomfacauca"
+ },
+ {
+  "id": "2840",
+  "nombre": "Corporación Universitaria Empresarial Alexander Von Humboldt - Cue",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Quindío"
+  ],
+  "buscar": "corporacion universitaria empresarial alexander von humboldt - cue"
+ },
+ {
+  "id": "2836",
+  "nombre": "Corporación Universitaria Empresarial de Salamanca",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Atlántico"
+  ],
+  "buscar": "corporacion universitaria empresarial de salamanca"
+ },
+ {
+  "id": "2830",
+  "nombre": "Corporación Universitaria Iberoamericana",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "corporacion universitaria iberoamericana"
+ },
+ {
+  "id": "2820",
+  "nombre": "Corporación Universitaria Lasallista",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "corporacion universitaria lasallista"
+ },
+ {
+  "id": "4818",
+  "nombre": "Corporación Universitaria Latinoamericana - Cul",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Atlántico"
+  ],
+  "buscar": "corporacion universitaria latinoamericana - cul"
+ },
+ {
+  "id": "2829",
+  "nombre": "Corporación Universitaria Minuto de Dios -uniminuto-",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia",
+   "Atlántico",
+   "Bogotá, D.C.",
+   "Bolívar",
+   "Boyacá",
+   "Caldas",
+   "Caquetá",
+   "Casanare",
+   "Cauca",
+   "Cesar",
+   "Chocó",
+   "Cundinamarca",
+   "Guainía",
+   "Huila",
+   "Magdalena",
+   "Meta",
+   "Nariño",
+   "Norte de Santander",
+   "Quindío",
+   "Risaralda",
+   "Santander",
+   "Tolima",
+   "Valle del Cauca"
+  ],
+  "buscar": "corporacion universitaria minuto de dios -uniminuto-"
+ },
+ {
+  "id": "3821",
+  "nombre": "Corporación Universitaria Politecnico Costa Atlantica",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Atlántico"
+  ],
+  "buscar": "corporacion universitaria politecnico costa atlantica"
+ },
+ {
+  "id": "2825",
+  "nombre": "Corporación Universitaria Rafael Nuñez",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Atlántico",
+   "Bolívar"
+  ],
+  "buscar": "corporacion universitaria rafael nunez"
+ },
+ {
+  "id": "2842",
+  "nombre": "Corporación Universitaria Reformada - Cur -",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Atlántico"
+  ],
+  "buscar": "corporacion universitaria reformada - cur -"
+ },
+ {
+  "id": "4826",
+  "nombre": "Corporación Universitaria Regional del Caribe -iafic-",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bolívar"
+  ],
+  "buscar": "corporacion universitaria regional del caribe -iafic-"
+ },
+ {
+  "id": "2833",
+  "nombre": "Corporación Universitaria Remington",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia",
+   "Bogotá, D.C.",
+   "Córdoba",
+   "Norte de Santander",
+   "Santander",
+   "Tolima",
+   "Valle del Cauca"
+  ],
+  "buscar": "corporacion universitaria remington"
+ },
+ {
+  "id": "2837",
+  "nombre": "Corporación Universitaria Republicana",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "corporacion universitaria republicana"
+ },
+ {
+  "id": "4835",
+  "nombre": "Corporación Universitaria Taller Cinco Centro de Diseño",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "corporacion universitaria taller cinco centro de diseno"
+ },
+ {
+  "id": "9900",
+  "nombre": "Corporación Universitaria U de Colombia",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "corporacion universitaria u de colombia"
+ },
+ {
+  "id": "2848",
+  "nombre": "Corporación Universitaria Unitec",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "corporacion universitaria unitec"
+ },
+ {
+  "id": "9913",
+  "nombre": "Corporación Universitaria de Asturias",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "corporacion universitaria de asturias"
+ },
+ {
+  "id": "9945",
+  "nombre": "Corporación Universitaria de Bogotá -universitaria de Bogotá",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "corporacion universitaria de bogota -universitaria de bogota"
+ },
+ {
+  "id": "9923",
+  "nombre": "Corporación Universitaria de Cataluña",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "corporacion universitaria de cataluna"
+ },
+ {
+  "id": "2831",
+  "nombre": "Corporación Universitaria de Ciencia y Desarrollo - Uniciencia",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C.",
+   "Boyacá",
+   "Córdoba",
+   "Santander"
+  ],
+  "buscar": "corporacion universitaria de ciencia y desarrollo - uniciencia"
+ },
+ {
+  "id": "4837",
+  "nombre": "Corporación Universitaria de Ciencias Empresariales, Educación y Salud -unicorsalud-",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Atlántico",
+   "Córdoba"
+  ],
+  "buscar": "corporacion universitaria de ciencias empresariales, educacion y salud -unicorsalud-"
+ },
+ {
+  "id": "2824",
+  "nombre": "Corporación Universitaria de Colombia Ideas",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Meta"
+  ],
+  "buscar": "corporacion universitaria de colombia ideas"
+ },
+ {
+  "id": "9127",
+  "nombre": "Corporación Universitaria de Sabaneta - Unisabaneta",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia",
+   "Bogotá, D.C."
+  ],
+  "buscar": "corporacion universitaria de sabaneta - unisabaneta"
+ },
+ {
+  "id": "2818",
+  "nombre": "Corporación Universitaria de Santa Rosa de Cabal-unisarc-",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Risaralda"
+  ],
+  "buscar": "corporacion universitaria de santa rosa de cabal-unisarc-"
+ },
+ {
+  "id": "2823",
+  "nombre": "Corporación Universitaria del Caribe - Cecar",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Sucre"
+  ],
+  "buscar": "corporacion universitaria del caribe - cecar"
+ },
+ {
+  "id": "2828",
+  "nombre": "Corporación Universitaria del Huila-corhuila-",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Huila"
+  ],
+  "buscar": "corporacion universitaria del huila-corhuila-"
+ },
+ {
+  "id": "2827",
+  "nombre": "Corporación Universitaria del Meta - Unimeta",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Cundinamarca",
+   "Meta"
+  ],
+  "buscar": "corporacion universitaria del meta - unimeta"
+ },
+ {
+  "id": "9906",
+  "nombre": "Corporación Universitaria para el Desarrollo Empresarial y Social - Misión Paz.",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "buscar": "corporacion universitaria para el desarrollo empresarial y social - mision paz."
+ },
+ {
+  "id": "4812",
+  "nombre": "Corporación de Educación Superior Suramerica",
+  "sector": "privada",
+  "caracter": "Institución Técnica Profesional",
+  "deps": [
+   "Bogotá, D.C.",
+   "Meta"
+  ],
+  "buscar": "corporacion de educacion superior suramerica"
+ },
+ {
+  "id": "4817",
+  "nombre": "Corporación de Educación Superior del Litoral",
+  "sector": "privada",
+  "caracter": "Institución Técnica Profesional",
+  "deps": [
+   "Atlántico"
+  ],
+  "buscar": "corporacion de educacion superior del litoral"
+ },
+ {
+  "id": "3811",
+  "nombre": "Corporación de Educación del Norte del Tolima - Coreducacion",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Caldas",
+   "Tolima"
+  ],
+  "buscar": "corporacion de educacion del norte del tolima - coreducacion"
+ },
+ {
+  "id": "3801",
+  "nombre": "Corporación de Estudios Tecnologicos del Norte del Valle",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "buscar": "corporacion de estudios tecnologicos del norte del valle"
+ },
+ {
+  "id": "2106",
+  "nombre": "Dirección de Educación Policial",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Amazonas",
+   "Antioquia",
+   "Atlántico",
+   "Bogotá, D.C.",
+   "Boyacá",
+   "Caldas",
+   "Chocó",
+   "Cundinamarca",
+   "La Guajira",
+   "Meta",
+   "Santander",
+   "Sucre",
+   "Tolima",
+   "Valle del Cauca"
+  ],
+  "buscar": "direccion de educacion policial"
+ },
+ {
+  "id": "9117",
+  "nombre": "Escuela Internacional de Estudios Superiores - Inter",
+  "sector": "privada",
+  "caracter": "Institución Técnica Profesional",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "escuela internacional de estudios superiores - inter"
+ },
+ {
+  "id": "9103",
+  "nombre": "Escuela Militar de Aviacion Marco Fidel Suarez",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "buscar": "escuela militar de aviacion marco fidel suarez"
+ },
+ {
+  "id": "9104",
+  "nombre": "Escuela Militar de Cadetes General José María Cordova",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "escuela militar de cadetes general jose maria cordova"
+ },
+ {
+  "id": "3902",
+  "nombre": "Escuela Militar de Suboficiales Sargento Inocencio Chinca",
+  "sector": "publica",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Cundinamarca"
+  ],
+  "buscar": "escuela militar de suboficiales sargento inocencio chinca"
+ },
+ {
+  "id": "2114",
+  "nombre": "Escuela Nacional del Deporte",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "buscar": "escuela nacional del deporte"
+ },
+ {
+  "id": "9105",
+  "nombre": "Escuela Naval de Cadetes Almirante Padilla",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Bolívar"
+  ],
+  "buscar": "escuela naval de cadetes almirante padilla"
+ },
+ {
+  "id": "3114",
+  "nombre": "Escuela Naval de Suboficiales Arc Barranquilla",
+  "sector": "publica",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Atlántico",
+   "Bolívar"
+  ],
+  "buscar": "escuela naval de suboficiales arc barranquilla"
+ },
+ {
+  "id": "2104",
+  "nombre": "Escuela Superior de Administración Pública-esap-",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "escuela superior de administracion publica-esap-"
+ },
+ {
+  "id": "4108",
+  "nombre": "Escuela Tecnológica Instituto Técnico Central",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "escuela tecnologica instituto tecnico central"
+ },
+ {
+  "id": "3901",
+  "nombre": "Escuela de Formación de Infanteria de Marina",
+  "sector": "publica",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Sucre"
+  ],
+  "buscar": "escuela de formacion de infanteria de marina"
+ },
+ {
+  "id": "9107",
+  "nombre": "Escuela de Ingenieros Militares",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "escuela de ingenieros militares"
+ },
+ {
+  "id": "2901",
+  "nombre": "Escuela de Inteligencia y Contrainteligencia Brigadier General Ricardo Charry Solano",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "escuela de inteligencia y contrainteligencia brigadier general ricardo charry solano"
+ },
+ {
+  "id": "2902",
+  "nombre": "Escuela de Logística",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "escuela de logistica"
+ },
+ {
+  "id": "9102",
+  "nombre": "Escuela de Suboficiales Fac -capitán Andrés M. Díaz-",
+  "sector": "publica",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Cundinamarca"
+  ],
+  "buscar": "escuela de suboficiales fac -capitan andres m. diaz-"
+ },
+ {
+  "id": "3807",
+  "nombre": "Escuela de Tecnologías de Antioquia -eta-",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "escuela de tecnologias de antioquia -eta-"
+ },
+ {
+  "id": "9914",
+  "nombre": "Eseit - Escuela Superior de Empresa, Ingeniería y Tecnología",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "eseit - escuela superior de empresa, ingenieria y tecnologia"
+ },
+ {
+  "id": "4701",
+  "nombre": "Fundación Academia de Dibujo Profesional",
+  "sector": "privada",
+  "caracter": "Institución Técnica Profesional",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "buscar": "fundacion academia de dibujo profesional"
+ },
+ {
+  "id": "3706",
+  "nombre": "Fundación Centro Colombiano de Estudios Profesionales, -f.c.e.c.e.p.",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "buscar": "fundacion centro colombiano de estudios profesionales, -f.c.e.c.e.p."
+ },
+ {
+  "id": "3712",
+  "nombre": "Fundación Centro de Investigación Docencia y Consultoria Administrativa-f-cidca-",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Bogotá, D.C.",
+   "Meta",
+   "Risaralda"
+  ],
+  "buscar": "fundacion centro de investigacion docencia y consultoria administrativa-f-cidca-"
+ },
+ {
+  "id": "9905",
+  "nombre": "Fundación Escuela Tecnológica de Neiva - Jesus Oviedo Perez -fet",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Huila"
+  ],
+  "buscar": "fundacion escuela tecnologica de neiva - jesus oviedo perez -fet"
+ },
+ {
+  "id": "4714",
+  "nombre": "Fundación Interamericana Técnica-fit-",
+  "sector": "privada",
+  "caracter": "Institución Técnica Profesional",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion interamericana tecnica-fit-"
+ },
+ {
+  "id": "4710",
+  "nombre": "Fundación Politécnico Minuto de Dios - Tec Md",
+  "sector": "privada",
+  "caracter": "Institución Técnica Profesional",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion politecnico minuto de dios - tec md"
+ },
+ {
+  "id": "3702",
+  "nombre": "Fundación Tecnológica Autónoma de Bogotá-faba-",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion tecnologica autonoma de bogota-faba-"
+ },
+ {
+  "id": "3715",
+  "nombre": "Fundación Tecnológica Autónoma del Pacifico",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "buscar": "fundacion tecnologica autonoma del pacifico"
+ },
+ {
+  "id": "1725",
+  "nombre": "Fundación Universidad Autónoma de Colombia -fuac-",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion universidad autonoma de colombia -fuac-"
+ },
+ {
+  "id": "1715",
+  "nombre": "Fundación Universidad de América",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion universidad de america"
+ },
+ {
+  "id": "1707",
+  "nombre": "Fundación Universidad de Bogotá - Jorge Tadeo Lozano",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C.",
+   "Bolívar"
+  ],
+  "buscar": "fundacion universidad de bogota - jorge tadeo lozano"
+ },
+ {
+  "id": "2723",
+  "nombre": "Fundación Universitaria Agraria de Colombia -uniagraria-",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion universitaria agraria de colombia -uniagraria-"
+ },
+ {
+  "id": "3710",
+  "nombre": "Fundación Universitaria Antonio de Arevalo - Unitecnar",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Atlántico",
+   "Bolívar",
+   "Risaralda",
+   "Sucre"
+  ],
+  "buscar": "fundacion universitaria antonio de arevalo - unitecnar"
+ },
+ {
+  "id": "9120",
+  "nombre": "Fundación Universitaria Bellas Artes",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "fundacion universitaria bellas artes"
+ },
+ {
+  "id": "9129",
+  "nombre": "Fundación Universitaria Cafam -unicafam",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion universitaria cafam -unicafam"
+ },
+ {
+  "id": "2731",
+  "nombre": "Fundación Universitaria Católica Lumen Gentium - Unicatólica - Cali",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "buscar": "fundacion universitaria catolica lumen gentium - unicatolica - cali"
+ },
+ {
+  "id": "9939",
+  "nombre": "Fundación Universitaria Católica del Caribe",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Atlántico"
+  ],
+  "buscar": "fundacion universitaria catolica del caribe"
+ },
+ {
+  "id": "2732",
+  "nombre": "Fundación Universitaria Católica del Norte",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "fundacion universitaria catolica del norte"
+ },
+ {
+  "id": "9921",
+  "nombre": "Fundación Universitaria Católica del Sur - Unicatolica del Sur",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Nariño"
+  ],
+  "buscar": "fundacion universitaria catolica del sur - unicatolica del sur"
+ },
+ {
+  "id": "9131",
+  "nombre": "Fundación Universitaria Cervantes San Agustín - Unicervantes",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C.",
+   "Caquetá",
+   "Putumayo"
+  ],
+  "buscar": "fundacion universitaria cervantes san agustin - unicervantes"
+ },
+ {
+  "id": "9116",
+  "nombre": "Fundación Universitaria Claretiana - Uniclaretiana",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Chocó",
+   "Valle del Cauca"
+  ],
+  "buscar": "fundacion universitaria claretiana - uniclaretiana"
+ },
+ {
+  "id": "9904",
+  "nombre": "Fundación Universitaria Colombo Germana",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C.",
+   "Risaralda"
+  ],
+  "buscar": "fundacion universitaria colombo germana"
+ },
+ {
+  "id": "9121",
+  "nombre": "Fundación Universitaria Colombo Internacional - Unicolombo",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bolívar"
+  ],
+  "buscar": "fundacion universitaria colombo internacional - unicolombo"
+ },
+ {
+  "id": "9922",
+  "nombre": "Fundación Universitaria Comfamiliar Risaralda",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Risaralda"
+  ],
+  "buscar": "fundacion universitaria comfamiliar risaralda"
+ },
+ {
+  "id": "9902",
+  "nombre": "Fundación Universitaria Comfenalco Santander",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Santander"
+  ],
+  "buscar": "fundacion universitaria comfenalco santander"
+ },
+ {
+  "id": "2745",
+  "nombre": "Fundación Universitaria Compensar",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C.",
+   "Meta"
+  ],
+  "buscar": "fundacion universitaria compensar"
+ },
+ {
+  "id": "2738",
+  "nombre": "Fundación Universitaria Empresarial de la Camara de Comercio de Bogotá- Uniempresarial",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion universitaria empresarial de la camara de comercio de bogota- uniempresarial"
+ },
+ {
+  "id": "2730",
+  "nombre": "Fundación Universitaria Escuela Colombiana de Rehabilitación",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion universitaria escuela colombiana de rehabilitacion"
+ },
+ {
+  "id": "3720",
+  "nombre": "Fundación Universitaria Esumer",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "fundacion universitaria esumer"
+ },
+ {
+  "id": "4721",
+  "nombre": "Fundación Universitaria Horizonte",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion universitaria horizonte"
+ },
+ {
+  "id": "9924",
+  "nombre": "Fundación Universitaria Internacional de Colombia - Unincol",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion universitaria internacional de colombia - unincol"
+ },
+ {
+  "id": "9926",
+  "nombre": "Fundación Universitaria Internacional de la Rioja - Unir",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion universitaria internacional de la rioja - unir"
+ },
+ {
+  "id": "2707",
+  "nombre": "Fundación Universitaria Juan N. Corpas",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion universitaria juan n. corpas"
+ },
+ {
+  "id": "2720",
+  "nombre": "Fundación Universitaria Juan de Castellanos",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Boyacá"
+  ],
+  "buscar": "fundacion universitaria juan de castellanos"
+ },
+ {
+  "id": "2712",
+  "nombre": "Fundación Universitaria Konrad Lorenz",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion universitaria konrad lorenz"
+ },
+ {
+  "id": "2721",
+  "nombre": "Fundación Universitaria María Cano",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia",
+   "Cauca",
+   "Huila",
+   "Valle del Cauca"
+  ],
+  "buscar": "fundacion universitaria maria cano"
+ },
+ {
+  "id": "2710",
+  "nombre": "Fundación Universitaria Monserrate -unimonserrate",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion universitaria monserrate -unimonserrate"
+ },
+ {
+  "id": "9907",
+  "nombre": "Fundación Universitaria Navarra - Uninavarra",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Huila"
+  ],
+  "buscar": "fundacion universitaria navarra - uninavarra"
+ },
+ {
+  "id": "9931",
+  "nombre": "Fundación Universitaria Patricio Symes",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion universitaria patricio symes"
+ },
+ {
+  "id": "9928",
+  "nombre": "Fundación Universitaria Salesiana",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion universitaria salesiana"
+ },
+ {
+  "id": "2733",
+  "nombre": "Fundación Universitaria San Alfonso- Fusa-",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion universitaria san alfonso- fusa-"
+ },
+ {
+  "id": "2709",
+  "nombre": "Fundación Universitaria San Martin",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia",
+   "Atlántico",
+   "Bogotá, D.C.",
+   "Nariño",
+   "Valle del Cauca"
+  ],
+  "buscar": "fundacion universitaria san martin"
+ },
+ {
+  "id": "4726",
+  "nombre": "Fundación Universitaria San Mateo - San Mateo Educación Superior",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C.",
+   "Norte de Santander"
+  ],
+  "buscar": "fundacion universitaria san mateo - san mateo educacion superior"
+ },
+ {
+  "id": "9932",
+  "nombre": "Fundación Universitaria San Pablo - Unisanpablo",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion universitaria san pablo - unisanpablo"
+ },
+ {
+  "id": "2746",
+  "nombre": "Fundación Universitaria Sanitas",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion universitaria sanitas"
+ },
+ {
+  "id": "2736",
+  "nombre": "Fundación Universitaria Seminario Biblico de Colombia - Fusbc",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "fundacion universitaria seminario biblico de colombia - fusbc"
+ },
+ {
+  "id": "2748",
+  "nombre": "Fundación Universitaria Seminario Teologico Bautista Internacional",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "buscar": "fundacion universitaria seminario teologico bautista internacional"
+ },
+ {
+  "id": "3705",
+  "nombre": "Fundación Universitaria Tecnológico Comfenalco - Cartagena",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bolívar"
+  ],
+  "buscar": "fundacion universitaria tecnologico comfenalco - cartagena"
+ },
+ {
+  "id": "2715",
+  "nombre": "Fundación Universitaria de Popayán",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Cauca"
+  ],
+  "buscar": "fundacion universitaria de popayan"
+ },
+ {
+  "id": "2724",
+  "nombre": "Fundación Universitaria de San Gil - Unisangil -",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Boyacá",
+   "Casanare",
+   "Santander"
+  ],
+  "buscar": "fundacion universitaria de san gil - unisangil -"
+ },
+ {
+  "id": "2728",
+  "nombre": "Fundación Universitaria del Area Andina",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia",
+   "Bogotá, D.C.",
+   "Cesar",
+   "Risaralda"
+  ],
+  "buscar": "fundacion universitaria del area andina"
+ },
+ {
+  "id": "2713",
+  "nombre": "Fundación Universitaria los Libertadores",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C.",
+   "Bolívar"
+  ],
+  "buscar": "fundacion universitaria los libertadores"
+ },
+ {
+  "id": "3713",
+  "nombre": "Fundación Universitaria para el Desarrollo Humano - Uninpahu",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion universitaria para el desarrollo humano - uninpahu"
+ },
+ {
+  "id": "9947",
+  "nombre": "Fundación Universitaria para la Investigación, el Desarrollo Tecnológico y la Innovación - Iditek",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Atlántico"
+  ],
+  "buscar": "fundacion universitaria para la investigacion, el desarrollo tecnologico y la innovacion - iditek"
+ },
+ {
+  "id": "2727",
+  "nombre": "Fundación Universitaria-ceipa-",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia",
+   "Atlántico"
+  ],
+  "buscar": "fundacion universitaria-ceipa-"
+ },
+ {
+  "id": "3725",
+  "nombre": "Fundación de Educación Superior Alberto Merani",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion de educacion superior alberto merani"
+ },
+ {
+  "id": "4719",
+  "nombre": "Fundación de Educación Superior Nueva América",
+  "sector": "privada",
+  "caracter": "Institución Técnica Profesional",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion de educacion superior nueva america"
+ },
+ {
+  "id": "4702",
+  "nombre": "Fundación de Educación Superior San José -fessanjose-",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion de educacion superior san jose -fessanjose-"
+ },
+ {
+  "id": "4705",
+  "nombre": "Fundación de Educación Superior Uparsistem",
+  "sector": "privada",
+  "caracter": "Institución Técnica Profesional",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion de educacion superior uparsistem"
+ },
+ {
+  "id": "2741",
+  "nombre": "Fundación de Estudios Superiores - Monseñor Abraham Escudero Montoya - Fundes",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Tolima"
+  ],
+  "buscar": "fundacion de estudios superiores - monsenor abraham escudero montoya - fundes"
+ },
+ {
+  "id": "3718",
+  "nombre": "Fundación de Estudios Superiores Comfanorte -f.e.s.c.-",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Norte de Santander"
+  ],
+  "buscar": "fundacion de estudios superiores comfanorte -f.e.s.c.-"
+ },
+ {
+  "id": "2739",
+  "nombre": "Fundación de Estudios Superiores Universitarios de Uraba Antonio Roldan Betancur",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "fundacion de estudios superiores universitarios de uraba antonio roldan betancur"
+ },
+ {
+  "id": "4704",
+  "nombre": "Fundación para la Educación Superior Real de Colombia",
+  "sector": "privada",
+  "caracter": "Institución Técnica Profesional",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "fundacion para la educacion superior real de colombia"
+ },
+ {
+  "id": "3724",
+  "nombre": "Institucion Internacional de Altos Estudios Leon Cooper",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "institucion internacional de altos estudios leon cooper"
+ },
+ {
+  "id": "3302",
+  "nombre": "Institucion Universitaria - Itm",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "institucion universitaria - itm"
+ },
+ {
+  "id": "3301",
+  "nombre": "Institucion Universitaria Antonio José Camacho",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "buscar": "institucion universitaria antonio jose camacho"
+ },
+ {
+  "id": "2211",
+  "nombre": "Institucion Universitaria Bellas Artes y Ciencias de Bolívar",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bolívar"
+  ],
+  "buscar": "institucion universitaria bellas artes y ciencias de bolivar"
+ },
+ {
+  "id": "2701",
+  "nombre": "Institucion Universitaria Colegios de Colombia - Unicoc",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C.",
+   "Cundinamarca",
+   "Valle del Cauca"
+  ],
+  "buscar": "institucion universitaria colegios de colombia - unicoc"
+ },
+ {
+  "id": "2740",
+  "nombre": "Institucion Universitaria Colombo Americana - Unica",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "institucion universitaria colombo americana - unica"
+ },
+ {
+  "id": "9930",
+  "nombre": "Institucion Universitaria Comando de Educación y Doctrina - Cedoc del Ejercito Nacional",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Cundinamarca"
+  ],
+  "buscar": "institucion universitaria comando de educacion y doctrina - cedoc del ejercito nacional"
+ },
+ {
+  "id": "9918",
+  "nombre": "Institucion Universitaria Conocimiento e Innovación para la Justicia - Cij",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "institucion universitaria conocimiento e innovacion para la justicia - cij"
+ },
+ {
+  "id": "9927",
+  "nombre": "Institucion Universitaria Digital de Antioquia -iu. Digital",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "institucion universitaria digital de antioquia -iu. digital"
+ },
+ {
+  "id": "4709",
+  "nombre": "Institucion Universitaria Eam",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Quindío"
+  ],
+  "buscar": "institucion universitaria eam"
+ },
+ {
+  "id": "3703",
+  "nombre": "Institucion Universitaria Escolme",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "institucion universitaria escolme"
+ },
+ {
+  "id": "3719",
+  "nombre": "Institucion Universitaria Latina - Unilatina",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "institucion universitaria latina - unilatina"
+ },
+ {
+  "id": "3812",
+  "nombre": "Institucion Universitaria Marco Fidel Suarez - Iumafis",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "institucion universitaria marco fidel suarez - iumafis"
+ },
+ {
+  "id": "4102",
+  "nombre": "Institucion Universitaria Nacional Tecnológica de la Guajira - Uniteg",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "La Guajira"
+  ],
+  "buscar": "institucion universitaria nacional tecnologica de la guajira - uniteg"
+ },
+ {
+  "id": "4112",
+  "nombre": "Institucion Universitaria Oriente de Caldas - Unioc",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Caldas"
+  ],
+  "buscar": "institucion universitaria oriente de caldas - unioc"
+ },
+ {
+  "id": "2749",
+  "nombre": "Institucion Universitaria Salazar y Herrera",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "institucion universitaria salazar y herrera"
+ },
+ {
+  "id": "9899",
+  "nombre": "Institucion Universitaria de Colombia - Universitaria de Colombia",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "institucion universitaria de colombia - universitaria de colombia"
+ },
+ {
+  "id": "2302",
+  "nombre": "Institucion Universitaria de Envigado",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "institucion universitaria de envigado"
+ },
+ {
+  "id": "9940",
+  "nombre": "Institucion Universitaria de Santa Marta",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Magdalena"
+  ],
+  "buscar": "institucion universitaria de santa marta"
+ },
+ {
+  "id": "4110",
+  "nombre": "Institucion Universitaria de el Espinal - Uniespinal",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Tolima"
+  ],
+  "buscar": "institucion universitaria de el espinal - uniespinal"
+ },
+ {
+  "id": "3103",
+  "nombre": "Institución Universitaria Mayor de Cartagena",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bolívar"
+  ],
+  "buscar": "institucion universitaria mayor de cartagena"
+ },
+ {
+  "id": "3107",
+  "nombre": "Institución Universitaria Pascual Bravo",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "institucion universitaria pascual bravo"
+ },
+ {
+  "id": "9946",
+  "nombre": "Institución Universitaria Pública de Bello - Iupbello",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "institucion universitaria publica de bello - iupbello"
+ },
+ {
+  "id": "4107",
+  "nombre": "Institución Universitaria Técnica para el Desarrollo Profesional - Utedé",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "buscar": "institucion universitaria tecnica para el desarrollo profesional - utede"
+ },
+ {
+  "id": "2747",
+  "nombre": "Institución Universitaria Visión de las Américas",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia",
+   "Risaralda"
+  ],
+  "buscar": "institucion universitaria vision de las americas"
+ },
+ {
+  "id": "3117",
+  "nombre": "Institución Universitaria de Barranquilla - Iub",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Atlántico"
+  ],
+  "buscar": "institucion universitaria de barranquilla - iub"
+ },
+ {
+  "id": "4101",
+  "nombre": "Institución Universitaria de Roldanillo - Unintep",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Quindío",
+   "Valle del Cauca"
+  ],
+  "buscar": "institucion universitaria de roldanillo - unintep"
+ },
+ {
+  "id": "4106",
+  "nombre": "Institución Universitaria de San Andrés Providencia y Santa Catalina - Iusai",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Archipiélago de San Andrés, Providencia y Santa Catalina"
+  ],
+  "buscar": "institucion universitaria de san andres providencia y santa catalina - iusai"
+ },
+ {
+  "id": "9944",
+  "nombre": "Institución Universitaria de las Culturas y las Artes Populares Ipc",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "buscar": "institucion universitaria de las culturas y las artes populares ipc"
+ },
+ {
+  "id": "4111",
+  "nombre": "Institución Universitaria del Caribe",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Magdalena"
+  ],
+  "buscar": "institucion universitaria del caribe"
+ },
+ {
+  "id": "3115",
+  "nombre": "Institución Universitaria del Putumayo",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Putumayo"
+  ],
+  "buscar": "institucion universitaria del putumayo"
+ },
+ {
+  "id": "2206",
+  "nombre": "Instituto Departamental de Bellas Artes",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "buscar": "instituto departamental de bellas artes"
+ },
+ {
+  "id": "3809",
+  "nombre": "Instituto Superior de Ciencias Sociales y Economico Familiares-icsef-",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Cundinamarca"
+  ],
+  "buscar": "instituto superior de ciencias sociales y economico familiares-icsef-"
+ },
+ {
+  "id": "3102",
+  "nombre": "Instituto Superior de Educación Rural-iser-",
+  "sector": "publica",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Bolívar",
+   "Cesar",
+   "Norte de Santander"
+  ],
+  "buscar": "instituto superior de educacion rural-iser-"
+ },
+ {
+  "id": "4109",
+  "nombre": "Instituto Técnico Nacional de Comercio Simon Rodriguez - Intenalco",
+  "sector": "publica",
+  "caracter": "Institución Técnica Profesional",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "buscar": "instituto tecnico nacional de comercio simon rodriguez - intenalco"
+ },
+ {
+  "id": "2207",
+  "nombre": "Instituto Universitario de la Paz",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bolívar",
+   "Santander"
+  ],
+  "buscar": "instituto universitario de la paz"
+ },
+ {
+  "id": "9128",
+  "nombre": "Lci - Fundación Tecnológica",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Atlántico",
+   "Bogotá, D.C."
+  ],
+  "buscar": "lci - fundacion tecnologica"
+ },
+ {
+  "id": "2209",
+  "nombre": "Politecnico Colombiano Jaime Isaza Cadavid",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "politecnico colombiano jaime isaza cadavid"
+ },
+ {
+  "id": "2725",
+  "nombre": "Politecnico Grancolombiano",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia",
+   "Bogotá, D.C."
+  ],
+  "buscar": "politecnico grancolombiano"
+ },
+ {
+  "id": "3822",
+  "nombre": "Politecnico Icaft",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "politecnico icaft"
+ },
+ {
+  "id": "4727",
+  "nombre": "Politecnico Internacional Institucion de Educación Superior",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Atlántico",
+   "Bogotá, D.C."
+  ],
+  "buscar": "politecnico internacional institucion de educacion superior"
+ },
+ {
+  "id": "3827",
+  "nombre": "Politecnico Santafe de Bogotá",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Bogotá, D.C.",
+   "Meta"
+  ],
+  "buscar": "politecnico santafe de bogota"
+ },
+ {
+  "id": "1701",
+  "nombre": "Pontificia Universidad Javeriana",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C.",
+   "Valle del Cauca"
+  ],
+  "buscar": "pontificia universidad javeriana"
+ },
+ {
+  "id": "9110",
+  "nombre": "Servicio Nacional de Aprendizaje-sena-",
+  "sector": "publica",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Amazonas",
+   "Antioquia",
+   "Arauca",
+   "Archipiélago de San Andrés, Providencia y Santa Catalina",
+   "Atlántico",
+   "Bogotá, D.C.",
+   "Bolívar",
+   "Boyacá",
+   "Caldas",
+   "Caquetá",
+   "Casanare",
+   "Cauca",
+   "Cesar",
+   "Chocó",
+   "Cundinamarca",
+   "Córdoba",
+   "Guainía",
+   "Guaviare",
+   "Huila",
+   "La Guajira",
+   "Magdalena",
+   "Meta",
+   "Nariño",
+   "Norte de Santander",
+   "Putumayo",
+   "Quindío",
+   "Risaralda",
+   "Santander",
+   "Sucre",
+   "Tolima",
+   "Valle del Cauca",
+   "Vaupés",
+   "Vichada"
+  ],
+  "buscar": "servicio nacional de aprendizaje-sena-"
+ },
+ {
+  "id": "9903",
+  "nombre": "Tec Alianza",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "tec alianza"
+ },
+ {
+  "id": "3716",
+  "nombre": "Tecnológica Fitec",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Santander"
+  ],
+  "buscar": "tecnologica fitec"
+ },
+ {
+  "id": "9124",
+  "nombre": "Tecnológico Coredi",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "tecnologico coredi"
+ },
+ {
+  "id": "3204",
+  "nombre": "Tecnológico de Antioquia",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Antioquia",
+   "Nariño",
+   "Putumayo"
+  ],
+  "buscar": "tecnologico de antioquia"
+ },
+ {
+  "id": "3303",
+  "nombre": "Tecnológico de Artes Débora Arango Institución Redefinida",
+  "sector": "publica",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "tecnologico de artes debora arango institucion redefinida"
+ },
+ {
+  "id": "2301",
+  "nombre": "Unidad Central del Valle del Cauca",
+  "sector": "publica",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "buscar": "unidad central del valle del cauca"
+ },
+ {
+  "id": "9935",
+  "nombre": "Unidad Tecnológica del Magdalena Medio - Utem -",
+  "sector": "privada",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Santander"
+  ],
+  "buscar": "unidad tecnologica del magdalena medio - utem -"
+ },
+ {
+  "id": "3201",
+  "nombre": "Unidades Tecnologicas de Santander",
+  "sector": "publica",
+  "caracter": "Institución Tecnológica",
+  "deps": [
+   "Santander"
+  ],
+  "buscar": "unidades tecnologicas de santander"
+ },
+ {
+  "id": "1826",
+  "nombre": "Universidad Antonio Nariño",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Antioquia",
+   "Atlántico",
+   "Bogotá, D.C.",
+   "Bolívar",
+   "Boyacá",
+   "Cauca",
+   "Huila",
+   "Magdalena",
+   "Meta",
+   "Norte de Santander",
+   "Quindío",
+   "Santander",
+   "Tolima",
+   "Valle del Cauca"
+  ],
+  "buscar": "universidad antonio narino"
+ },
+ {
+  "id": "9929",
+  "nombre": "Universidad Autónoma Indígena Intercultural - Uaiin",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Cauca"
+  ],
+  "buscar": "universidad autonoma indigena intercultural - uaiin"
+ },
+ {
+  "id": "1814",
+  "nombre": "Universidad Autónoma Latinoamericana-unaula-",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "universidad autonoma latinoamericana-unaula-"
+ },
+ {
+  "id": "1823",
+  "nombre": "Universidad Autónoma de Bucaramanga-unab-",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Antioquia",
+   "Casanare",
+   "Santander"
+  ],
+  "buscar": "universidad autonoma de bucaramanga-unab-"
+ },
+ {
+  "id": "1825",
+  "nombre": "Universidad Autónoma de Manizales",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Caldas"
+  ],
+  "buscar": "universidad autonoma de manizales"
+ },
+ {
+  "id": "1830",
+  "nombre": "Universidad Autónoma de Occidente",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "buscar": "universidad autonoma de occidente"
+ },
+ {
+  "id": "1804",
+  "nombre": "Universidad Autónoma del Caribe- Uniautonoma",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Atlántico"
+  ],
+  "buscar": "universidad autonoma del caribe- uniautonoma"
+ },
+ {
+  "id": "2719",
+  "nombre": "Universidad Católica Luis Amigó",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Antioquia",
+   "Bogotá, D.C.",
+   "Caldas",
+   "Córdoba"
+  ],
+  "buscar": "universidad catolica luis amigo"
+ },
+ {
+  "id": "1719",
+  "nombre": "Universidad Católica de Colombia",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "universidad catolica de colombia"
+ },
+ {
+  "id": "1827",
+  "nombre": "Universidad Católica de Manizales",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Antioquia",
+   "Caldas"
+  ],
+  "buscar": "universidad catolica de manizales"
+ },
+ {
+  "id": "1726",
+  "nombre": "Universidad Católica de Oriente -uco",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "universidad catolica de oriente -uco"
+ },
+ {
+  "id": "2711",
+  "nombre": "Universidad Católica de Pereira",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Risaralda"
+  ],
+  "buscar": "universidad catolica de pereira"
+ },
+ {
+  "id": "1709",
+  "nombre": "Universidad Central",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "universidad central"
+ },
+ {
+  "id": "2708",
+  "nombre": "Universidad Ces",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Antioquia",
+   "Bogotá, D.C."
+  ],
+  "buscar": "universidad ces"
+ },
+ {
+  "id": "2744",
+  "nombre": "Universidad Cesmag - Unicesmag",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Nariño"
+  ],
+  "buscar": "universidad cesmag - unicesmag"
+ },
+ {
+  "id": "1816",
+  "nombre": "Universidad Cooperativa de Colombia",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Antioquia",
+   "Arauca",
+   "Bogotá, D.C.",
+   "Cauca",
+   "Cundinamarca",
+   "Córdoba",
+   "Huila",
+   "Magdalena",
+   "Meta",
+   "Nariño",
+   "Risaralda",
+   "Santander",
+   "Tolima",
+   "Valle del Cauca"
+  ],
+  "buscar": "universidad cooperativa de colombia"
+ },
+ {
+  "id": "1301",
+  "nombre": "Universidad Distrital-francisco José de Caldas",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "universidad distrital-francisco jose de caldas"
+ },
+ {
+  "id": "1712",
+  "nombre": "Universidad Eafit-",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "universidad eafit-"
+ },
+ {
+  "id": "2812",
+  "nombre": "Universidad Ean",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "universidad ean"
+ },
+ {
+  "id": "5802",
+  "nombre": "Universidad Ecci",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Antioquia",
+   "Bogotá, D.C.",
+   "Valle del Cauca"
+  ],
+  "buscar": "universidad ecci"
+ },
+ {
+  "id": "2813",
+  "nombre": "Universidad Eia",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "universidad eia"
+ },
+ {
+  "id": "2811",
+  "nombre": "Universidad Escuela Colombiana de Ingeniería Julio Garavito",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "universidad escuela colombiana de ingenieria julio garavito"
+ },
+ {
+  "id": "1706",
+  "nombre": "Universidad Externado de Colombia",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "universidad externado de colombia"
+ },
+ {
+  "id": "1209",
+  "nombre": "Universidad Francisco de Paula Santander",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Norte de Santander"
+  ],
+  "buscar": "universidad francisco de paula santander"
+ },
+ {
+  "id": "2702",
+  "nombre": "Universidad Fucs",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "universidad fucs"
+ },
+ {
+  "id": "1828",
+  "nombre": "Universidad Icesi",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "buscar": "universidad icesi"
+ },
+ {
+  "id": "1703",
+  "nombre": "Universidad Incca de Colombia",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "universidad incca de colombia"
+ },
+ {
+  "id": "1204",
+  "nombre": "Universidad Industrial de Santander",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Arauca",
+   "Cesar",
+   "Santander"
+  ],
+  "buscar": "universidad industrial de santander"
+ },
+ {
+  "id": "2743",
+  "nombre": "Universidad Internacional del Trópico Americano - Unitrópico",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Casanare"
+  ],
+  "buscar": "universidad internacional del tropico americano - unitropico"
+ },
+ {
+  "id": "1806",
+  "nombre": "Universidad Libre",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Atlántico",
+   "Bogotá, D.C.",
+   "Bolívar",
+   "Norte de Santander",
+   "Risaralda",
+   "Santander",
+   "Valle del Cauca"
+  ],
+  "buscar": "universidad libre"
+ },
+ {
+  "id": "1735",
+  "nombre": "Universidad Manuela Beltran-umb-",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C.",
+   "Cundinamarca",
+   "Santander"
+  ],
+  "buscar": "universidad manuela beltran-umb-"
+ },
+ {
+  "id": "1720",
+  "nombre": "Universidad Mariana",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Cesar",
+   "Nariño"
+  ],
+  "buscar": "universidad mariana"
+ },
+ {
+  "id": "1824",
+  "nombre": "Universidad Metropolitana",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Atlántico"
+  ],
+  "buscar": "universidad metropolitana"
+ },
+ {
+  "id": "1117",
+  "nombre": "Universidad Militar-nueva Granada",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C.",
+   "Cundinamarca"
+  ],
+  "buscar": "universidad militar-nueva granada"
+ },
+ {
+  "id": "2102",
+  "nombre": "Universidad Nacional Abierta y a Distancia Unad",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "universidad nacional abierta y a distancia unad"
+ },
+ {
+  "id": "1101",
+  "nombre": "Universidad Nacional de Colombia",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Amazonas",
+   "Antioquia",
+   "Archipiélago de San Andrés, Providencia y Santa Catalina",
+   "Bogotá, D.C.",
+   "Caldas",
+   "Cesar",
+   "Valle del Cauca"
+  ],
+  "buscar": "universidad nacional de colombia"
+ },
+ {
+  "id": "1105",
+  "nombre": "Universidad Pedagógica Nacional",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C.",
+   "Cundinamarca"
+  ],
+  "buscar": "universidad pedagogica nacional"
+ },
+ {
+  "id": "1106",
+  "nombre": "Universidad Pedagógica y Tecnológica de Colombia - Uptc",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C.",
+   "Boyacá",
+   "Casanare"
+  ],
+  "buscar": "universidad pedagogica y tecnologica de colombia - uptc"
+ },
+ {
+  "id": "1710",
+  "nombre": "Universidad Pontificia Bolivariana",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Antioquia",
+   "Córdoba",
+   "Santander",
+   "Valle del Cauca"
+  ],
+  "buscar": "universidad pontificia bolivariana"
+ },
+ {
+  "id": "1120",
+  "nombre": "Universidad Popular del Cesar",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Cesar"
+  ],
+  "buscar": "universidad popular del cesar"
+ },
+ {
+  "id": "1805",
+  "nombre": "Universidad Santiago de Cali",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Valle del Cauca"
+  ],
+  "buscar": "universidad santiago de cali"
+ },
+ {
+  "id": "1704",
+  "nombre": "Universidad Santo Tomas",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Antioquia",
+   "Bogotá, D.C.",
+   "Boyacá",
+   "Meta",
+   "Santander"
+  ],
+  "buscar": "universidad santo tomas"
+ },
+ {
+  "id": "1728",
+  "nombre": "Universidad Sergio Arboleda",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Atlántico",
+   "Bogotá, D.C.",
+   "Magdalena"
+  ],
+  "buscar": "universidad sergio arboleda"
+ },
+ {
+  "id": "2805",
+  "nombre": "Universidad Simón Bolívar",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Atlántico",
+   "Norte de Santander"
+  ],
+  "buscar": "universidad simon bolivar"
+ },
+ {
+  "id": "1114",
+  "nombre": "Universidad Surcolombiana",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Huila"
+  ],
+  "buscar": "universidad surcolombiana"
+ },
+ {
+  "id": "1832",
+  "nombre": "Universidad Tecnológica de Bolívar",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Bolívar"
+  ],
+  "buscar": "universidad tecnologica de bolivar"
+ },
+ {
+  "id": "1111",
+  "nombre": "Universidad Tecnológica de Pereira - Utp",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Risaralda"
+  ],
+  "buscar": "universidad tecnologica de pereira - utp"
+ },
+ {
+  "id": "1118",
+  "nombre": "Universidad Tecnológica del Chocó-diego Luis Córdoba",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Chocó"
+  ],
+  "buscar": "universidad tecnologica del choco-diego luis cordoba"
+ },
+ {
+  "id": "1201",
+  "nombre": "Universidad de Antioquia",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Antioquia",
+   "Córdoba",
+   "Quindío",
+   "Vaupés"
+  ],
+  "buscar": "universidad de antioquia"
+ },
+ {
+  "id": "1734",
+  "nombre": "Universidad de Boyacá Uniboyaca",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Boyacá"
+  ],
+  "buscar": "universidad de boyaca uniboyaca"
+ },
+ {
+  "id": "1112",
+  "nombre": "Universidad de Caldas",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Caldas",
+   "Vaupés"
+  ],
+  "buscar": "universidad de caldas"
+ },
+ {
+  "id": "1205",
+  "nombre": "Universidad de Cartagena",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Bolívar"
+  ],
+  "buscar": "universidad de cartagena"
+ },
+ {
+  "id": "1835",
+  "nombre": "Universidad de Ciencias Aplicadas y Ambientales - Udca",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C.",
+   "Bolívar"
+  ],
+  "buscar": "universidad de ciencias aplicadas y ambientales - udca"
+ },
+ {
+  "id": "1214",
+  "nombre": "Universidad de Cundinamarca",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Cundinamarca"
+  ],
+  "buscar": "universidad de cundinamarca"
+ },
+ {
+  "id": "1113",
+  "nombre": "Universidad de Córdoba",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Córdoba"
+  ],
+  "buscar": "universidad de cordoba"
+ },
+ {
+  "id": "1831",
+  "nombre": "Universidad de Ibagué",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Tolima"
+  ],
+  "buscar": "universidad de ibague"
+ },
+ {
+  "id": "2847",
+  "nombre": "Universidad de Investigación y Desarrollo - Udi",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Santander"
+  ],
+  "buscar": "universidad de investigacion y desarrollo - udi"
+ },
+ {
+  "id": "1722",
+  "nombre": "Universidad de Manizales",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Caldas"
+  ],
+  "buscar": "universidad de manizales"
+ },
+ {
+  "id": "1812",
+  "nombre": "Universidad de Medellín",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Antioquia"
+  ],
+  "buscar": "universidad de medellin"
+ },
+ {
+  "id": "1206",
+  "nombre": "Universidad de Nariño",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Nariño"
+  ],
+  "buscar": "universidad de narino"
+ },
+ {
+  "id": "1212",
+  "nombre": "Universidad de Pamplona",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Norte de Santander"
+  ],
+  "buscar": "universidad de pamplona"
+ },
+ {
+  "id": "1718",
+  "nombre": "Universidad de San Buenaventura",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Antioquia",
+   "Bogotá, D.C.",
+   "Bolívar",
+   "Quindío",
+   "Tolima",
+   "Valle del Cauca"
+  ],
+  "buscar": "universidad de san buenaventura"
+ },
+ {
+  "id": "2832",
+  "nombre": "Universidad de Santander - Udes",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C.",
+   "Cesar",
+   "Norte de Santander",
+   "Santander"
+  ],
+  "buscar": "universidad de santander - udes"
+ },
+ {
+  "id": "1217",
+  "nombre": "Universidad de Sucre",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Sucre"
+  ],
+  "buscar": "universidad de sucre"
+ },
+ {
+  "id": "1115",
+  "nombre": "Universidad de la Amazonia",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Amazonas",
+   "Caquetá",
+   "Guaviare",
+   "Putumayo"
+  ],
+  "buscar": "universidad de la amazonia"
+ },
+ {
+  "id": "1218",
+  "nombre": "Universidad de la Guajira",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "La Guajira"
+  ],
+  "buscar": "universidad de la guajira"
+ },
+ {
+  "id": "1711",
+  "nombre": "Universidad de la Sabana",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Cundinamarca"
+  ],
+  "buscar": "universidad de la sabana"
+ },
+ {
+  "id": "1803",
+  "nombre": "Universidad de la Salle",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C.",
+   "Casanare",
+   "Cundinamarca"
+  ],
+  "buscar": "universidad de la salle"
+ },
+ {
+  "id": "1813",
+  "nombre": "Universidad de los Andes",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "universidad de los andes"
+ },
+ {
+  "id": "1119",
+  "nombre": "Universidad de los Llanos",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Meta"
+  ],
+  "buscar": "universidad de los llanos"
+ },
+ {
+  "id": "1202",
+  "nombre": "Universidad del Atlántico",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Antioquia",
+   "Archipiélago de San Andrés, Providencia y Santa Catalina",
+   "Atlántico",
+   "Cesar"
+  ],
+  "buscar": "universidad del atlantico"
+ },
+ {
+  "id": "1110",
+  "nombre": "Universidad del Cauca",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Cauca"
+  ],
+  "buscar": "universidad del cauca"
+ },
+ {
+  "id": "1213",
+  "nombre": "Universidad del Magdalena - Unimagdalena",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Cauca",
+   "Magdalena"
+  ],
+  "buscar": "universidad del magdalena - unimagdalena"
+ },
+ {
+  "id": "1713",
+  "nombre": "Universidad del Norte",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Atlántico"
+  ],
+  "buscar": "universidad del norte"
+ },
+ {
+  "id": "1122",
+  "nombre": "Universidad del Pacifico",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Chocó",
+   "Nariño",
+   "Valle del Cauca"
+  ],
+  "buscar": "universidad del pacifico"
+ },
+ {
+  "id": "1208",
+  "nombre": "Universidad del Quindío",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Quindío",
+   "Valle del Cauca"
+  ],
+  "buscar": "universidad del quindio"
+ },
+ {
+  "id": "1207",
+  "nombre": "Universidad del Tolima",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Huila",
+   "Quindío",
+   "Tolima"
+  ],
+  "buscar": "universidad del tolima"
+ },
+ {
+  "id": "1203",
+  "nombre": "Universidad del Valle",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Cauca",
+   "Valle del Cauca"
+  ],
+  "buscar": "universidad del valle"
+ },
+ {
+  "id": "1729",
+  "nombre": "Universidad el Bosque",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "universidad el bosque"
+ },
+ {
+  "id": "1801",
+  "nombre": "Universidad la Gran Colombia",
+  "sector": "privada",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C.",
+   "Quindío"
+  ],
+  "buscar": "universidad la gran colombia"
+ },
+ {
+  "id": "1121",
+  "nombre": "Universidad-colegio Mayor de Cundinamarca",
+  "sector": "publica",
+  "caracter": "Universidad",
+  "deps": [
+   "Bogotá, D.C.",
+   "Cundinamarca"
+  ],
+  "buscar": "universidad-colegio mayor de cundinamarca"
+ },
+ {
+  "id": "2834",
+  "nombre": "Universitaria Agustiniana- Uniagustiniana",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "universitaria agustiniana- uniagustiniana"
+ },
+ {
+  "id": "9915",
+  "nombre": "Universitaria Virtual Internacional",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Bogotá, D.C."
+  ],
+  "buscar": "universitaria virtual internacional"
+ },
+ {
+  "id": "9938",
+  "nombre": "Universitaria del Chicamocha",
+  "sector": "privada",
+  "caracter": "Institución Universitaria/Escuela Tecnológica",
+  "deps": [
+   "Santander"
+  ],
+  "buscar": "universitaria del chicamocha"
+ }
+]

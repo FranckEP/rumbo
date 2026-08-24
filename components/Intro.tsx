@@ -6,13 +6,14 @@ import { BECAS } from "@/lib/becas";
 import { BECAS_UNI } from "@/lib/becasUni";
 import { CAREERS } from "@/lib/careers";
 import { DIMS, DIM_KEYS, TOTAL, type DimKey } from "@/lib/riasec";
-import { DEPTS, SNIES_URL, UNIS } from "@/lib/universities";
+import { DEPARTAMENTOS, INSTITUCIONES } from "@/lib/instituciones";
+import { SNIES_URL } from "@/lib/universities";
 
 /* Los números salen de los datos, no a mano: si mañana agregas una carrera o
    una universidad, la portada se actualiza sola. */
 const N_CARRERAS = CAREERS.length;
-const N_UNIS = Object.keys(UNIS).length;
-const N_DEPTS = DEPTS.length;
+const N_UNIS = Object.keys(INSTITUCIONES).length;
+const N_DEPTS = DEPARTAMENTOS.length;
 const N_BECAS = BECAS.length + Object.keys(BECAS_UNI).length;
 
 const PASOS = [

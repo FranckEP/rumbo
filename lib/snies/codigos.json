@@ -1,0 +1,21 @@
+{
+  "_nota": "Código SNIES (institución padre) de cada universidad que ya teníamos verificada. Se resolvió a mano contra el archivo del SNIES porque emparejar por nombre asignaba enlaces a instituciones equivocadas: 'Tecnológico de Antioquia' y 'Universidad de Antioquia' son entidades distintas.",
+  "unal": "1101", "andes": "1813", "javeriana": "1701", "udea": "1201",
+  "univalle": "1203", "rosario": "1714", "externado": "1706", "eafit": "1712",
+  "uninorte": "1713", "uis": "1204", "upb": "1710", "sabana": "1711",
+  "icesi": "1828", "distrital": "1301", "upn": "1105", "utp": "1111",
+  "sena": "9110", "tadeo": "1707", "bosque": "1729", "ces": "2708",
+  "lasalle": "1803", "escuelaing": "2811", "konrad": "2712", "magdalena": "1213",
+  "poli": "2725", "uao": "1830", "cesa": "2704", "unilibre": "1806",
+  "umng": "1117", "uptc": "1106", "colmayor": "2110", "ean": "2812",
+  "udca": "1835", "uniatlantico": "1202", "unisimon": "2805",
+  "unicartagena": "1205", "unab": "1823", "unicordoba": "1113",
+  "unicauca": "1110", "uac": "1804", "cuc": "2810", "unimetro": "1824",
+  "iub": "3117", "utb": "1832", "curn": "2825", "comfenalco": "3705",
+  "unisinu": "1833", "unicesar": "1120", "udes": "2832", "areandina": "2728",
+  "unisucre": "1217", "cecar": "2823", "uniguajira": "1218", "ucc": "1816",
+  "sergio": "1728", "unad": "2102", "uniminuto": "2829", "esap": "2104",
+  "utolima": "1207", "americana": "9119", "cues": "2836", "pca": "3821",
+  "litoral": "4817", "reformada": "2842", "sanmartin": "2709", "cul": "4818",
+  "unicorsalud": "4837"
+}

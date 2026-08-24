@@ -1,8 +1,9 @@
 import { BECAS } from "@/lib/becas";
 import { BECAS_UNI } from "@/lib/becasUni";
-import { LEVEL_LABELS, RUTAS, unisPorNivel, type Career, type CareerLevel } from "@/lib/careers";
+import { LEVEL_LABELS, RUTAS, type Career, type CareerLevel } from "@/lib/careers";
+import { institucionesDe, nivelesDe } from "@/lib/oferta";
 import { DIMS, DIM_KEYS, PROFILE_TITLES, type DimKey, type Scores } from "@/lib/riasec";
-import { SECTOR_LABEL, SNIES_URL, UNIS, sectorDe } from "@/lib/universities";
+import { SECTOR_LABEL, SNIES_URL } from "@/lib/universities";
 
 const ORDER: CareerLevel[] = ["profesional", "tecnologica", "tecnica"];
 const N_CARRERAS = 10;
@@ -29,11 +30,9 @@ export default function PrintReport({ code, n, ranked, deptFilter }: Props) {
 
   /** universidades de la carrera principal, filtradas por departamento */
   const unisPrincipal = principal
-    ? ORDER.flatMap((l) => (unisPorNivel(principal)[l] ?? []).map((id) => ({ id, l })))
-        .filter(({ id }) => {
-          const u = UNIS[id];
-          return u && (deptFilter === "all" || u[2].includes("*") || u[2].includes(deptFilter));
-        })
+    ? ORDER.filter((l) => nivelesDe(principal.n).includes(l))
+        .flatMap((l) => institucionesDe(principal.n, l, deptFilter))
+        .filter((u, i, arr) => arr.findIndex((x) => x.id === u.id) === i)
         .slice(0, N_UNIS)
     : [];
 
@@ -133,12 +132,12 @@ export default function PrintReport({ code, n, ranked, deptFilter }: Props) {
                 </tr>
               </thead>
               <tbody>
-                {unisPrincipal.map(({ id }) => (
-                  <tr key={id}>
-                    <td className="pr-career">{UNIS[id][0]}</td>
-                    <td>{SECTOR_LABEL[sectorDe(id)]}</td>
-                    <td>{BECAS_UNI[id]?.p.length ?? 0}</td>
-                    <td className="pr-url">{UNIS[id][1].replace("https://", "")}</td>
+                {unisPrincipal.map((u) => (
+                  <tr key={u.id}>
+                    <td className="pr-career">{u.nombre}</td>
+                    <td>{SECTOR_LABEL[u.sector]}</td>
+                    <td>{u.clave ? BECAS_UNI[u.clave]?.p.length ?? 0 : 0}</td>
+                    <td className="pr-url">{u.url.replace("https://", "")}</td>
                   </tr>
                 ))}
               </tbody>
@@ -159,15 +158,15 @@ export default function PrintReport({ code, n, ranked, deptFilter }: Props) {
         ))}
       </div>
 
-      {principal && unisPrincipal.some(({ id }) => BECAS_UNI[id]) && (
+      {principal && unisPrincipal.some((u) => u.clave && BECAS_UNI[u.clave]) && (
         <>
           <h3 className="pr-h3">Becas de las universidades de tu carrera principal</h3>
           <div className="pr-becas-uni">
             {unisPrincipal
-              .filter(({ id }) => BECAS_UNI[id])
-              .map(({ id }) => (
-                <div key={id}>
-                  <b>{UNIS[id][0]}:</b> {BECAS_UNI[id].p.join(" · ")}
+              .filter((u) => u.clave && BECAS_UNI[u.clave])
+              .map((u) => (
+                <div key={u.id}>
+                  <b>{u.nombre}:</b> {BECAS_UNI[u.clave!].p.join(" · ")}
                 </div>
               ))}
           </div>

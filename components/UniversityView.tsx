@@ -1,7 +1,10 @@
 import { useEffect, useMemo } from "react";
-import { BECAS_UNI } from "@/lib/becasUni";
-import { LEVEL_LABELS, RUTAS, unisPorNivel, type Career, type CareerLevel } from "@/lib/careers";
-import { SECTOR_LABEL, SNIES_URL, UNIS, sectorDe } from "@/lib/universities";
+import { BECAS_UNI, comprobadaEl } from "@/lib/becasUni";
+import { becasWebDe, fechaLegible } from "@/lib/becasWeb";
+import { LEVEL_LABELS, RUTAS, type Career, type CareerLevel } from "@/lib/careers";
+import { institucion } from "@/lib/instituciones";
+import { costoDe, duracionDe, institucionesDe, nivelesDe, pesos } from "@/lib/oferta";
+import { SECTOR_LABEL, SNIES_URL } from "@/lib/universities";
 import { LinkOutIcon, PinIcon } from "./icons";
 
 const ORDER: CareerLevel[] = ["profesional", "tecnologica", "tecnica"];
@@ -27,25 +30,38 @@ export default function UniversityView({
   verTodasAfines,
   onVerTodasAfines,
 }: Props) {
-  const u = UNIS[uniId];
-  const becas = BECAS_UNI[uniId];
-  const sector = sectorDe(uniId);
+  const u = institucion(uniId);
+  const becas = u?.clave ? BECAS_UNI[u.clave] : undefined;
+  /* Si no hay datos curados, al menos se ofrece su página de becas. */
+  const web = !becas && u ? becasWebDe(u.id) : undefined;
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
   }, [uniId]);
 
-  /** el nivel en el que esta universidad ofrece la carrera */
-  const nivel = useMemo(() => {
-    const por = unisPorNivel(career);
-    return ORDER.find((l) => (por[l] ?? []).includes(uniId));
-  }, [career, uniId]);
+  /** el nivel en el que esta universidad ofrece la carrera, según el SNIES */
+  const nivel = useMemo(
+    () =>
+      ORDER.filter((l) => nivelesDe(career.n).includes(l)).find((l) =>
+        institucionesDe(career.n, l, "all").some((i) => i.id === uniId)
+      ),
+    [career.n, uniId]
+  );
 
   const ruta = nivel ? (RUTAS[career.n] ?? []).find((r) => r.l === nivel) : undefined;
+  const dur = nivel ? duracionDe(career.n, nivel) : undefined;
+  const costo = nivel ? costoDe(career.n, nivel) : undefined;
 
-  /** otras carreras del ranking que esta misma universidad ofrece */
+  /** otras carreras del ranking que esta misma universidad ofrece de verdad */
   const afines = useMemo(
-    () => ranked.filter((c) => c.n !== career.n && c.u.includes(uniId)),
+    () =>
+      ranked.filter(
+        (c) =>
+          c.n !== career.n &&
+          nivelesDe(c.n).some((l) =>
+            institucionesDe(c.n, l, "all").some((i) => i.id === uniId)
+          )
+      ),
     [ranked, career.n, uniId]
   );
   const afinesVisibles = verTodasAfines ? afines : afines.slice(0, AFINES_VISIBLES);
@@ -63,13 +79,13 @@ export default function UniversityView({
 
       <header className="uni-hero panel">
         <div>
-          <h2>{u[0]}</h2>
+          <h2>{u.nombre}</h2>
           <div className="uni-hero-chips">
             <span className="uni-chip">
-              <PinIcon /> {u[2].includes("*") ? "Todo el país" : u[2].join(" · ")}
+              <PinIcon /> {u.deps.includes("*") ? "Todo el país" : u.deps.join(" · ")}
             </span>
-            <span className={`uni-chip${sector === "publica" ? " uni-chip-on" : ""}`}>
-              {SECTOR_LABEL[sector]}
+            <span className={`uni-chip${u.sector === "publica" ? " uni-chip-on" : ""}`}>
+              {SECTOR_LABEL[u.sector]}
             </span>
             {becas && (
               <span className="uni-chip uni-chip-on">
@@ -78,7 +94,7 @@ export default function UniversityView({
             )}
           </div>
         </div>
-        <a className="btn" href={u[1]} target="_blank" rel="noopener">
+        <a className="btn" href={u.url} target="_blank" rel="noopener">
           Sitio oficial <LinkOutIcon />
         </a>
       </header>
@@ -102,19 +118,29 @@ export default function UniversityView({
                 </dt>
                 <dd>{ruta?.n ?? career.n}</dd>
               </div>
-              {ruta?.t && (
+              {(dur || ruta?.t) && (
                 <div>
                   <dt className="ruta-lvl uni-fact-neutral">Duración</dt>
                   <dd>
-                    {ruta.t} <em>(referencia general)</em>
+                    {dur ? `${dur} semestres` : ruta?.t}
+                    {dur ? <em> (mediana del SNIES)</em> : <em> (referencia general)</em>}
+                  </dd>
+                </div>
+              )}
+              {costo && (
+                <div>
+                  <dt className="ruta-lvl uni-fact-neutral">Matrícula</dt>
+                  <dd>
+                    ~{pesos(costo)} por semestre <em>(mediana del SNIES)</em>
                   </dd>
                 </div>
               )}
             </dl>
 
             <p className="uni-note">
-              La duración y el plan de estudios exactos los define cada universidad. Confírmalos en
-              el SNIES antes de decidir.
+              La duración y la matrícula son las medianas que reporta el SNIES para esta carrera y
+              nivel en el país, no el dato exacto de esta universidad. Confírmalo con ella antes de
+              decidir.
             </p>
           </div>
 
@@ -160,6 +186,12 @@ export default function UniversityView({
                 <span className="eyebrow">A quién se las dan</span>
                 <p>{becas.c}</p>
               </div>
+              {becas.f && (
+                <p className="captura">
+                  Comprobado en su sitio oficial el {comprobadaEl(becas.f)}.{" "}
+                  <b>Las convocatorias cambian cada semestre: confírmalo antes de contar con una.</b>
+                </p>
+              )}
             </>
           ) : (
             <p className="no-unis">
@@ -168,9 +200,39 @@ export default function UniversityView({
             </p>
           )}
 
+          {web && (
+            <>
+              {web.nombres.length > 0 ? (
+                <>
+                  <p className="uni-sub-note">
+                    Estas aparecen en su página de becas. Los requisitos y la vigencia hay que
+                    confirmarlos allí.
+                  </p>
+                  <div className="uni-becas">
+                    {web.nombres.map((b) => (
+                      <div className="uni-beca-item" key={b}>
+                        {b}
+                      </div>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <p className="uni-sub-note">
+                  Esta institución tiene su propia página de becas. No listamos cuáles son porque
+                  las convocatorias cambian cada semestre: preferimos mandarte a la fuente antes
+                  que darte un dato viejo.
+                </p>
+              )}
+              <p className="captura">
+                Página comprobada el {fechaLegible()}.{" "}
+                <b>Lo que diga su sitio es lo que manda.</b>
+              </p>
+            </>
+          )}
+
           <div className="uni-actions">
-            <a className="btn" href={u[1]} target="_blank" rel="noopener">
-              Ver requisitos de las becas <LinkOutIcon />
+            <a className="btn" href={web?.url ?? u.url} target="_blank" rel="noopener">
+              {web ? "Ver su página de becas" : "Ver requisitos de las becas"} <LinkOutIcon />
             </a>
             <a className="btn-ghost" href={SNIES_URL} target="_blank" rel="noopener">
               Buscar el programa en el SNIES

@@ -1,7 +1,8 @@
 import { useMemo, useState } from "react";
 import { BECAS } from "@/lib/becas";
 import { BECAS_UNI } from "@/lib/becasUni";
-import { SECTOR_LABEL, UNIS, sectorDe } from "@/lib/universities";
+import { INSTITUCIONES } from "@/lib/instituciones";
+import { SECTOR_LABEL } from "@/lib/universities";
 import { LinkOutIcon } from "./icons";
 import UniBecas from "./UniBecas";
 
@@ -36,15 +37,18 @@ export default function Becas({ deptFilter, vistas }: Props) {
     () =>
       Object.entries(BECAS_UNI)
         .filter(([, b]) => b.c.includes("100%") || b.p.some((p) => p.includes("100%")))
-        .filter(([id]) => {
-          const u = UNIS[id];
-          return u && (!hasDept || u[2].includes("*") || u[2].includes(deptFilter));
+        .filter(([clave]) => {
+          const u = Object.values(INSTITUCIONES).find((i) => i.clave === clave);
+          return u && (!hasDept || u.deps.includes("*") || u.deps.includes(deptFilter));
         })
         .slice(0, 4),
     [hasDept, deptFilter]
   );
 
-  const misUnis = vistas.map((id) => ({ id, u: UNIS[id], b: BECAS_UNI[id] })).filter((x) => x.u);
+  const misUnis = vistas
+    .map((id) => INSTITUCIONES[id])
+    .filter(Boolean)
+    .map((u) => ({ id: u.id, u, b: u.clave ? BECAS_UNI[u.clave] : undefined }));
 
   return (
     <div className="tab-panel">
@@ -78,8 +82,10 @@ export default function Becas({ deptFilter, vistas }: Props) {
                   {hasDept ? ` (en ${deptFilter})` : ""}.
                 </em>
                 <span className="ruta-unis">
-                  {cienPorCiento.map(([id]) => (
-                    <i key={id}>{UNIS[id][0]}</i>
+                  {cienPorCiento.map(([clave]) => (
+                    <i key={clave}>
+                      {Object.values(INSTITUCIONES).find((i) => i.clave === clave)?.nombre ?? clave}
+                    </i>
                   ))}
                 </span>
               </div>
@@ -122,12 +128,12 @@ export default function Becas({ deptFilter, vistas }: Props) {
           </div>
           <div className="beca-rows">
             {misUnis.map(({ id, u, b }) => (
-              <a key={id} className="beca-row" href={u[1]} target="_blank" rel="noopener">
-                <span className={`uni-row-sector${sectorDe(id) === "publica" ? " on" : ""}`}>
-                  {SECTOR_LABEL[sectorDe(id)]}
+              <a key={id} className="beca-row" href={u.url} target="_blank" rel="noopener">
+                <span className={`uni-row-sector${u.sector === "publica" ? " on" : ""}`}>
+                  {SECTOR_LABEL[u.sector]}
                 </span>
                 <span className="beca-row-text">
-                  <b>{u[0]}</b>
+                  <b>{u.nombre}</b>
                   <em>{b ? b.p.slice(0, 3).join(" · ") : "Consulta sus becas en el sitio oficial"}</em>
                 </span>
                 <span className="beca-row-go">

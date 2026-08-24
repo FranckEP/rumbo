@@ -6,6 +6,8 @@ export interface BecaUni {
   p: string[];
   /** cobertura y criterios principales */
   c: string;
+  /** fecha en que se comprobó contra el sitio oficial (AAAA-MM-DD) */
+  f?: string;
 }
 
 export const BECAS_UNI: Record<string, BecaUni> = {
@@ -42,8 +44,9 @@ export const BECAS_UNI: Record<string, BecaUni> = {
     c: "Exención del 40% al 100% de la matrícula combinada con auxilios de sostenimiento; financiación conjunta con empresas e instituciones aliadas.",
   },
   uninorte: {
-    p: ["Orgullo Caribe", "Mejor Icfes (hasta 100%)", "Marvel Moreno (50%)", "Álvaro Jaramillo Vengoechea (hasta 80%)", "Profesor Alberto Assa (50%)"],
-    c: "Cobertura del 20% al 100% en matrícula e idiomas para bachilleres del Caribe con excelencia y necesidad socioeconómica; incluye incentivo para mujeres en STEM.",
+    p: ["Pro-Excelencia Promigas (100% de toda la carrera)", "Orgullo Caribe (hasta 90%)", "Álvaro Jaramillo Vengoechea (hasta 80%)", "Karl C. Parrish (hasta 80%)", "Excelencia Deportiva (hasta 80%)", "Marvel Moreno (hasta 50%, mujeres)", "Profesor Alberto Assa (50%)", "Hospital Universidad del Norte (20%, Enfermería)", "Comedal (internos de Medicina)"],
+    c: "Nueve becas de pregrado, con cobertura del 20% al 100%. Pro-Excelencia Promigas paga la carrera completa a bachilleres de estratos 1 a 3. Jaramillo Vengoechea aplica a todos los programas menos Medicina y Odontología. Marvel Moreno es solo para mujeres en Ingeniería, Economía, Música, Matemáticas y Negocios.",
+    f: "2026-08-23",
   },
   uis: {
     p: ["Gratuidad estatal", "Matrícula de Honor por facultad", "Auxiliaturas docentes e investigativas", "Movilidad internacional (AUIP, Alianza Pacífico)"],
@@ -118,8 +121,9 @@ export const BECAS_UNI: Record<string, BecaUni> = {
     c: "Cobertura parcial del semestre en Administración de Empresas para jóvenes con perfil sobresaliente de liderazgo y mérito académico.",
   },
   unilibre: {
-    p: ["Excelencia académica", "Exención por primer puesto", "Descuentos por convenio o familiares"],
-    c: "Exoneración del 50% al 100% de la matrícula para los mejores promedios acumulados en cada seccional.",
+    p: ["Becas a la Excelencia (estratos 1 a 3)", "Subsidio del 25% con crédito ICETEX", "Descuento para mayores de 25 años en jornada nocturna", "Descuento por reconocimiento en ciencia, cultura, tecnología o deporte", "Bono por referidos"],
+    c: "Las Becas a la Excelencia piden estar en estratos 1, 2 o 3 y haber sido admitido en pregrado. Quien tenga crédito ICETEX y esté en Sisbén 1 a 4 con estrato 1 o 2 recibe además un subsidio del 25% del valor de la matrícula.",
+    f: "2026-08-23",
   },
   umng: {
     p: ["Becas de Honor por promedio", "Descuentos fuerza pública y familiares", "Auxilios socioeconómicos"],
@@ -142,12 +146,14 @@ export const BECAS_UNI: Record<string, BecaUni> = {
     c: "Deducciones sobre el costo semestral para estudiantes sobresalientes en áreas agropecuarias, ambientales y de la salud.",
   },
   uniatlantico: {
-    p: ["Gratuidad estatal", "Exención por promedio académico", "Apoyos de alimentación y transporte"],
-    c: "Cubrimiento completo de los derechos de matrícula por política del Estado; exenciones por primer puesto en cada programa.",
+    p: ["Gratuidad estatal (100% de la matrícula ordinaria)", "Exención por primer puesto del programa", "Apoyos de alimentación y transporte"],
+    c: "Universidad pública: el Gobierno Nacional asume la matrícula ordinaria neta de los estudiantes de pregrado que cumplan el reglamento de gratuidad. Encima hay exenciones por ser el primer promedio de cada programa.",
+    f: "2026-08-23",
   },
   unisimon: {
-    p: ["Excelencia Simón Bolívar", "Deportivas y culturales", "Auxilios socioeconómicos"],
-    c: "Deducciones en el valor del semestre por puntajes altos en Saber 11 e incentivos para deportistas de selección y gestores culturales.",
+    p: ["Beca del 100% (matrícula de toda la carrera e idiomas)", "Becas por excelencia académica", "Becas creciendo juntos (convenios)"],
+    c: "La beca completa cubre el 100% de la matrícula durante toda la carrera y el 100% de los niveles de idiomas exigidos. Las de excelencia piden mantener promedio de 3.5 o 3.8 según la modalidad. Los convenios se gestionan en convenios@unisimon.edu.co.",
+    f: "2026-08-23",
   },
   unicartagena: {
     p: ["Gratuidad estatal", "Becas de Honor por rendimiento", "Subsidios de bienestar"],
@@ -166,20 +172,24 @@ export const BECAS_UNI: Record<string, BecaUni> = {
     c: "Cobertura del 100% de la matrícula bajo normatividad estatal; exoneración de pago para los mejores puntajes semestrales por programa.",
   },
   uac: {
-    p: ["Excelencia académica", "Deportivo-culturales", "Descuentos por convenios colectivos"],
-    c: "Reducciones del 15% al 50% en la matrícula para estudiantes con méritos académicos sobresalientes o representación en competencias nacionales.",
+    p: ["Beca de excelencia académica (promedio desde 4.50)", "Descuento para egresados (hasta 10%)", "Descuento para familiares de estudiantes (hasta 10%)", "Convenios institucionales"],
+    c: "La Autónoma trabaja con descuentos educativos antes que con becas completas: hasta 10% para egresados y para familiares de estudiantes activos, más la beca de excelencia, que exige promedio acumulado de 4.50 o más.",
+    f: "2026-08-23",
   },
   cuc: {
-    p: ["Excelencia CUC", "Mérito investigativo y deportivo", "Descuentos socioeconómicos"],
-    c: "Exenciones de matrícula asignadas por desempeño en Saber 11 e integración activa a los semilleros de investigación de la institución.",
+    p: ["La Beca de tu Vida (100% de toda la carrera)", "Beca Talento (hasta 100%)", "Opción Atlántico (hasta 100%)", "Convenios empresariales (15% a 100%)", "BEA Excelencia Académica (50% y 25%)", "Deportistas (25% a 50%)", "Participación cultural (25% a 50%)", "Semilleros de investigación (25% a 50%)", "Minorías y población especial (hasta 50%)", "Grupos familiares, tres hermanos (hasta 50%)", "Primer semestre (hasta 40%)", "Monitores académicos (hasta 15%)", "Hijos de graduados (15%)", "Colegios en convenio (15%)", "Graduados CUC (15%)"],
+    c: "Quince becas y descuentos institucionales, muchos acumulables con la matrícula de un solo programa. La Beca de tu Vida cubre el 100% de toda la carrera para egresados recientes de colegios oficiales de Barranquilla con Saber 11 desde 370 puntos. BEA entrega dos cupos del 50% y cuatro del 25% en cada programa.",
+    f: "2026-08-23",
   },
   unimetro: {
-    p: ["Mérito académico en salud", "Auxilios socioeconómicos", "Descuentos por convenios marco"],
-    c: "Descuentos parciales sobre la matrícula para estudiantes con promedios altos en carreras de la salud que demuestren necesidad financiera.",
+    p: ["Crédito directo y financiación a largo plazo", "Convenios con ICETEX, bancos, cooperativas y cajas de compensación"],
+    c: "No maneja becas propias de pregrado. Lo que ofrece es financiación: crédito reembolsable a largo plazo, en el que la universidad no le cobra la matrícula ordinaria al estudiante y este la paga a través del ICETEX.",
+    f: "2026-08-23",
   },
   iub: {
-    p: ["Gratuidad estatal", "Becas Alcaldía de Barranquilla (PML)", "Estímulos por promedio académico"],
-    c: "Matrícula cubierta al 100% combinando recursos del Gobierno Nacional y programas sociales del Distrito de Barranquilla.",
+    p: ["Gratuidad estatal (100% de la matrícula ordinaria)", "IUB al Barrio (100%)", "Mayor promedio del programa (100%)", "Logros deportivos, artísticos o de investigación nacionales (100%)", "Monitores destacados (50%)", "Comunidades minoritarias (50%)", "Logros departamentales (30%)", "Prácticas investigativas (20%)", "Grupos artísticos, deportivos y semilleros (15%)", "Beca Inclusión IUB", "Inscripción gratuita para bachilleres de colegios distritales"],
+    c: "Institución pública del Distrito, antes conocida como ITSA. La matrícula la cubre la gratuidad estatal y encima hay estímulos escalonados del 15% al 100% por promedio, deporte, arte, investigación y monitorías. Beca Inclusión está dirigida a comunidades afro, indígenas y personas desplazadas.",
+    f: "2026-08-23",
   },
   utb: {
     p: ["Premio a la Excelencia UTB", "Premio UTB al Talento Caribe", "Descuentos e incentivos financieros"],
@@ -234,8 +244,9 @@ export const BECAS_UNI: Record<string, BecaUni> = {
     c: "Cobertura total de matrícula a distancia para quienes cumplen los requisitos de gratuidad; convenios acumulables con descuentos adicionales.",
   },
   uniminuto: {
-    p: ["Socioeconómicas Padre García-Herreros", "Excelencia académica", "Descuentos por alianzas sociales"],
-    c: "Subsidios directos y reducciones del costo de la matrícula ordinaria para comunidades de ingresos bajos en todo el país.",
+    p: ["Honor Académico (100% del semestre siguiente)", "Socioeconómicas (20% a 35%)", "Espíritu UNIMINUTO (deporte, cultura y servicio social)", "Descuento por convenio", "Descuento por pronto pago"],
+    c: "Honor Académico exime la matrícula completa del semestre siguiente a quien tenga el mejor promedio del programa, por encima de 4.5 y sin materias perdidas. Las socioeconómicas van del 20% al 35% para estratos 1 a 3 con promedio sobre 4.0 y 40 horas de servicio social por semestre.",
+    f: "2026-08-23",
   },
   esap: {
     p: ["Exención 100% de matrícula", "Becas Ley de Juventudes", "Estímulos académicos especiales"],
@@ -246,35 +257,39 @@ export const BECAS_UNI: Record<string, BecaUni> = {
     c: "Financiación estatal completa del semestre en modalidad presencial y a distancia para estudiantes de estratos 1, 2 y 3.",
   },
   americana: {
-    p: ["Excelencia académica", "Auxilios financieros institucionales", "Descuentos por convenios sociales"],
-    c: "Reducciones en la matrícula por rendimiento escolar superior y apoyos financieros para garantizar la permanencia estudiantil.",
-  },
-  cues: {
-    p: ["Mérito académico", "Auxilios socioeconómicos", "Descuentos por convenio empresarial"],
-    c: "Descuentos sobre el valor del semestre por promedio alto de secundaria y por vínculos con organizaciones empresariales de la región.",
+    p: ["Mejor promedio del programa (100%)", "Beca de Excelencia, segundo mejor de la facultad (75%)", "Convenio Gobernación del Atlántico (35% a 70%)", "Incentivos deportivos y culturales"],
+    c: "El mejor promedio de cada programa queda exento del 100% de la matrícula del periodo siguiente, siempre que haya aprobado todo, no repita ni retire materias y tenga promedio desde 4.2. El segundo mejor de la facultad recibe el 75%.",
+    f: "2026-08-23",
   },
   pca: {
-    p: ["Rendimiento académico", "Descuentos por convenios empresariales"],
-    c: "Planes de descuento y estímulos económicos parciales para estudiantes de programas técnicos, tecnológicos y profesionales.",
-  },
-  litoral: {
-    p: ["Inclusión educativa", "Descuentos por convenios socioeconómicos"],
-    c: "Subsidios parciales de matrícula orientados a la formación técnica profesional de jóvenes en condición de vulnerabilidad.",
+    p: ["Becas por solicitud, caso por caso", "Alivios financieros para pregrado", "Descuento por caja de compensación"],
+    c: "No publica un listado de becas con nombres y porcentajes: las atiende por solicitud. Sí ofrece alivios financieros y descuentos por caja de compensación. Hay que preguntar en ayuda@pca.edu.co o al 605 319 8672.",
+    f: "2026-08-23",
   },
   reformada: {
-    p: ["Vocacionales y servicio social", "Excelencia académica", "Descuentos institucionales"],
-    c: "Becas parciales asignadas por rendimiento académico y por vinculación a proyectos de desarrollo comunitario e impacto social.",
-  },
-  sanmartin: {
-    p: ["Excelencia académica", "Descuentos por convenios y familiares"],
-    c: "Descuentos sobre el valor de la matrícula para estudiantes regulares que se destaquen por promedio académico ponderado.",
+    p: ["Alicia Winter (100%, mujeres, estudio-trabajo)", "Mérito Académico Estudiante del SER (100% de toda la carrera)", "Talento Especial Iglesia Presbiteriana (50%, Música)", "Inscripción gratuita para estudiantes nuevos"],
+    c: "Alicia Winter cubre el 100% hasta por tres periodos a mujeres en situación económica vulnerable, desde quinto semestre y con promedio sobre 4.5. La beca del SER es para egresados del Colegio Americano de Barranquilla con mención de mérito y dura toda la carrera, manteniendo promedio de 3.7.",
+    f: "2026-08-23",
   },
   cul: {
-    p: ["Mérito académico", "Descuentos institucionales y auxilios"],
-    c: "Deducciones porcentuales de matrícula para estudiantes de alto rendimiento y recursos económicos limitados.",
+    p: ["Descuentos puntuales sobre inscripción y matrícula"],
+    c: "No tiene un programa de becas propio. Los descuentos que publica son puntuales y van atados a fechas de inscripción, así que hay que preguntar por la convocatoria que esté abierta.",
+    f: "2026-08-23",
   },
   unicorsalud: {
-    p: ["Excelencia académica en salud", "Auxilios socioeconómicos"],
-    c: "Exención parcial para estudiantes con promedios destacados en las carreras del área de la salud y las ciencias de la vida.",
+    p: ["Beca del 50% en Ingeniería (primer semestre)", "Beca del 25% en técnicos laborales (primer semestre)", "Cobertura del 20% en los periodos siguientes"],
+    c: "Trabaja con becas de entrada: 50% del primer semestre en los programas de Ingeniería y 25% en los técnicos laborales por competencias. De ahí en adelante todos los programas mantienen un 20% sobre el valor de la matrícula. Son convocatorias promocionales: hay que confirmar cuál está abierta.",
+    f: "2026-08-23",
   },
 };
+
+/** Fecha de comprobación contra el sitio oficial, en formato legible. */
+export function comprobadaEl(f?: string): string | undefined {
+  if (!f) return undefined;
+  const [a, m, d] = f.split("-").map(Number);
+  return new Date(a, m - 1, d).toLocaleDateString("es-CO", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+}

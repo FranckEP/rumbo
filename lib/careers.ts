@@ -76,48 +76,10 @@ export interface Ruta {
   w?: string;
 }
 
-/** Qué instituciones ofrecen cada nivel. La lista profesional es `career.u`
- *  menos `pExcluye` (instituciones que solo ofrecen el nivel técnico/tecnológico
- *  de esa carrera). Los otros niveles se listan explícitamente. */
-export interface NivelOpciones {
-  pExcluye?: string[];
-  tecnologica?: string[];
-  tecnica?: string[];
-}
-
-export const NIVEL_UNIS: Record<string, NivelOpciones> = {
-  "Enfermería": { tecnica: ["sena"] },
-  "Ingeniería de Software": { pExcluye: ["iub"], tecnologica: ["sena", "iub"], tecnica: ["sena", "iub"] },
-  "Ciencia de Datos": { tecnologica: ["sena"] },
-  "Ingeniería Civil": { tecnologica: ["sena"] },
-  "Ingeniería Mecánica / Mecatrónica": { pExcluye: ["iub"], tecnologica: ["sena", "iub"], tecnica: ["sena", "iub"] },
-  "Ingeniería Industrial": { pExcluye: ["comfenalco"], tecnologica: ["sena", "comfenalco", "unicorsalud"], tecnica: ["sena", "iub"] },
-  "Ingeniería Ambiental": { tecnologica: ["sena"], tecnica: ["unicorsalud", "sena"] },
-  "Arquitectura": { tecnologica: ["uniatlantico"], tecnica: ["uniatlantico", "sena"] },
-  "Diseño Gráfico / UX": { tecnologica: ["sena"], tecnica: ["iub", "sena"] },
-  "Cine y Comunicación Audiovisual": { tecnica: ["sena"] },
-  "Publicidad y Marketing": { tecnologica: ["sena"] },
-  "Administración de Empresas": { pExcluye: ["litoral"], tecnologica: ["sena", "iub", "unicorsalud", "litoral"], tecnica: ["sena", "unicorsalud"] },
-  "Contabilidad y Finanzas": { pExcluye: ["comfenalco", "litoral"], tecnologica: ["sena", "litoral", "comfenalco"], tecnica: ["sena"] },
-  "Relaciones Internacionales": { tecnologica: ["sena", "cues", "pca"], tecnica: ["iub", "litoral"] },
-  "Química y Farmacia": { tecnologica: ["unad"], tecnica: ["utolima", "sena"] },
-  "Agronomía": { tecnologica: ["sena", "uniatlantico"], tecnica: ["sena", "uniatlantico"] },
-  "Gastronomía": { pExcluye: ["sena"], tecnologica: ["sena"], tecnica: ["sena"] },
-  "Turismo y Hotelería": { pExcluye: ["sena"], tecnologica: ["uniatlantico", "sena"], tecnica: ["uniatlantico", "sena"] },
-  "Odontología": { tecnica: [] },
-  "Recursos Humanos": { pExcluye: ["sena", "iub"], tecnologica: ["sena", "iub"], tecnica: ["sena", "unicorsalud"] },
-  "Ciencias del Deporte": { tecnica: ["sena"] },
-};
-
-/** Instituciones por nivel para una carrera, listas para pintar. */
-export function unisPorNivel(c: Career): Partial<Record<CareerLevel, string[]>> {
-  const o = NIVEL_UNIS[c.n] ?? {};
-  const res: Partial<Record<CareerLevel, string[]>> = {};
-  if (c.lvl.includes("profesional")) res.profesional = c.u.filter((id) => !(o.pExcluye ?? []).includes(id));
-  if (c.lvl.includes("tecnologica")) res.tecnologica = o.tecnologica ?? [];
-  if (c.lvl.includes("tecnica")) res.tecnica = o.tecnica ?? [];
-  return res;
-}
+/* La tabla que decía qué institución ofrecía cada nivel se eliminó: esa
+   información ahora sale del SNIES (lib/oferta.ts), con 9.148 programas reales
+   en vez de una lista escrita a mano. El campo `u` de cada carrera tampoco se
+   usa para "dónde estudiar"; se conserva solo como referencia histórica. */
 
 export const RUTAS: Record<string, Ruta[]> = {
   "Medicina": [

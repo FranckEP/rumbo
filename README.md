@@ -6,6 +6,9 @@ filtrables por departamento y becas oficiales.
 
 Creado por **Franck E. Peñaloza**.
 
+> **[BITACORA.md](BITACORA.md)** — qué se ha construido, por qué se decidió así,
+> las trampas encontradas y qué queda pendiente. Léela antes de retomar el proyecto.
+
 ## Correr el proyecto
 
 ```bash

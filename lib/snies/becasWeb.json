@@ -1,0 +1,90 @@
+{
+ "_nota": "URL de la página de becas de cada institución, hallada y comprobada automáticamente. Se guarda el ENLACE, no el contenido: las convocatorias cambian cada semestre y un listado raspado envejece mal. Un intento de extraer los nombres automáticamente se descartó: mezclaba fragmentos de reglamento ('la beca no es acumulable'), becas de intercambio que no pagan la matrícula, y porcentajes sueltos sin relación con ninguna beca. Solo se conservaron los 8 casos revisados a mano.",
+ "_fecha": "2026-08-23",
+ "paginas": {
+  "1119": "https://unillanos.edu.co/index.php/proceso-de-descuento-2018",
+  "1212": "https://www.unipamplona.edu.co/unipamplona/portalIG/home_8/recursos/2016/09092016/descuentos.jsp",
+  "1709": "https://www.ucentral.edu.co/becas",
+  "1722": "https://umanizales.edu.co/becas-0",
+  "1726": "https://uco.edu.co/bienestar/becas/",
+  "1734": "https://www.uniboyaca.edu.co/es/micrositio/becas-de-estudio",
+  "1812": "https://udem.edu.co/becas",
+  "1815": "https://www.unipiloto.edu.co/becas",
+  "1825": "https://autonoma.edu.co/financiacion",
+  "1826": "https://www.uan.edu.co/becas-y-auxilios",
+  "1827": "https://www.ucm.edu.co/admisiones/becas-e-incentivos/",
+  "2301": "https://www.uceva.edu.co/becas",
+  "2710": "https://unimonserrate.edu.co/becas",
+  "2713": "https://www.ulibertadores.edu.co/beneficios",
+  "2720": "https://www.jdc.edu.co/oferta-academica/apoyo-financiero/becas-y-convenios",
+  "2721": "https://www.fumc.edu.co/becas",
+  "2723": "https://uniagraria.edu.co/becas",
+  "2727": "https://ceipa.edu.co/financiacion",
+  "2733": "https://sanalfonso.edu.co/becas",
+  "2738": "https://uniempresarial.edu.co/thank-you-page-becas/",
+  "2741": "https://www.fundes.edu.co/convenios-descuentos.php",
+  "2744": "https://www.unicesmag.edu.co/becas/",
+  "2745": "https://ucompensar.edu.co/becas-compensar-nuevos/",
+  "2749": "https://www.iush.edu.co/becas",
+  "2815": "https://unac.edu.co/becas",
+  "2820": "https://www.unilasallista.edu.co/admisiones-y-becas/#ProcesoAdmi",
+  "2827": "https://unimeta.edu.co/index.php/becas-en-villavicencio-becas-universitarias-becas-pregrado-becas-colombia-beca",
+  "2830": "https://www.ibero.edu.co/internacionalizacion/becas-estudiar-en-el-exterior",
+  "2838": "https://www.colegiatura.edu.co/metodos-de-financiacion",
+  "2840": "https://unihumboldt.edu.co/es/nuestra-u/portafolio-becas-empresariales",
+  "2850": "https://corposucre.edu.co/en/becas",
+  "3107": "https://pascualbravo.edu.co/becas",
+  "3302": "https://www.itm.edu.co/becas-fundacion-juan-pablo-gutierrez-caceres-fundacion-fraternidad/",
+  "3303": "https://www.deboraarango.edu.co/inicio/financiacion-y-becas/",
+  "3702": "https://faba.edu.co/beneficios",
+  "3710": "https://www.unitecnar.edu.co/becas",
+  "3808": "https://ctb.edu.co/beneficios",
+  "3809": "http://icsef.edu.co/becas-y-apoyos-economicos/",
+  "3812": "https://iumafis.edu.co/becas",
+  "3817": "https://www.aunar.edu.co/becas",
+  "3831": "https://unicomfacauca.edu.co/becas",
+  "4111": "https://www.unicaribe.edu.co/becas/",
+  "4112": "https://unioc.edu.co/becas",
+  "4813": "https://cun.edu.co/becas/",
+  "5802": "https://ecci.edu.co/becas-y-descuentos/",
+  "9121": "https://unicolombo.edu.co/planes-de-becas/",
+  "9903": "https://www.tecalianza.edu.co/financiacion/impulsa-tec",
+  "9924": "https://unincol.edu.co/admisiones/becas-y-apoyo-financiero",
+  "9926": "https://unir.edu.co/estudiar-fundacion/becas-universitarias/",
+  "9928": "https://salesiana.edu.co/becas-salesiana/",
+  "9947": "https://iditek.edu.co/becas"
+ },
+ "nombres": {
+  "4813": [
+   "Becas por excelencia académica",
+   "Becas deportivas y culturales"
+  ],
+  "2745": [
+   "Becas Estudiante Nuevo",
+   "Becas Estudiante Antiguo"
+  ],
+  "5802": [
+   "Beca por Excelencia",
+   "Beca por Convenio",
+   "Beca por Empleado Familiar"
+  ],
+  "1812": [
+   "Beca de Honor",
+   "Beca de Excelencia"
+  ],
+  "9903": [
+   "Beca Impulso Talento Técnico",
+   "Beca Impulso Talento Tecnológico"
+  ],
+  "1827": [
+   "Becas Top",
+   "Beca Nuestra Señora de la Presentación"
+  ],
+  "2850": [
+   "Becas Deportivas y Culturales"
+  ],
+  "3831": [
+   "Becas a mejor promedio académico"
+  ]
+ }
+}

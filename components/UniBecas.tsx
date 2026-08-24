@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { BECAS_UNI } from "@/lib/becasUni";
-import { UNIS } from "@/lib/universities";
+import { INSTITUCIONES } from "@/lib/instituciones";
 import { LinkOutIcon, SearchIcon } from "./icons";
 
 const PAGE = 6;
@@ -18,18 +18,22 @@ export default function UniBecas({ deptFilter }: Props) {
   const lista = useMemo(() => {
     const q = query.trim().toLowerCase();
     return Object.entries(BECAS_UNI)
-      .map(([id, b]) => ({ id, b, u: UNIS[id] }))
+      .map(([clave, b]) => ({
+        clave,
+        b,
+        u: Object.values(INSTITUCIONES).find((i) => i.clave === clave),
+      }))
       .filter(({ u, b }) => {
         if (!u) return false;
-        if (deptFilter !== "all" && !u[2].includes("*") && !u[2].includes(deptFilter)) return false;
+        if (deptFilter !== "all" && !u.deps.includes("*") && !u.deps.includes(deptFilter)) return false;
         if (!q) return true;
         return (
-          u[0].toLowerCase().includes(q) ||
+          u.nombre.toLowerCase().includes(q) ||
           b.p.some((x) => x.toLowerCase().includes(q)) ||
           b.c.toLowerCase().includes(q)
         );
       })
-      .sort((a, z) => a.u[0].localeCompare(z.u[0], "es"));
+      .sort((a, z) => a.u!.nombre.localeCompare(z.u!.nombre, "es"));
   }, [query, deptFilter]);
 
   const mostradas = lista.slice(0, visibles);
@@ -70,16 +74,17 @@ export default function UniBecas({ deptFilter }: Props) {
       )}
 
       <div className="uni-beca-list">
-        {mostradas.map(({ id, b, u }) => {
-          const open = abierta === id;
+        {mostradas.map(({ clave, b, u }) => {
+          const open = abierta === clave;
+          if (!u) return null;
           return (
-            <div className={`uni-beca${open ? " open" : ""}`} key={id}>
+            <div className={`uni-beca${open ? " open" : ""}`} key={clave}>
               <button
                 className="uni-beca-head"
                 aria-expanded={open}
-                onClick={() => setAbierta(open ? null : id)}
+                onClick={() => setAbierta(open ? null : clave)}
               >
-                <span className="uni-beca-name">{u[0]}</span>
+                <span className="uni-beca-name">{u.nombre}</span>
                 <span className="uni-beca-count">
                   {b.p.length} {b.p.length === 1 ? "beca" : "becas"}
                 </span>
@@ -103,8 +108,8 @@ export default function UniBecas({ deptFilter }: Props) {
                       ))}
                     </ul>
                     <p className="uni-beca-cov">{b.c}</p>
-                    <a href={u[1]} target="_blank" rel="noopener">
-                      Ver requisitos en {u[0]} <LinkOutIcon />
+                    <a href={u.url} target="_blank" rel="noopener">
+                      Ver requisitos en {u.nombre} <LinkOutIcon />
                     </a>
                   </div>
                 </div>

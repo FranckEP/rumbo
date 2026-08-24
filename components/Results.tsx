@@ -26,7 +26,7 @@ import {
   type DimKey,
   type Scores,
 } from "@/lib/riasec";
-import { DEPTS } from "@/lib/universities";
+import { DEPARTAMENTOS } from "@/lib/instituciones";
 
 const PAGE_SIZE = 8;
 type SortMode = "match" | "alpha";
@@ -331,7 +331,7 @@ export default function Results({ answers, onRestart, onToast }: Props) {
               <label htmlFor="deptSel">Universidades en</label>
               <select id="deptSel" value={deptFilter} onChange={(e) => setDeptFilter(e.target.value)}>
                 <option value="all">Todo el país</option>
-                {DEPTS.map((d) => (
+                {DEPARTAMENTOS.map((d) => (
                   <option key={d} value={d}>
                     {d}
                   </option>
