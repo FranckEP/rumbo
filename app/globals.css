@@ -186,7 +186,14 @@ header.top {
   margin: 34px 0 30px;
 }
 .dim-chip {
-  display: block; width: 100%; text-align: left;
+  /* Un <button> centra su contenido verticalmente por defecto. Como la rejilla
+     estira las seis tarjetas a la misma altura y las pistas ocupan una o dos
+     lineas, la de una linea bajaba su bloque entero la mitad de la diferencia:
+     la insignia de «Artistico» quedaba 8 px mas abajo que las demas y con ella
+     el nombre. En columna flex el contenido arranca arriba en todas. */
+  display: flex; flex-direction: column; align-items: stretch;
+  justify-content: flex-start;
+  width: 100%; text-align: left;
   font: inherit; color: inherit;
   border: 1px solid var(--line);
   background: var(--surface);
@@ -199,6 +206,7 @@ header.top {
 .dim-chip.expanded { border-color: var(--accent); box-shadow: var(--shadow); }
 .dim-chip .letter {
   display: inline-flex; align-items: center; justify-content: center;
+  align-self: flex-start; flex: none;
   width: 30px; height: 30px; border-radius: 9px;
   font-family: var(--font-display);
   font-weight: 800; font-size: 1rem;
@@ -342,6 +350,15 @@ header.top {
 }
 .summary-text em { font-style: normal; font-size: .8rem; color: var(--ink-faint); }
 .summary-match { text-align: right; flex: none; }
+/* El porcentaje va en su propia pastilla en vez de colgar de un punto medio.
+   `<i>` es cursiva por defecto: aqui no. */
+.summary-match b i {
+  font-style: normal; font-weight: 700;
+  margin-left: 7px; padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--accent-soft); color: var(--accent);
+  font-size: .82em;
+}
 .summary-match b {
   display: block;
   font-family: var(--font-display); font-weight: 800;
@@ -384,6 +401,18 @@ header.top {
   width: max-content; max-width: 100%;
   margin: 0 auto 26px;
 }
+/* El contador va como pastilla, no como «Carreras· 32»: el punto suelto
+   quedaba pegado a la palabra y separado del numero, y se leia como una
+   errata. */
+.tab b {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 20px; margin-left: 7px; padding: 0 6px;
+  font-family: var(--font-mono); font-size: .72rem; font-weight: 600;
+  line-height: 18px; border-radius: 999px;
+  background: var(--surface-2); color: var(--ink-faint);
+  vertical-align: middle;
+}
+.tab-on b { background: var(--accent-soft); color: var(--accent); }
 .tab {
   font: inherit; font-weight: 600; font-size: .95rem;
   border: none; background: none; color: var(--ink-soft);
@@ -404,8 +433,9 @@ header.top {
 
 .tab-panel { animation: rise .3s ease both; }
 .tab-lede {
-  color: var(--ink-soft); max-width: 60ch;
-  margin: 0 0 22px;
+  color: var(--ink-soft); max-width: 62ch;
+  font-size: 1rem; line-height: 1.6;
+  margin: 0 0 20px;
 }
 .blurb-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 22px;
@@ -435,7 +465,15 @@ header.top {
 
 .res-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 22px;
-  align-items: start; margin-bottom: 22px;
+  margin-bottom: 22px;
+}
+/* Las barras son más bajas que el radar y sobraba un hueco muerto debajo.
+   En vez de encoger la tarjeta (quedaría descuadrada al lado del radar), las
+   barras se reparten el alto disponible. */
+.res-grid > .panel { display: flex; flex-direction: column; }
+.dim-bars { flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 4px; }
+@media (max-width: 720px) {
+  .dim-bars { gap: 0; justify-content: flex-start; }
 }
 @media (max-width: 720px) { .res-grid { grid-template-columns: 1fr; } }
 .panel {
@@ -673,6 +711,10 @@ header.top {
 .search-field input:focus { outline: none; }
 .search-field input::placeholder { color: var(--ink-faint); }
 .filter-row {
+  /* Los tres controles miden lo mismo de alto. Antes las pildoras llevaban
+     dos lineas (rotulo + valor) y el selector de orden una sola, asi que la
+     fila quedaba con tres alturas distintas y se veia descuadrada. */
+  --ctl-h: 50px;
   display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
   margin-bottom: 14px;
 }
@@ -680,6 +722,7 @@ header.top {
    encima en transparente para que toda la píldora sea zona de toque. */
 .filter-pill {
   display: inline-flex; align-items: center; gap: 9px;
+  height: var(--ctl-h, auto); box-sizing: border-box;
   font: inherit; text-align: left; cursor: pointer;
   background: var(--surface); color: var(--ink);
   border: 1px solid var(--line); border-radius: 999px;
@@ -692,6 +735,11 @@ header.top {
 .filter-pill > svg:last-of-type { flex: none; color: var(--ink-faint); }
 .filter-pill-txt {
   display: flex; flex-direction: column; gap: 1px;
+  /* Que ocupe el hueco que sobre: sin esto el contenido quedaba apinado al
+     principio y la flecha pegada al texto, con la pildora medio vacia por la
+     derecha cuando se estira a todo el ancho. Asi la flecha se va al borde,
+     como en un desplegable de toda la vida. */
+  flex: 1 1 auto;
   min-width: 0; text-align: left;
 }
 .filter-pill-k {
@@ -727,46 +775,154 @@ header.top {
   font-size: .9rem; color: var(--ink-soft);
 }
 @media (max-width: 620px) {
-  /* Repartidas al 50% quedaban 85 px de texto y los departamentos largos se
-     cortaban a nada. La de departamento se lleva la fila entera; nivel y
-     orden comparten la segunda. */
-  .filter-pill { min-width: 0; }
-  .filter-pill:first-child { flex: 1 1 100%; }
-  .filter-pill:first-child b { font-size: .92rem; }
-  .filter-pill + .filter-pill { flex: 0 1 auto; }
-  .sort-toggle { flex: 0 1 auto; margin-left: auto; }
+  /* OJO: los elementos flex de .filter-row son los `.dd`, no las píldoras.
+     Las píldoras van dentro de cada `.dd`, así que dimensionar `.filter-pill`
+     aquí no hace nada. Se dimensiona el `.dd`.
+
+     El de departamento se lleva la fila entera (sus valores son largos: con
+     media fila quedaban 85 px de texto y «Norte de Santander» se cortaba);
+     nivel y orden comparten la segunda, cada uno con la mitad, para que no
+     quede el orden solo y descolgado a la derecha. */
+  /* En movil el rotulo en mayusculas se quita: el icono ya dice de que va
+     el filtro (chincheta = lugar, birrete = nivel) y asi la pildora cabe en
+     una linea, a la misma altura que el selector de orden. El texto completo
+     sigue en el `aria-label` y en el titulo del panel al abrirlo. */
+  .filter-row { --ctl-h: 44px; }
+  .filter-pill-k { display: none; }
+  .filter-pill b { font-size: .9rem; }
+  .filter-row > .dd:first-child { flex: 1 1 100%; }
+  /* Mitad exacta cada uno, descontando la mitad del hueco. Con `flex: 1 1 0`
+     salian 161 y 167 px: el ancho minimo del contenido del selector de orden
+     se imponia. Una base explicita no depende del contenido. */
+  .filter-row > .dd + .dd,
+  .sort-toggle { flex: 0 0 calc(50% - 4px); min-width: 0; }
+  .sort-toggle { margin-left: 0; }
+  .sort-toggle button { flex: 1; min-width: 0; padding: 0 8px; }
 }
 .no-unis { font-size: .82rem; color: var(--ink-faint); font-style: italic; }
 
 .sort-toggle {
-  display: inline-flex; gap: 2px;
+  display: inline-flex; align-items: stretch; gap: 2px;
+  height: var(--ctl-h, auto); box-sizing: border-box;
   background: var(--surface-2); border-radius: 999px; padding: 3px;
   margin-left: auto;
 }
 .sort-toggle button { white-space: nowrap; }
 .sort-toggle button {
+  display: inline-flex; align-items: center; justify-content: center;
   font: inherit; font-size: .82rem; font-weight: 600;
   border: none; background: none; color: var(--ink-soft);
-  border-radius: 999px; padding: 6px 14px; cursor: pointer;
+  border-radius: 999px; padding: 0 16px; cursor: pointer;
   transition: background-color .15s ease, color .15s ease;
 }
 .sort-toggle button.active { background: var(--surface); color: var(--accent); box-shadow: var(--shadow); }
 .sort-toggle button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 
 
+
+/* La entradilla a un lado y el filtro al otro: el parrafo solo dejaba un
+   vacio grande a la derecha y se leia como texto cortado. */
+.becas-intro {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px 32px; flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+/* `balance` reparte las lineas por igual en vez de dejar una llena y otra
+   a dos tercios. Donde no este soportado simplemente se ignora. */
+.becas-intro .tab-lede {
+  margin: 0; flex: 1 1 340px; max-width: 66ch;
+  text-wrap: balance;
+}
+.becas-intro .filter-row { margin: 0; flex: 0 0 auto; }
+@media (max-width: 720px) {
+  .becas-intro { gap: 16px; }
+  .becas-intro .tab-lede { flex: 1 1 100%; }
+  .becas-intro .filter-row { flex: 1 1 100%; }
+}
+
+/* ---------- Becas: cuánto cuesta y ficha de tres preguntas ---------- */
+/* Lo primero es el precio según a dónde entres: sin esa referencia, las
+   ayudas de abajo no tienen contra qué compararse. */
+.cuanto {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; margin-bottom: 30px;
+}
+.cuanto-cel {
+  display: flex; flex-direction: column; gap: 5px;
+  background: var(--surface); padding: 18px 20px;
+}
+.cuanto-donde {
+  font-size: .75rem; font-weight: 700; letter-spacing: .04em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+.cuanto-precio {
+  font-family: var(--font-display);
+  font-size: 1.5rem; font-weight: 800; letter-spacing: -.02em;
+  color: var(--accent); line-height: 1.1;
+}
+.cuanto-nota { font-size: .84rem; color: var(--ink-soft); line-height: 1.5; }
+
+.group-nota {
+  margin: -6px 0 16px;
+  font-size: .89rem; line-height: 1.5; color: var(--ink-soft);
+  max-width: 68ch;
+}
+.beca-vacio {
+  margin: 0; padding: 18px 20px;
+  background: var(--surface-2); border-radius: var(--radius);
+  font-size: .9rem; color: var(--ink); line-height: 1.55;
+}
+
+/* Las tres preguntas van siempre en el mismo orden y con la misma pinta:
+   así se comparan dos becas de un vistazo en vez de leerlas enteras. */
+.beca-dl { margin: 0; flex: 1; }
+.beca-dl dt {
+  font-size: .71rem; font-weight: 700; letter-spacing: .05em;
+  text-transform: uppercase; color: var(--ink-soft);
+  margin-top: 13px;
+}
+.beca-par:first-child dt { margin-top: 0; }
+.beca-dl dd {
+  margin: 4px 0 0;
+  font-size: .9rem; color: var(--ink); line-height: 1.55;
+}
+.beca-row-n {
+  font-style: normal; font-weight: 600; font-size: .74rem;
+  background: var(--accent-soft); color: var(--accent);
+  border-radius: 999px; padding: 2px 9px; margin-left: 8px;
+  vertical-align: middle;
+}
+
+@media (max-width: 720px) {
+  /* En columna la tira se lee como lista de precios, que sigue funcionando. */
+  .cuanto { grid-template-columns: 1fr; }
+  .cuanto-cel {
+    display: grid; grid-template-columns: 1fr auto;
+    align-items: baseline; gap: 4px 12px; padding: 14px 16px;
+  }
+  .cuanto-precio { grid-column: 2; grid-row: 1; font-size: 1.2rem; }
+  .cuanto-nota { grid-column: 1 / -1; }
+}
+
 /* ---------- Desplegable propio (components/Dropdown.tsx) ---------- */
 /* El <select> nativo no se podía diseñar: su lista es cromo del sistema.
    Esto la reemplaza. En escritorio cuelga del botón; en móvil se ancla al
    borde inferior, donde llega el pulgar. */
-.dd { position: relative; display: inline-flex; }
+.dd { position: relative; display: inline-flex; min-width: 0; }
+.dd > .filter-pill { width: 100%; }
 .dd .dd-caret { transition: transform .18s ease; }
 .dd.open .dd-caret { transform: rotate(180deg); }
 
 .dd-backdrop { display: none; }
 
 .dd-panel {
-  position: absolute; top: calc(100% + 7px); left: 0;
-  z-index: 40;
+  /* Fijo y montado en <body>: las coordenadas las pone Dropdown.tsx. Iba
+     `absolute` colgando del botón, pero un ancestro animado se convierte en
+     bloque contenedor y descolocaba la hoja de móvil. */
+  position: fixed; top: 0; left: 0;
+  z-index: 46;
   min-width: 100%; width: max-content; max-width: min(340px, 88vw);
   background: var(--surface);
   border: 1px solid var(--line); border-radius: 16px;
@@ -774,7 +930,7 @@ header.top {
   padding: 8px;
   animation: ddIn .16s ease both;
 }
-.dd-panel.up { top: auto; bottom: calc(100% + 7px); transform-origin: bottom left; }
+.dd-panel.up { transform-origin: bottom left; }
 @keyframes ddIn {
   from { opacity: 0; transform: translateY(-5px) scale(.98); }
   to { opacity: 1; transform: none; }
@@ -831,11 +987,21 @@ header.top {
     animation: fadeIn .18s ease both;
   }
   .dd-panel, .dd-panel.up {
-    position: fixed; inset: auto 0 0 0; z-index: 46;
-    width: auto; max-width: none; max-height: 74vh;
+    /* La hoja manda sobre las coordenadas que calcula el script.
+       `--dd-teclado` y `--dd-visible` los pone Dropdown.tsx leyendo
+       `visualViewport`: sin eso el teclado del celular se monta encima,
+       porque `fixed` se ancla al viewport de diseño y ese no encoge. */
+    top: auto !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: var(--dd-teclado, 0px) !important;
+    display: flex; flex-direction: column;
+    width: auto; min-width: 0 !important; max-width: none;
+    max-height: min(74vh, calc(var(--dd-visible, 100vh) - 48px));
     border-radius: 20px 20px 0 0; border-bottom: none;
     padding: 8px 12px calc(12px + env(safe-area-inset-bottom));
     animation: ddSheet .2s ease both;
+    transition: bottom .18s ease, max-height .18s ease;
   }
   @keyframes ddSheet {
     from { transform: translateY(100%); }
@@ -846,8 +1012,11 @@ header.top {
     display: block; width: 38px; height: 4px; margin: 6px auto 10px;
     border-radius: 999px; background: var(--line);
   }
+  .dd-asa, .dd-titulo, .dd-busca { flex: none; }
   .dd-titulo { margin: 0 4px 10px; font-size: .72rem; }
-  .dd-lista { max-height: 52vh; }
+  /* que la lista tome el alto que sobre, en vez de un tope fijo que no
+     sabe nada del teclado */
+  .dd-lista { flex: 1 1 auto; min-height: 0; max-height: none; }
   .dd-op { padding: 13px 12px; font-size: .94rem; }
   .dd-busca { padding: 11px 13px; font-size: .92rem; }
 }
@@ -862,9 +1031,21 @@ header.top {
 .group-rule i { height: 1px; background: var(--line); flex: 1; }
 .becas-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  /* `auto-fill` y no `auto-fit`: con `auto-fit` las pistas vacías colapsan y
+     dos fichas se estiraban de forma distinta según cuántas hubiera. */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 14px;
 }
+/* Cuando el grupo tiene UNA sola beca, ocupa el ancho entero: una tarjeta
+   estrecha con tres columnas vacías al lado se ve como un error. Y como
+   entonces sobra ancho, las tres preguntas se reparten en columnas en vez de
+   quedar en una tira larguísima. */
+.becas-grid.una { grid-template-columns: 1fr; }
+.becas-grid.una .beca-dl {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0 30px; align-items: start;
+}
+.becas-grid.una .beca-par dt { margin-top: 0; }
 .beca {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -873,15 +1054,19 @@ header.top {
   display: flex; flex-direction: column; gap: 9px;
 }
 .beca-key { border-width: 1.5px; border-color: var(--accent); }
-.beca-tags { display: flex; align-items: center; gap: 8px; }
+/* Envuelve: coberturas como «Crédito; algunas líneas condonan parte» son
+   largas y empujaban la etiqueta de alcance fuera de la pantalla. */
+.beca-tags { display: flex; align-items: center; gap: 6px 8px; flex-wrap: wrap; }
 .beca-tag {
   font-family: var(--font-mono);
   font-size: .66rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 600;
   background: var(--surface-2); color: var(--ink-soft);
-  border-radius: 999px; padding: 3px 11px; flex: none;
+  border-radius: 999px; padding: 3px 11px; flex: 0 1 auto;
+  /* que un texto largo parta en dos lineas antes que romper el ancho */
+  max-width: 100%; white-space: normal; text-align: center;
 }
 .beca-tag-free { background: var(--accent-soft); color: var(--accent); }
-.beca-scope { font-size: .76rem; color: var(--ink-faint); }
+.beca-scope { font-size: .8rem; color: var(--ink-soft); flex: none; }
 .beca h4 {
   font-family: var(--font-display);
   font-size: 1.05rem; font-weight: 700; margin: 0;
@@ -991,11 +1176,11 @@ footer { margin-top: 60px; text-align: center; font-size: .78rem; color: var(--i
   display: flex; flex-wrap: wrap; gap: 6px;
 }
 .uni-beca-progs li {
-  font-size: .78rem; color: var(--ink-soft);
+  font-size: .82rem; color: var(--ink);
   background: var(--surface-2);
-  border-radius: 999px; padding: 4px 12px;
+  border-radius: 999px; padding: 5px 12px;
 }
-.uni-beca-cov { margin: 0 0 10px; font-size: .87rem; color: var(--ink-soft); }
+.uni-beca-cov { margin: 0 0 12px; font-size: .9rem; line-height: 1.55; color: var(--ink-soft); }
 .uni-beca-body a {
   display: inline-flex; align-items: center; gap: 6px;
   font-size: .85rem; font-weight: 600;
@@ -1129,43 +1314,6 @@ footer { margin-top: 60px; text-align: center; font-size: .78rem; color: var(--i
 }
 
 /* ---------- Becas: rutas A y B ---------- */
-.rutas-becas {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 18px;
-  margin-bottom: 30px; align-items: stretch;
-}
-.ruta-beca { display: flex; flex-direction: column; }
-.ruta-beca-key { border-width: 1.5px; border-color: var(--accent); }
-.ruta-beca h3 { font-size: 1.3rem; font-weight: 800; margin: 10px 0 6px; letter-spacing: -.015em; }
-.ruta-lede { margin: 0 0 18px; font-size: .88rem; color: var(--ink-soft); }
-.ruta-tag {
-  align-self: flex-start;
-  font-family: var(--font-mono);
-  font-size: .66rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 600;
-  background: var(--surface-2); color: var(--ink-soft);
-  border-radius: 999px; padding: 4px 12px;
-}
-.ruta-tag-a { background: var(--accent-soft); color: var(--accent); }
-.ruta-items { display: flex; flex-direction: column; gap: 10px; flex: 1; }
-.ruta-item {
-  display: block; text-decoration: none; color: inherit;
-  border: 1px solid var(--line); border-radius: 12px;
-  padding: 14px 16px;
-  transition: border-color .14s ease;
-}
-a.ruta-item:hover { border-color: var(--accent); }
-a.ruta-item:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-.ruta-item b { display: block; font-size: .95rem; font-weight: 700; margin-bottom: 3px; }
-.ruta-item em { font-style: normal; font-size: .84rem; color: var(--ink-faint); }
-.ruta-item-go {
-  display: inline-flex; align-items: center; gap: 6px;
-  margin-top: 10px; font-size: .82rem; font-weight: 600; color: var(--accent);
-}
-.ruta-unis { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-.ruta-unis i {
-  font-style: normal; font-size: .76rem;
-  background: var(--accent-soft); color: var(--accent);
-  border-radius: 999px; padding: 3px 11px;
-}
 .ver-todas {
   display: flex; align-items: center; justify-content: space-between;
   gap: 18px; flex-wrap: wrap;
@@ -1173,9 +1321,6 @@ a.ruta-item:focus-visible { outline: 3px solid var(--accent); outline-offset: 2p
   padding: 18px 24px;
 }
 .ver-todas p { margin: 0; font-size: .9rem; color: var(--ink-soft); }
-@media (max-width: 720px) {
-  .rutas-becas { grid-template-columns: 1fr; }
-}
 @media (max-width: 620px) {
   .ver-todas { flex-direction: column; align-items: stretch; text-align: center; }
   .uni-row { padding: 13px 14px; gap: 9px; }
@@ -1202,7 +1347,10 @@ a.ruta-item:focus-visible { outline: 3px solid var(--accent); outline-offset: 2p
   gap: 16px; margin-top: 20px;
 }
 .paso {
-  display: flex; align-items: flex-start; gap: 14px;
+  /* El numero iba al lado y se comia un tercio del ancho util en columnas
+     estrechas, dejando el texto en una tira finisima. Encima del texto ocupa
+     una linea y el parrafo recupera todo el ancho. */
+  display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
   background: var(--surface);
   border: 1px solid var(--line); border-radius: var(--radius);
   padding: 20px;

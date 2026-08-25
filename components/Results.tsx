@@ -74,14 +74,11 @@ export default function Results({ answers, onRestart, onToast }: Props) {
   /** universidad abierta: {carrera, universidad} */
   const [uniView, setUniView] = useState<{ career: string; uni: string } | null>(null);
   const [verTodasAfines, setVerTodasAfines] = useState(false);
-  /** universidades que ya abrió, para personalizar la pestaña de becas */
-  const [unisVistas, setUnisVistas] = useState<string[]>([]);
   const [enDesempate, setEnDesempate] = useState(false);
 
   function abrirUni(career: string, uni: string) {
     setUniView({ career, uni });
     setVerTodasAfines(false);
-    setUnisVistas((prev) => (prev.includes(uni) ? prev : [uni, ...prev].slice(0, 5)));
   }
   const [barsReady, setBarsReady] = useState(false);
   const [hoverDim, setHoverDim] = useState<DimKey | null>(null);
@@ -251,7 +248,7 @@ export default function Results({ answers, onRestart, onToast }: Props) {
           [
             ["perfil", "Mi perfil", null],
             ["carreras", "Carreras", ranked.length],
-            ["becas", "Becas", BECAS.length + Object.keys(BECAS_UNI).length],
+            ["becas", "Becas", null],
           ] as [Tab, string, number | null][]
         ).map(([id, label, count]) => (
           <button
@@ -262,7 +259,7 @@ export default function Results({ answers, onRestart, onToast }: Props) {
             onClick={() => goTab(id)}
           >
             {label}
-            {count !== null && <b>· {count}</b>}
+            {count !== null && <b>{count}</b>}
           </button>
         ))}
       </div>
@@ -284,7 +281,7 @@ export default function Results({ answers, onRestart, onToast }: Props) {
 
             <div className="panel">
               <h3>Puntaje por dimensión</h3>
-              <div>
+              <div className="dim-bars">
                 {barOrder.map((k) => (
                   <DimBar
                     key={k}
@@ -417,7 +414,7 @@ export default function Results({ answers, onRestart, onToast }: Props) {
             <span>
               {filtered.length} {filtered.length === 1 ? "carrera" : "carreras"}
               {query ? ` para «${query}»` : ""}
-              {deptFilter !== "all" ? ` · universidades en ${deptFilter}` : ""}
+              {deptFilter !== "all" ? ` con universidades en ${deptFilter}` : ""}
             </span>
             {activeFilters > 0 && (
               <button
@@ -468,7 +465,9 @@ export default function Results({ answers, onRestart, onToast }: Props) {
         </div>
       )}
 
-      {tab === "becas" && <Becas deptFilter={deptFilter} vistas={unisVistas} />}
+      {tab === "becas" && (
+        <Becas deptFilter={deptFilter} onDepto={setDeptFilter} />
+      )}
 
       <div className="res-actions">
         <button className="btn" onClick={copyResults}>
@@ -500,7 +499,7 @@ export default function Results({ answers, onRestart, onToast }: Props) {
 function buildSummary(code: DimKey[], n: Scores, top: { n: string; match: number }[]): string {
   return [
     "🧭 Mi resultado en Rumbo",
-    `Código Holland: ${code.join("")} (${code.map((k) => DIMS[k].name).join(" · ")})`,
+    `Código Holland: ${code.join("")} (${code.map((k) => DIMS[k].name).join(", ")})`,
     "",
     "Perfil RIASEC:",
     ...DIM_KEYS.map((k) => `  ${k} ${DIMS[k].name}: ${Math.round(n[k] * 100)}%`),

@@ -82,7 +82,7 @@ export default function UniversityView({
           <h2>{u.nombre}</h2>
           <div className="uni-hero-chips">
             <span className="uni-chip">
-              <PinIcon /> {u.deps.includes("*") ? "Todo el país" : u.deps.join(" · ")}
+              <PinIcon /> {u.deps.includes("*") ? "Todo el país" : u.deps.join(", ")}
             </span>
             <span className={`uni-chip${u.sector === "publica" ? " uni-chip-on" : ""}`}>
               {SECTOR_LABEL[u.sector]}

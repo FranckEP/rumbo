@@ -12,7 +12,7 @@ export default function SiteHeader() {
         <span className="brand-name">Rumbo</span>
       </div>
       <div className="top-right">
-        <span className="eyebrow hide-on-narrow">Modelo RIASEC · Holland</span>
+        <span className="eyebrow hide-on-narrow">Modelo RIASEC de Holland</span>
         <ThemeToggle />
       </div>
     </header>

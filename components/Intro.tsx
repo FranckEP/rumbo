@@ -112,21 +112,21 @@ export default function Intro({ onStart, resumeCount, onResume }: Props) {
         <div className="stats">
           <div className="stat">
             <b>{N_CARRERAS}</b>
-            <span>carreras evaluadas, cada una con su porcentaje de afinidad contigo</span>
+            <span>Carreras evaluadas, cada una con su porcentaje de afinidad contigo</span>
           </div>
           <div className="stat">
             <b>{N_UNIS}</b>
             <span>
-              instituciones públicas y privadas, filtrables por {N_DEPTS} departamentos
+              Instituciones públicas y privadas, filtrables por {N_DEPTS} departamentos
             </span>
           </div>
           <div className="stat">
             <b>{N_BECAS}</b>
-            <span>becas y apoyos: nacionales, de tu región y de cada universidad</span>
+            <span>Becas y apoyos: nacionales, de tu región y de cada universidad</span>
           </div>
           <div className="stat">
             <b>3</b>
-            <span>niveles por carrera: profesional, tecnológica y técnica</span>
+            <span>Niveles por carrera: profesional, tecnológica y técnica</span>
           </div>
         </div>
         <p className="intro-note">

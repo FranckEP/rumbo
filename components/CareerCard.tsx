@@ -159,7 +159,7 @@ export default function CareerCard({
                         }}
                       >
                         {LEVEL_LABELS[l].split(" ")[0]}
-                        <b>· {count}</b>
+                        <b>{count}</b>
                       </button>
                     );
                   })}
@@ -167,9 +167,9 @@ export default function CareerCard({
 
                 <p className="ctab-hint">
                   {rutaActiva?.n ?? career.n}
-                  {dur ? ` · ${dur} semestres` : rutaActiva ? ` · ${rutaActiva.t}` : ""}
-                  {costo ? ` · matrícula ~${pesos(costo)}` : ""}
-                  {deptFilter !== "all" ? ` · en ${deptFilter}` : ""}
+                  {dur ? `, ${dur} semestres` : rutaActiva ? `, ${rutaActiva.t}` : ""}
+                  {costo ? `, matrícula desde ${pesos(costo)}` : ""}
+                  {deptFilter !== "all" ? `, en ${deptFilter}` : ""}
                 </p>
 
                 {mostradas.length ? (

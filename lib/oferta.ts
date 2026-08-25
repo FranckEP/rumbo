@@ -1,5 +1,5 @@
 import ofertaJson from "./snies/oferta.json";
-import type { CareerLevel } from "./careers";
+import { CAREERS, type CareerLevel } from "./careers";
 import { INSTITUCIONES, type Institucion } from "./instituciones";
 
 /**
@@ -20,7 +20,48 @@ interface OfertaCarrera {
   _costo?: Partial<Record<CareerLevel, number>>;
 }
 
-const OFERTA = ofertaJson as Record<string, OfertaCarrera>;
+const ORDEN: CareerLevel[] = ["profesional", "tecnologica", "tecnica"];
+
+/** Niveles que la carrera declara en `careers.ts`. */
+const PERMITIDOS: Record<string, CareerLevel[]> = Object.fromEntries(
+  CAREERS.map((c) => [c.n, c.lvl])
+);
+
+/**
+ * El indice del SNIES, ya depurado.
+ *
+ * El filtro se aplica UNA vez aqui y no en cada funcion, a proposito: antes
+ * `nivelesDe` e `institucionesDe` tenian la guarda pero `cuantasDe`,
+ * `duracionDe`, `costoDe` y `departamentosDe` leian el indice crudo y se la
+ * saltaban. Depurando el origen no queda ninguna puerta trasera.
+ *
+ * Que se depura: el mapeo automatico de nombres mete bajo una carrera
+ * programas que se le parecen pero no son ella. «Tecnologia en Atencion
+ * Prehospitalaria» y «Tecnologia en Radiologia» caian bajo Medicina,
+ * «Tecnologia en Criminalistica» bajo Derecho, «Tecnico Profesional en Salud
+ * Oral» bajo Odontologia. La ficha llegaba a decir «Medicina · Tecnologica ·
+ * 15 instituciones · 6 semestres», y un joven concluia que puede ser medico
+ * en tres anos. No puede: son profesiones reguladas que solo existen como
+ * pregrado universitario.
+ *
+ * Son carreras dignas y bien pagadas, pero son OTRAS carreras. Presentarlas
+ * como un atajo a la que el chico quiere es el peor error posible aqui.
+ */
+const OFERTA: Record<string, OfertaCarrera> = Object.fromEntries(
+  Object.entries(ofertaJson as Record<string, OfertaCarrera>).map(([carrera, datos]) => {
+    const permitidos = PERMITIDOS[carrera];
+    if (!permitidos) return [carrera, datos];
+
+    const limpio: OfertaCarrera = { _dur: {}, _costo: {} };
+    for (const n of ORDEN) {
+      if (!permitidos.includes(n)) continue;
+      if (datos[n]) limpio[n] = datos[n];
+      if (datos._dur?.[n] !== undefined) limpio._dur![n] = datos._dur[n];
+      if (datos._costo?.[n] !== undefined) limpio._costo![n] = datos._costo[n];
+    }
+    return [carrera, limpio];
+  })
+);
 
 export function tieneOferta(carrera: string): boolean {
   return carrera in OFERTA;
@@ -30,7 +71,7 @@ export function tieneOferta(carrera: string): boolean {
 export function nivelesDe(carrera: string): CareerLevel[] {
   const o = OFERTA[carrera];
   if (!o) return [];
-  return (["profesional", "tecnologica", "tecnica"] as CareerLevel[]).filter((n) => o[n]);
+  return ORDEN.filter((n) => o[n]);
 }
 
 /**

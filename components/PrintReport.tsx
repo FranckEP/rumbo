@@ -41,14 +41,14 @@ export default function PrintReport({ code, n, ranked, deptFilter }: Props) {
       <header className="pr-head">
         <div>
           <div className="pr-brand">Rumbo</div>
-          <div className="pr-sub">Test vocacional · modelo RIASEC (Holland)</div>
+          <div className="pr-sub">Test vocacional, modelo RIASEC (Holland)</div>
         </div>
         <div className="pr-date">{hoy}</div>
       </header>
 
       <h1 className="pr-title">
         Tu perfil: {PROFILE_TITLES[code[0]]}
-        {code[1] ? ` · ${DIMS[code[1]].name}` : ""}
+        {code[1] ? ` y ${DIMS[code[1]].name.toLowerCase()}` : ""}
       </h1>
       <p className="pr-lede">
         Código Holland <b>{code.join("-")}</b> — las tres dimensiones que más te definen son{" "}
@@ -77,7 +77,7 @@ export default function PrintReport({ code, n, ranked, deptFilter }: Props) {
         {code.slice(0, 2).map((k) => (
           <div key={k}>
             <b>
-              {k} · {DIMS[k].name}
+              {DIMS[k].name}
             </b>
             <p>{DIMS[k].desc}</p>
           </div>
@@ -100,7 +100,7 @@ export default function PrintReport({ code, n, ranked, deptFilter }: Props) {
               <td className="pr-rank">{String(i + 1).padStart(2, "0")}</td>
               <td className="pr-career">{c.n}</td>
               <td className="pr-levels">
-                {c.lvl.map((l) => LEVEL_LABELS[l].split(" ")[0]).join(" · ")}
+                {c.lvl.map((l) => LEVEL_LABELS[l].split(" ")[0]).join(", ")}
               </td>
               <td className="pr-pct">{Math.round(c.match * 100)}%</td>
             </tr>
@@ -117,7 +117,7 @@ export default function PrintReport({ code, n, ranked, deptFilter }: Props) {
           <div className="pr-rutas">
             {(RUTAS[principal.n] ?? []).map((r) => (
               <div key={r.l + r.n}>
-                <b>{LEVEL_LABELS[r.l].split(" ")[0]}</b> · {r.n} · {r.t}
+                <b>{LEVEL_LABELS[r.l].split(" ")[0]}</b> {r.n}, {r.t}
               </div>
             ))}
           </div>
@@ -151,8 +151,10 @@ export default function PrintReport({ code, n, ranked, deptFilter }: Props) {
         {BECAS.map((b) => (
           <div className="pr-beca" key={b.n}>
             <b>{b.n}</b>
-            <span className="pr-beca-tag">{b.tag}</span>
-            <p>{b.d}</p>
+            <span className="pr-beca-tag">{b.cobertura}</span>
+            <p>
+              {b.paraQuien} <i>{b.queNecesitas}</i>
+            </p>
             <span className="pr-url">{b.url.replace("https://", "")}</span>
           </div>
         ))}
@@ -166,7 +168,7 @@ export default function PrintReport({ code, n, ranked, deptFilter }: Props) {
               .filter((u) => u.clave && BECAS_UNI[u.clave])
               .map((u) => (
                 <div key={u.id}>
-                  <b>{u.nombre}:</b> {BECAS_UNI[u.clave!].p.join(" · ")}
+                  <b>{u.nombre}:</b> {BECAS_UNI[u.clave!].p.join(", ")}
                 </div>
               ))}
           </div>
@@ -180,7 +182,7 @@ export default function PrintReport({ code, n, ranked, deptFilter }: Props) {
           son una referencia general. Verifica el registro calificado y la acreditación de cada
           programa en el SNIES ({SNIES_URL.replace("https://", "")}) antes de decidir.
         </p>
-        <p className="pr-credit">Rumbo · creado por Franck E. Peñaloza · basado en el modelo RIASEC de John L. Holland</p>
+        <p className="pr-credit">Rumbo, creado por Franck E. Peñaloza. Basado en el modelo RIASEC de John L. Holland</p>
       </footer>
     </div>
   );

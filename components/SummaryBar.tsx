@@ -29,7 +29,7 @@ export default function SummaryBar({ code, topCareer, hoverDim, onHover }: Props
         <div className="summary-text">
           <b>
             {PROFILE_TITLES[code[0]]}
-            {code[1] ? ` · ${DIMS[code[1]].name}` : ""}
+            {code[1] ? ` y ${DIMS[code[1]].name.toLowerCase()}` : ""}
           </b>
           <em>Código Holland {code.join("-")}</em>
         </div>
@@ -39,7 +39,7 @@ export default function SummaryBar({ code, topCareer, hoverDim, onHover }: Props
         <div className="summary-match">
           <span className="eyebrow">Tu mejor match</span>
           <b>
-            {topCareer.n} · {Math.round(topCareer.match * 100)}%
+            {topCareer.n} <i>{Math.round(topCareer.match * 100)}%</i>
           </b>
         </div>
       )}

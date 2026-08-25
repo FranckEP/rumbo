@@ -66,7 +66,7 @@ export default function TestScreen({
           ))}
         </div>
 
-        <p className="kbd-hint">Atajos: teclas 1–4 para responder · ← para volver</p>
+        <p className="kbd-hint">Atajos: teclas 1–4 para responder, ← para volver</p>
 
         <div className="test-nav">
           <button

@@ -164,7 +164,7 @@ export default function Page() {
         )}
 
         <footer>
-          Creado por <strong>Franck E. Peñaloza</strong> · Basado en la teoría de tipos vocacionales
+          Creado por <strong>Franck Echeverría Peñaloza</strong>. Basado en la teoría de tipos vocacionales
           de John L. Holland (RIASEC)
         </footer>
       </div>

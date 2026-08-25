@@ -75,7 +75,6 @@ export default function Dropdown({
   const [arriba, setArriba] = useState(false);
   const [busca, setBusca] = useState("");
   const [activa, setActiva] = useState(0);
-  const [esMovil, setEsMovil] = useState(false);
 
   const raiz = useRef<HTMLDivElement>(null);
   const boton = useRef<HTMLButtonElement>(null);
@@ -85,16 +84,6 @@ export default function Dropdown({
   const id = useId();
 
   const conBuscador = opciones.length > UMBRAL_BUSCADOR;
-
-  /* La hoja de móvil se monta en <body> (ver abajo), así que hay que saber en
-     qué modo estamos en el momento de renderizar, no solo desde el CSS. */
-  useEffect(() => {
-    const mq = window.matchMedia("(max-width: 620px)");
-    const leer = () => setEsMovil(mq.matches);
-    leer();
-    mq.addEventListener("change", leer);
-    return () => mq.removeEventListener("change", leer);
-  }, []);
 
   const visibles = useMemo(() => {
     if (!busca.trim()) return opciones;
@@ -127,29 +116,108 @@ export default function Dropdown({
     setActiva(i < 0 ? 0 : i);
   }, [abierto, opciones, valor]);
 
-  /* Hacia dónde cuelga el panel y cuánto puede crecer la lista.
-     No basta con un umbral fijo: con 33 departamentos el panel mide 350 px y
-     se salía por debajo de la ventana. Se mide el hueco real de cada lado, se
-     elige el mayor y la lista se limita a lo que quepa ahí, así el panel
-     siempre termina dentro de la pantalla y lo que sobra se desplaza.
-     En móvil no aplica: ahí va anclado al borde inferior como hoja. */
-  useLayoutEffect(() => {
-    if (!abierto || !boton.current) return;
+  /* Coloca el panel. Va montado en <body> (ver `flotante`), así que en
+     escritorio hay que darle las coordenadas a mano: se mide el hueco real
+     arriba y abajo del botón, se elige el lado con más espacio y la lista se
+     limita a lo que quepa, de modo que el panel siempre termina dentro de la
+     pantalla y lo que sobra se desplaza. En móvil no se toca: manda el CSS,
+     que lo ancla al borde inferior como hoja. */
+  const colocar = useCallback(() => {
+    const caja = panel.current;
+    if (!caja || !boton.current) return;
+
     if (window.matchMedia("(max-width: 620px)").matches) {
+      caja.style.top = caja.style.left = caja.style.minWidth = "";
+      lista.current?.style.removeProperty("--dd-lista-max");
       setArriba(false);
       return;
     }
+
     const r = boton.current.getBoundingClientRect();
     const MARGEN = 16;
+    const HUECO = 7;
     const abajo = window.innerHeight - r.bottom - MARGEN;
     const encima = r.top - MARGEN;
-    const va = abajo < 240 && encima > abajo;
+
+    caja.style.minWidth = `${r.width}px`;
+    const va = abajo < Math.min(caja.offsetHeight, 240) && encima > abajo;
     setArriba(va);
 
     /* Lo que el panel gasta fuera de la lista: título, buscador y relleno. */
-    const marco = (panel.current?.offsetHeight ?? 0) - (lista.current?.offsetHeight ?? 0);
-    const hueco = Math.max((va ? encima : abajo) - marco, 120);
-    lista.current?.style.setProperty("--dd-lista-max", `${Math.min(hueco, 264)}px`);
+    const marco = caja.offsetHeight - (lista.current?.offsetHeight ?? 0);
+    const cabe = Math.max((va ? encima : abajo) - marco - HUECO, 120);
+    lista.current?.style.setProperty("--dd-lista-max", `${Math.min(cabe, 264)}px`);
+
+    caja.style.left = `${r.left}px`;
+    caja.style.top = va ? `${r.top - caja.offsetHeight - HUECO}px` : `${r.bottom + HUECO}px`;
+  }, []);
+
+  useLayoutEffect(() => {
+    if (abierto) colocar();
+  }, [abierto, colocar]);
+
+  /* Al desplazar la página el panel se despegaría del botón, porque va en
+     coordenadas fijas. Se RECOLOCA, no se cierra.
+
+     Cerrarlo era lo intuitivo y estuvo mal dos veces: al abrir, el navegador
+     desplaza para hacer visible el botón o el campo de búsqueda, ese
+     desplazamiento llegaba al cierre y mataba el panel en el mismo instante en
+     que se abría. Recolocar no tiene ese problema y encima se comporta mejor.
+     Solo se cierra si el botón se fue del todo de la pantalla, que es cuando
+     ya no queda a qué anclarse. */
+  useEffect(() => {
+    if (!abierto) return;
+    if (window.matchMedia("(max-width: 620px)").matches) return;
+
+    const alMover = (e?: Event) => {
+      if (e && panel.current?.contains(e.target as Node)) return;
+      const r = boton.current?.getBoundingClientRect();
+      if (!r) return;
+      if (r.bottom < 0 || r.top > window.innerHeight) {
+        cerrar(false);
+        return;
+      }
+      colocar();
+    };
+
+    window.addEventListener("scroll", alMover, true);
+    window.addEventListener("resize", alMover);
+    return () => {
+      window.removeEventListener("scroll", alMover, true);
+      window.removeEventListener("resize", alMover);
+    };
+  }, [abierto, cerrar, colocar]);
+
+  /* El teclado del celular tapa la parte de abajo de la pantalla, y la hoja va
+     en `position: fixed`, que se ancla al viewport de DISEÑO: ese no encoge
+     con el teclado, así que la hoja quedaba detrás. `visualViewport` sí mide
+     lo que de verdad se ve; con eso se sube la hoja lo justo y se le limita el
+     alto para que quepa entre el teclado y el borde de arriba. */
+  useEffect(() => {
+    if (!abierto) return;
+    const vv = window.visualViewport;
+    if (!vv) return;
+
+    const ajustar = () => {
+      const caja = panel.current;
+      if (!caja) return;
+      if (!window.matchMedia("(max-width: 620px)").matches) {
+        caja.style.removeProperty("--dd-teclado");
+        caja.style.removeProperty("--dd-visible");
+        return;
+      }
+      const tapado = Math.max(window.innerHeight - vv.height - vv.offsetTop, 0);
+      caja.style.setProperty("--dd-teclado", `${Math.round(tapado)}px`);
+      caja.style.setProperty("--dd-visible", `${Math.round(vv.height)}px`);
+    };
+
+    ajustar();
+    vv.addEventListener("resize", ajustar);
+    vv.addEventListener("scroll", ajustar);
+    return () => {
+      vv.removeEventListener("resize", ajustar);
+      vv.removeEventListener("scroll", ajustar);
+    };
   }, [abierto]);
 
   useEffect(() => {
@@ -157,14 +225,20 @@ export default function Dropdown({
     /* El buscador se lleva el foco; si no hay, lo toma la lista para que las
        flechas funcionen de inmediato. */
     const t = window.setTimeout(() => {
-      if (conBuscador) campo.current?.focus();
-      else lista.current?.focus();
+      /* `preventScroll` es obligatorio: sin él el navegador desplaza para
+         hacer visible el campo, ese scroll llega al cierre por desplazamiento
+         y el panel se cerraba solo al abrirlo. */
+      if (conBuscador) campo.current?.focus({ preventScroll: true });
+      else lista.current?.focus({ preventScroll: true });
     }, 0);
 
     const fuera = (e: PointerEvent) => {
       /* El panel de móvil vive fuera de `raiz`, así que se comprueba aparte;
          si no, tocar dentro de la hoja la cerraría. */
-      const t = e.target as Node;
+      const t = e.target;
+      /* Un evento puede llegar sin `target`, o con uno que no es un nodo:
+         `contains` lanza si se le pasa cualquier otra cosa. */
+      if (!(t instanceof Node)) return;
       if (raiz.current?.contains(t) || panel.current?.contains(t)) return;
       cerrar(false);
     };
@@ -175,12 +249,21 @@ export default function Dropdown({
     };
   }, [abierto, conBuscador, cerrar]);
 
-  /* La opción activa siempre visible al moverse con el teclado. */
+  /* La opción activa siempre visible al moverse con el teclado.
+     Se mueve `scrollTop` a mano en vez de usar `scrollIntoView`: ese también
+     desplaza los contenedores de arriba, incluida la página, y ese scroll
+     disparaba el cierre por desplazamiento nada más abrir. */
   useEffect(() => {
     if (!abierto) return;
-    lista.current
-      ?.querySelector<HTMLElement>('[data-activa="1"]')
-      ?.scrollIntoView({ block: "nearest" });
+    const caja = lista.current;
+    const op = caja?.querySelector<HTMLElement>('[data-activa="1"]');
+    if (!caja || !op) return;
+    const arribaDe = op.offsetTop;
+    const abajoDe = arribaDe + op.offsetHeight;
+    if (arribaDe < caja.scrollTop) caja.scrollTop = arribaDe;
+    else if (abajoDe > caja.scrollTop + caja.clientHeight) {
+      caja.scrollTop = abajoDe - caja.clientHeight;
+    }
   }, [abierto, activa, visibles]);
 
   function teclas(e: React.KeyboardEvent) {
@@ -312,7 +395,7 @@ export default function Dropdown({
         <ChevronIcon className="dd-caret" />
       </button>
 
-      {abierto && (esMovil ? createPortal(flotante, document.body) : flotante)}
+      {abierto && createPortal(flotante, document.body)}
     </div>
   );
 }

@@ -41,16 +41,13 @@ export default function UniBecas({ deptFilter }: Props) {
   return (
     <section className="beca-group">
       <div className="group-rule">
-        <span className="eyebrow">
-          {deptFilter === "all" ? "En las universidades" : `Universidades en ${deptFilter}`}
-        </span>
+        <span className="eyebrow">De la universidad</span>
         <i />
       </div>
-
-      <p className="ctab-hint">
-        Casi toda institución tiene becas propias. Estas son las de {lista.length}{" "}
-        {lista.length === 1 ? "institución" : "instituciones"} de nuestra muestra
-        {deptFilter === "all" ? " en el país" : ""}.
+      <p className="group-nota">
+        Estas se piden directamente a la institución, no al Estado. Tenemos las de{" "}
+        {lista.length} {lista.length === 1 ? "institución" : "instituciones"}
+        {deptFilter === "all" ? " del país" : ` en ${deptFilter}`}.
       </p>
 
       <label className="search-field uni-search">
