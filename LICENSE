@@ -1,0 +1,77 @@
+Copyright © 2026 Franck Echeverría Peñaloza. Todos los derechos reservados.
+
+RUMBO — Test vocacional para jóvenes de Colombia
+https://github.com/  (repositorio privado)
+
+
+AVISO DE DERECHOS DE AUTOR
+==========================
+
+Este software, su código fuente, sus textos, su diseño y las bases de datos
+elaboradas para él son obra de Franck Echeverría Peñaloza y están protegidos
+por la Ley 23 de 1982 y la Decisión Andina 351 de 1993 sobre derecho de autor,
+así como por el Convenio de Berna en los demás países signatarios.
+
+La protección nace con la creación de la obra: no depende de este archivo ni
+de ningún registro. Este aviso solo lo hace explícito.
+
+
+OBRA PROTEGIDA
+==============
+
+Quedan cubiertos, entre otros:
+
+  - El código fuente completo (TypeScript, React, CSS y scripts de Python).
+  - Los textos de la interfaz, las 48 afirmaciones del cuestionario, las
+    descripciones de carreras y los duelos del desempate.
+  - Las bases de datos elaboradas: el registro de instituciones con sus
+    enlaces resueltos uno a uno, el mapeo de programas del SNIES a las
+    carreras del modelo, y la información de becas verificada institución por
+    institución con su fecha de comprobación.
+
+Nota sobre las fuentes: los datos públicos del SNIES del Ministerio de
+Educación Nacional pertenecen a esa entidad. Lo que aquí se protege es la
+selección, depuración, corrección, estructura y verificación de esa
+información, que sí constituye obra propia.
+
+El modelo RIASEC es de John L. Holland y no se reclama derecho alguno sobre
+la teoría.
+
+
+LO QUE SÍ SE PERMITE, SIN PEDIR PERMISO
+=======================================
+
+  - Usar la aplicación publicada, gratis y sin registro.
+  - Recomendarla, compartir su enlace, proyectarla en clase y usarla en
+    jornadas de orientación vocacional.
+  - Imprimir los resultados y trabajarlos con estudiantes.
+
+Colegios, docentes, orientadores, secretarías de educación y organizaciones
+sociales pueden usarla libremente con sus estudiantes. Para eso se hizo.
+
+
+LO QUE REQUIERE AUTORIZACIÓN ESCRITA
+====================================
+
+  - Copiar, reproducir o distribuir el código fuente.
+  - Crear obras derivadas, adaptaciones o versiones modificadas.
+  - Incorporar el código, los textos o las bases de datos en otro producto,
+    servicio o aplicación.
+  - Vender, revender, licenciar o cobrar por el acceso.
+  - Publicar la obra o parte de ella bajo otra autoría o marca.
+
+Para pedir autorización, integrarla en un programa institucional o proponer un
+convenio: franck200402@gmail.com
+
+Las solicitudes de uso educativo sin ánimo de lucro se atienden con la mejor
+disposición.
+
+
+SIN GARANTÍA
+============
+
+El software se entrega "tal como está", sin garantía de ningún tipo. Los datos
+de instituciones, programas y becas son de referencia y cambian con el tiempo:
+deben verificarse en la fuente oficial antes de tomar cualquier decisión. El
+autor no responde por decisiones tomadas únicamente con base en esta
+herramienta.
